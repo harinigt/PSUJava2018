@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"e","c":"PhoneCall","l":"getCallee()"},{"p":"e","c":"PhoneCall","l":"getCaller()"},{"p":"e","c":"PhoneCall","l":"getEndTimeString()"},{"p":"e","c":"PhoneCall","l":"getStartTimeString()"},{"p":"e","c":"Project1","l":"main(String[])","url":"main(java.lang.String[])"},{"p":"e","c":"PhoneCall","l":"PhoneCall()"},{"p":"e","c":"Project1","l":"Project1()"}]
