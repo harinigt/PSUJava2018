@@ -43,7 +43,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>e.Project1</mainClass>
+              <mainClass>edu.pdx.cs410J.gharini.Project1</mainClass>
             </manifest>
           </archive>
         </configuration>

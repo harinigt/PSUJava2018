@@ -2,7 +2,11 @@
 <JDepend>
     <Packages>
 
-        <Package name="e">
+        <Package name="edu.pdx.cs410J">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="edu.pdx.cs410J.gharini">
             <Stats>
                 <TotalClasses>2</TotalClasses>
                 <ConcreteClasses>2</ConcreteClasses>
@@ -20,10 +24,10 @@
 
             <ConcreteClasses>
                 <Class sourceFile="PhoneCall.java">
-                    e.PhoneCall
+                    edu.pdx.cs410J.gharini.PhoneCall
                 </Class>
                 <Class sourceFile="Project1.java">
-                    e.Project1
+                    edu.pdx.cs410J.gharini.Project1
                 </Class>
             </ConcreteClasses>
 
@@ -35,10 +39,6 @@
 
             <UsedBy>
             </UsedBy>
-        </Package>
-
-        <Package name="edu.pdx.cs410J">
-            <error>No stats available: package referenced, but not analyzed.</error>
         </Package>
 
         <Package name="java.io">
