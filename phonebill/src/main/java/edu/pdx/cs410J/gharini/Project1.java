@@ -21,20 +21,20 @@ import java.util.regex.Pattern;
 public class Project1 {
 
     /**
-     * @param: length of command line arguments (number of arguments)
-     * * @return
+     * @param: count  length of command line arguments (number of arguments)
+     *
      */
 
   private static void checkNumOfArgs(int count){
       if(count < 5 ) {
-          throw new InvalidNumberOfArgumentsException ("Too Many Arguments ");
+          throw new InvalidNumberOfArgumentsException ("Missing few Command Line Arguments ");
       }else if(count > 7){
-          throw new InvalidNumberOfArgumentsException ("Missing Few Arguments ");
+          throw new InvalidNumberOfArgumentsException ("Command Line has too many arguments ");
       }
 
   }
     /**
-     * @param args
+     * @param args  command line arguments
      * @return
      */
   private static ArrayList<String> loadOptions(String[] args){
@@ -61,12 +61,15 @@ public class Project1 {
 
 
   private static void checkDateFormat(String arg){
-      SimpleDateFormat format = new SimpleDateFormat ("yyyy/MM/dd HH:mm" , Locale.US);
-      format.setLenient (false);
+      DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern ("yyyy/MM/dd HH:mm" , Locale.US);
+      //LocalDateTime startDateTime = LocalDateTime.parse (arg , dateTimeFormat );
+      //SimpleDateFormat format = new SimpleDateFormat ("yyyy/MM/dd HH:mm" , Locale.US);
+      //dateTimeFormat.setLenient (false);
       try {
-        Date date = format.parse(arg);
-        format.format(date);
-      } catch(ParseException pe){
+          LocalDateTime startDateTime = LocalDateTime.parse (arg , dateTimeFormat );
+        //Date date = format.parse(arg);
+          dateTimeFormat.format(startDateTime);
+      } catch(Exception pe){
           throw new InvalidDateAndTimeException ("Invalid Date , Usage : yyyy/MM/dd hh:mm " + arg);
 
       }
@@ -111,8 +114,24 @@ public class Project1 {
 
   }
 
+    private static String getStartAndEndDates(String arg) {
+        String startDate = null;
+        checkValidArgumentFormat (arg);
+        checkDateFormat(arg);
+        startDate = arg;
+        return startDate;
+    }
 
-  public static void readme(){
+    private static String getPhoneNumbers(String arg) {
+        String callerNumber = null;
+        checkValidArgumentFormat (arg);
+        checkPhoneNumberFormat (arg);
+        callerNumber = arg;
+        return callerNumber;
+    }
+
+
+    public static void readme(){
       String readme = "";
       System.out.println (readme);
   }
@@ -121,6 +140,11 @@ public class Project1 {
      System.out.println (call);
   }
 
+  public static void printErrorMessageAndExit(String msg){
+      System.err.println (msg);
+      System.exit (-1);
+
+  }
   public static void main(String[] args) {
     String customer = null;
     String callerNumber = null;
@@ -141,65 +165,42 @@ public class Project1 {
                 customer = args[i];
 
             } else if (callerNumber == null){
-                checkValidArgumentFormat (args[i]);
-                checkPhoneNumberFormat (args[i]);
-                callerNumber = args[i];
+                callerNumber = getPhoneNumbers (args[i]);
 
             } else if (calleeNumber == null){
-                checkValidArgumentFormat (args[i]);
-                checkPhoneNumberFormat (args[i]);
-                calleeNumber = args[i];
+                calleeNumber = getPhoneNumbers (args[i]);
                 checkCallerAndCallee (callerNumber,calleeNumber);
 
             } else if (startDate == null){
-                checkValidArgumentFormat (args[i]);
-                checkDateFormat(args[i]);
-                startDate = args[i];
+                startDate = getStartAndEndDates (args[i]);
 
             } else if(endDate == null) {
-                checkValidArgumentFormat (args[i]);
-                checkDateFormat (args[i]);
-                endDate = args[i];
+                endDate = getStartAndEndDates (args[i]);
                 checkDateDifference (startDate,endDate);
 
             }
         }
     }
     catch(InvalidArgumentFormatException iaf){
-        System.err.println (iaf.getMessage ());
-        // iaf.printStackTrace ();
-        System.exit (-1);
+        printErrorMessageAndExit (iaf.getMessage ());
     }
     catch(InvalidNumberOfArgumentsException ina) {
-        System.err.println (ina.getMessage ());
-        //ina.printStackTrace ();
-        System.exit(-1);
-
+        printErrorMessageAndExit (ina.getMessage ());
     }
     catch(NoOptionsInTheArgumentException noa){
-        System.err.println (noa.getMessage ());
-        //noa.printStackTrace ();
-        System.exit(-1);
+        printErrorMessageAndExit (noa.getMessage ());
     }
     catch(InvalidPhoneNumberException ipn){
-        System.err.println (ipn.getMessage ());
-        //ipn.printStackTrace ();
-        System.exit(-1);
+        printErrorMessageAndExit (ipn.getMessage ());
     }
     catch (InvalidDateAndTimeException idf){
-        System.err.println (idf.getMessage ());
-        //idf.printStackTrace ();
-        System.exit(-1);
+        printErrorMessageAndExit (idf.getMessage ());
     }
     catch (InvalidStartAndEndTimesException ise){
-        System.err.println (ise.getMessage ());
-        //ise.printStackTrace ();
-        System.exit (-1);
+        printErrorMessageAndExit (ise.getMessage ());
     }
     catch (SameCallerAndCalleeException scc){
-        System.err.println (scc.getMessage ());
-        //scc.printStackTrace ();
-        System.exit (-1);
+        printErrorMessageAndExit (scc.getMessage ());
     }
       PhoneCall call = new PhoneCall(customer,callerNumber,calleeNumber,startDate,endDate);
       PhoneBill bill = new PhoneBill(customer);
@@ -215,5 +216,6 @@ public class Project1 {
     System.exit(1);
 
   }
+
 
 }
