@@ -26,8 +26,12 @@ public class Project1 {
      */
 
   private static void checkNumOfArgs(int count){
-      if(count < 5 || count > 7)
-        throw new InvalidNumberOfArgumentsException( "invalid arguments");
+      if(count < 5 ) {
+          throw new InvalidNumberOfArgumentsException ("Too Many Arguments ");
+      }else if(count > 7){
+          throw new InvalidNumberOfArgumentsException ("Missing Few Arguments ");
+      }
+
   }
     /**
      * @param args
@@ -41,7 +45,7 @@ public class Project1 {
              options.add(arg);
         }
       }
-          if(options.size() == 0) throw new NoOptionsInTheArgumentException("No Options Provided in the command line arguments");
+          //if(options.size() == 0) throw new NoOptionsInTheArgumentException("No Options Provided in the command line arguments");
     return options;
   }
 
