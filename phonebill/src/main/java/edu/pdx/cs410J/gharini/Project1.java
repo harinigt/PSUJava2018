@@ -40,8 +40,8 @@ public class Project1 {
   private static ArrayList<String> loadOptions(String[] args){
     ArrayList<String> options = new ArrayList<>();
       for(int i = 0 ; i < args.length ; i++){
-          String arg= args[i].toUpperCase();
-          if(arg.equals("-README") || arg.equals("-PRINT")){
+          String arg= args[i];
+          if(arg.equals("-README") || arg.equals("-print")){
              options.add(arg);
         }
       }
@@ -77,7 +77,7 @@ public class Project1 {
 
   private static void checkValidArgumentFormat(String arg){
       if( arg.startsWith ("-")){
-          throw new InvalidArgumentFormatException ("Invalid Argument : Argument cannot start with a - " + arg);
+          throw new InvalidArgumentFormatException ("Invalid Argument : Argument cannot start with a -  :" + arg);
       }
   }
 
