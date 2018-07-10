@@ -3,22 +3,30 @@ package edu.pdx.cs410J.gharini;
 import edu.pdx.cs410J.AbstractPhoneBill;
 import edu.pdx.cs410J.AbstractPhoneCall;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
-public class PhoneBill extends AbstractPhoneBill {
+public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
+
+    public PhoneBill(String customer){
+        this.customer = customer;
+    }
+
+    private Collection<PhoneCall> calls = new ArrayList<>();
+    private String customer;
     @Override
     public String getCustomer() {
-        return null;
+        return this.customer;
     }
 
     @Override
-    public void addPhoneCall(AbstractPhoneCall abstractPhoneCall) {
-
+    public void addPhoneCall(PhoneCall call) {
+      this.calls.add (call);
     }
 
     @Override
-    public Collection getPhoneCalls() {
-        return null;
+    public Collection<PhoneCall> getPhoneCalls() {
+        return this.calls;
     }
 }
 
