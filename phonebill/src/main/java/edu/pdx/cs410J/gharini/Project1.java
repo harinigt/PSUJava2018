@@ -40,12 +40,18 @@ public class Project1 {
   private static ArrayList<String> loadOptions(String[] args){
     ArrayList<String> options = new ArrayList<>();
       for(int i = 0 ; i < args.length ; i++){
-          String arg= args[i];
-          if(arg.equals("-README") || arg.equals("-print")){
-             options.add(arg);
+          String arg= args[i].toLowerCase ();
+          if(arg.equals("-readme") || arg.equals("-print")){
+              if(args[i].matches ("-README") || args[i].matches ("-print")){
+                  options.add (args[i]);
+              } else
+              {
+                  throw new OptionsAreCaseSensitiveException ("Options are case sensitive , Usage : -README , -print  :" + args[i]);
+              }
+
         }
       }
-          //if(options.size() == 0) throw new NoOptionsInTheArgumentException("No Options Provided in the command line arguments");
+
     return options;
   }
 
@@ -187,8 +193,8 @@ public class Project1 {
     catch(InvalidNumberOfArgumentsException ina) {
         printErrorMessageAndExit (ina.getMessage ());
     }
-    catch(NoOptionsInTheArgumentException noa){
-        printErrorMessageAndExit (noa.getMessage ());
+    catch(OptionsAreCaseSensitiveException oace){
+        printErrorMessageAndExit (oace.getMessage ());
     }
     catch(InvalidPhoneNumberException ipn){
         printErrorMessageAndExit (ipn.getMessage ());
@@ -206,10 +212,9 @@ public class Project1 {
       PhoneBill bill = new PhoneBill(customer);
       bill.addPhoneCall (call);
       for(String option:options){
-         String m = option.toLowerCase ();
-         if(m.equals ("-print")){
+         if(option.equals ("-print")){
              printCall (call);
-         }else if(m.equals ("-readme")){
+         }else if(option.equals ("-README")){
              readme ();
          }
       }
