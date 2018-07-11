@@ -88,7 +88,7 @@ public class Project1 {
           Pattern pattern = Pattern.compile(regex);
           Matcher matcher = pattern.matcher(arg);
           if(!matcher.matches ()){
-              throw  new InvalidPhoneNumberException("Invalid Phone Number Format , Usage : nnn-nnn-nnnn");
+              throw  new InvalidPhoneNumberException("Invalid Phone Number Format , Usage : nnn-nnn-nnnn  : " + arg);
           }
 
   }
@@ -240,6 +240,14 @@ public class Project1 {
       System.exit (-1);
 
   }
+
+  public static void checkArgumentPosition( int i , int numOfOptions){
+      if(i == numOfOptions){
+
+      }
+
+
+  }
     /**
      *
      * @param args : The main method for the project1 takes input as command line arguments(args)
@@ -268,21 +276,21 @@ public class Project1 {
         int numOfNonOptions = list.get(1).size ();
         checkNumOfArgs(numOfNonOptions,numOfOptions,numOfArgs);
         for (int i = numOfOptions; i<args.length ; i++){
-            if(customer == null){
+            if(customer == null ){
                 checkValidArgumentFormat (args[i]);
                 customer = args[i];
 
             } else if (callerNumber == null){
                 callerNumber = getPhoneNumbers (args[i]);
 
-            } else if (calleeNumber == null){
+            } else if (calleeNumber == null ){
                 calleeNumber = getPhoneNumbers (args[i]);
                 checkCallerAndCallee (callerNumber,calleeNumber);
 
-            } else if (startDate == null){
+            } else if (startDate == null ){
                 startDate = getStartAndEndDates (args[i]);
 
-            } else if(endDate == null) {
+            } else if(endDate == null ) {
                 endDate = getStartAndEndDates (args[i]);
                 checkDateDifference (startDate,endDate);
 
@@ -306,6 +314,8 @@ public class Project1 {
     }
     catch (InvalidOptionException ioe){
         printErrorMessageAndExit (ioe.getMessage ());
+    } catch(Exception e){
+        printErrorMessageAndExit ("Argument not in right place");
     }
 
       PhoneCall call = new PhoneCall(customer,callerNumber,calleeNumber,startDate,endDate);
