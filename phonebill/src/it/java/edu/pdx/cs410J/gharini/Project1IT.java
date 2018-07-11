@@ -26,9 +26,18 @@ public class Project1IT extends InvokeMainTestCase {
   public void testNoCommandLineArguments() {
     MainMethodResult result = invokeMain();
     assertThat(result.getExitCode(), equalTo(-1));
-    assertThat(result.getTextWrittenToStandardError(), containsString("Missing few Command Line Arguments"));
+    assertThat(result.getTextWrittenToStandardError(), containsString("Missing Command Line Arguments"));
   }
 
+    /**
+     * Tests that invoking the main method missing arguments except for the options issues an error
+     */
+    @Test
+    public void testFewCommandLineArgumentsMissing() {
+        MainMethodResult result = invokeMain("-README","-print", "123-456-7890","234-456-7890","2009/12/12 12:12" ,"2009/12/12 12:20" );
+        assertThat(result.getExitCode(), equalTo(-1));
+        assertThat(result.getTextWrittenToStandardError(), containsString("Missing few Command Line Arguments"));
+    }
     /**
      * Tests that invoking the main method with extra arguments issues an error
      */
@@ -38,6 +47,31 @@ public class Project1IT extends InvokeMainTestCase {
         assertThat(result.getExitCode(), equalTo(-1));
         assertThat(result.getTextWrittenToStandardError(), containsString("Command Line has too many arguments"));
     }
+    /**
+     * Tests that invoking the main method with the options that are not in specified format (case sensitive)would result in an error
+     */
+
+    @Test
+    public void testOptionsAreCaseSensitive(){
+        MainMethodResult result = invokeMain ("-REaDmE","-print","MyName","123-456-7890","234-436-7890","2009/12/12 10:00" ,"2009/12/12 12:20");
+        assertThat (result.getExitCode (),equalTo (-1));
+        assertThat (result.getTextWrittenToStandardError (),containsString ("Options are case sensitive , Usage : -README , -print  :"));
+        assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
+    }
+
+    /**
+     * Tests that invoking the main method without any options would not result in error
+     */
+    @Test
+    public void testProgramRunsWithoutOptions(){
+        MainMethodResult result = invokeMain ("MyName","123-456-7890","234-436-7890","2009/12/12 10:00" ,"2009/12/12 12:20");
+        assertThat (result.getExitCode (),equalTo (1));
+        assertThat (result.getTextWrittenToStandardError (), equalTo (""));
+        assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
+
+    }
+
+
     /**
      * Tests that invoking the main method with the phone number with wrong format issues an error
      */
@@ -49,7 +83,7 @@ public class Project1IT extends InvokeMainTestCase {
     }
 
     /**
-     * Tests that invoking the main method with the phone number with wrong format issues an error
+     * Tests that invoking the main method with the phone number with wrong format(extra characters) issues an error
      */
     @Test
     public void testValidPhoneNumberFormat2(){
@@ -64,7 +98,26 @@ public class Project1IT extends InvokeMainTestCase {
         assertThat (result.getExitCode (),equalTo (-1));
         assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid Phone Number Format , Usage : nnn-nnn-nnnn"));
     }
+    /**
+     * Tests that invoking the main method with the caller and callee having same phone number results in an error
+     */
+    @Test
+    public void testCallerAndCalleeHasToBeDifferent(){
+        String option1 = "-README";
+        String option2 = "-print";
+        String name = "myName";
+        String caller = "334-456-7890";
+        String callee = "334-456-7890";
+        String startDate = "2009/12/12 12:12";
+        String endDate = "2009/12/12 12:22";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        assertThat (result.getExitCode (),equalTo (-1));
+        assertThat (result.getTextWrittenToStandardError (),containsString ("Caller and Callee should be different  :"));
+    }
 
+    /**
+     * Tests that start data/end date of phone call in format other than yyyy/MM/dd HH:mm would result in error
+     */
     @Test
     public  void testValidDateFormat1(){
         String option1 = "-README";
@@ -80,29 +133,196 @@ public class Project1IT extends InvokeMainTestCase {
         assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
     }
 
+    /**
+     * Tests that start data/end date of phone call in format other than yyyy/MM/dd HH:mm would result in error
+     */
     @Test
     public  void testValidDateFormat2(){
-        MainMethodResult result = invokeMain ("-README","-print","MyName","123-456-7890","234-436-7890","2009/12/12 12:12" ,"20/2009/12 12:20");
+        String option1 = "-README";
+        String option2 = "-print";
+        String name = "myName";
+        String caller = "123-456-7890";
+        String callee = "334-456-7890";
+        String startDate = "2009/12/12 12:12";
+        String endDate = "20/2009/12 12:20";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
         assertThat (result.getExitCode (),equalTo (-1));
         assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid Date , Usage : yyyy/MM/dd hh:mm"));
         assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
     }
 
+    /**
+     * Tests that start time/end time of phone call in format other than HH:mm would result in error
+     */
     @Test
     public  void testValidTimeFormat(){
-        MainMethodResult result = invokeMain ("-README","-print","MyName","123-456-7890","234-436-7890","2009/12/12 10:00:00" ,"2009/12/12 12:20");
+        String option1 = "-README";
+        String option2 = "-print";
+        String name = "myName";
+        String caller = "123-456-7890";
+        String callee = "334-456-7890";
+        String startDate = "2009/12/12 12:12:00";
+        String endDate = "2009/12/22 12:20";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
         assertThat (result.getExitCode (),equalTo (-1));
         assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid Date , Usage : yyyy/MM/dd hh:mm"));
         assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
     }
 
+    /**
+     * Tests that start data of the phone call is before end date
+     */
     @Test
-    public void testOptionsFormat(){
-        MainMethodResult result = invokeMain ("-REaDmE","-print","MyName","123-456-7890","234-436-7890","2009/12/12 10:00" ,"2009/12/12 12:20");
+    public  void testStartDateISBeforeEndDate(){
+        String option1 = "-README";
+        String option2 = "-print";
+        String name = "myName";
+        String caller = "123-456-7890";
+        String callee = "334-456-7890";
+        String startDate = "2009/12/22 12:12";
+        String endDate = "2009/12/12 12:20";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
         assertThat (result.getExitCode (),equalTo (-1));
-        assertThat (result.getTextWrittenToStandardError (),containsString ("Options are case sensitive , Usage : -README , -print  :"));
+        assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid Dates , Start Date should be before end date  "));
         assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
     }
 
+    /**
+     * Tests that end data of the phone call is not after today
+     */
+
+    @Test
+    public  void testEndDateIsBeforeToday(){
+        String option1 = "-README";
+        String option2 = "-print";
+        String name = "myName";
+        String caller = "123-456-7890";
+        String callee = "334-456-7890";
+        String startDate = "2009/12/22 12:12";
+        String endDate = "2019/12/22 12:20";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        assertThat (result.getExitCode (),equalTo (-1));
+        assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid end date , end date should be before today!!  "));
+        assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
+    }
+
+    /**
+     * Tests that the start and end times of phone call have 24hr format
+     */
+    @Test
+    public  void testStartAndEndTimeHave24HrFormat(){
+        String option1 = "-README";
+        String option2 = "-print";
+        String name = "myName";
+        String caller = "123-456-7890";
+        String callee = "334-456-7890";
+        String startDate = "2009/12/22 21:12";
+        String endDate = "2009/12/22 22:20";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        assertThat (result.getExitCode (),equalTo (1));
+        assertThat (result.getTextWrittenToStandardError (),equalTo (""));
+        assertThat(result.getTextWrittenToStandardOut(), containsString ("Phone call from"));
+    }
+
+
+    /**
+     * Tests that the start and end times of phone call can be same and 00:00 is a valid time
+     */
+    @Test
+    public  void testStartAndEndTimesCanBeEqual(){
+        String option1 = "-README";
+        String option2 = "-print";
+        String name = "myName";
+        String caller = "123-456-7890";
+        String callee = "334-456-7890";
+        String startDate = "2009/12/22 00:00";
+        String endDate = "2009/12/22 00:00";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        assertThat (result.getExitCode (),equalTo (1));
+        assertThat (result.getTextWrittenToStandardError (),equalTo (""));
+        assertThat(result.getTextWrittenToStandardOut(), containsString ("Phone call from"));
+    }
+
+
+    /**
+     * Tests that the command line arguments except for options cannot start with a -
+     */
+
+    @Test
+    public  void testArgumentFormat(){
+        String option1 = "-README";
+        String option2 = "-print";
+        String name = "-myName";
+        String caller = "-123-456-7890";
+        String callee = "-334-456-7890";
+        String startDate = "2009/12/22 00:00";
+        String endDate = "2009/12/22 00:00";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        assertThat (result.getExitCode (),equalTo (-1));
+        assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid Argument : Argument cannot start with a -  :"));
+
+    }
+
+    /**
+     * Tests that the command line arguments except for options cannot start with a -
+     */
+    @Test
+    public void testPrintOption(){
+        String option2 = "-print";
+        String name = "myName";
+        String caller = "123-456-7890";
+        String callee = "334-456-7890";
+        String startDate = "2009/12/22 00:00";
+        String endDate = "2009/12/22 00:00";
+        MainMethodResult result = invokeMain (option2,name,caller,callee,startDate,endDate);
+        assertThat (result.getExitCode (),equalTo (1));
+        String output = "Phone call from " + caller + " to " + callee + " from " + startDate + " to " + endDate;
+        assertThat (result.getTextWrittenToStandardOut (),equalTo (output+"\n"));
+
+
+    }
+
+    /**
+     * Tests that readme option in correct format works as expected.
+     */
+    @Test
+    public void testDashReadme(){
+        String option1 = "-README";
+        MainMethodResult result = invokeMain (option1);
+        assertThat (result.getExitCode (),equalTo (1));
+        assertThat (result.getTextWrittenToStandardOut (), containsString ("Course    : Advanced Java Programming."));
+    }
+
+    /**
+     * Tests that readme option works when it is specified in the proper case.
+     */
+    @Test
+    public void testDashReadmeForCaseSensitive(){
+        String option1 = "-ReaDME";
+        MainMethodResult result = invokeMain (option1);
+        assertThat (result.getExitCode (),equalTo (-1));
+        assertThat (result.getTextWrittenToStandardError (), containsString ("Options are case sensitive , Usage : -README , -print  :"));
+    }
+
+
+    /**
+     * Tests that program works as expected when all the arguments and options are passed in
+     */
+    @Test
+    public void testAllOptionsAndArgumentsPrintsReadmeAndPhonecallDetails(){
+        String option1 = "-README";
+        String option2 = "-print";
+        String name = "myName";
+        String caller = "123-456-7890";
+        String callee = "334-456-7890";
+        String startDate = "2009/12/22 00:00";
+        String endDate = "2009/12/22 00:00";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        assertThat (result.getExitCode (),equalTo (1));
+        assertThat (result.getTextWrittenToStandardError (), equalTo (""));
+        assertThat (result.getTextWrittenToStandardOut (),containsString ("Phone call from"));
+        assertThat (result.getTextWrittenToStandardOut (),containsString ("Course    : Advanced Java Programming."));
+    }
 
 }
+

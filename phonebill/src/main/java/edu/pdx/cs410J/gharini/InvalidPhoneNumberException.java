@@ -1,4 +1,7 @@
 package edu.pdx.cs410J.gharini;
+/**
+ * This is the exception class for the Invalid phone number in the command line argument
+ */
 
 public class InvalidPhoneNumberException extends RuntimeException {
     public InvalidPhoneNumberException() {
