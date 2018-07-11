@@ -2,25 +2,44 @@
 
 import edu.pdx.cs410J.AbstractPhoneCall;
 
-<span class="fc" id="L5">public class PhoneCall extends AbstractPhoneCall {</span>
+public class PhoneCall extends AbstractPhoneCall {
+  private String customer ;
+  private String callerNumber ;
+  private String calleeNumber ;
+  private String startTime ;
+  private String endTime ;
+
+<span class="nc" id="L12">  public PhoneCall(){}</span>
+
+  public PhoneCall( String customer , String callerNumber , String calleeNumber ,
+<span class="nc" id="L15">                   String startTime,String endTime) {</span>
+
+<span class="nc" id="L17">    this.customer = customer;</span>
+<span class="nc" id="L18">    this.callerNumber = callerNumber;</span>
+<span class="nc" id="L19">    this.calleeNumber = calleeNumber;</span>
+<span class="nc" id="L20">    this.startTime = startTime;</span>
+<span class="nc" id="L21">    this.endTime = endTime;</span>
+<span class="nc" id="L22">  }</span>
+
   @Override
   public String getCaller() {
-<span class="nc" id="L8">    throw new UnsupportedOperationException(&quot;This method is not implemented yet&quot;);</span>
+<span class="nc" id="L26">    return this.callerNumber;</span>
   }
 
   @Override
   public String getCallee() {
-<span class="nc" id="L13">    return &quot;This method is not implemented yet&quot;;</span>
+<span class="nc" id="L31">    return this.calleeNumber;</span>
   }
 
   @Override
   public String getStartTimeString() {
-<span class="nc" id="L18">    throw new UnsupportedOperationException(&quot;This method is not implemented yet&quot;);</span>
+    //throw new UnsupportedOperationException(&quot;This method is not implemented yet&quot;);
+<span class="nc" id="L37">    return this.startTime;</span>
   }
-
   @Override
   public String getEndTimeString() {
-<span class="nc" id="L23">    throw new UnsupportedOperationException(&quot;This method is not implemented yet&quot;);</span>
+<span class="nc" id="L41">    return  this.endTime;</span>
   }
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>
