@@ -5,13 +5,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
+    private Collection<PhoneCall> calls = new ArrayList<>();
+    private String customer;
 
     public PhoneBill(String customer){
         this.customer = customer;
     }
 
-    private Collection<PhoneCall> calls = new ArrayList<>();
-    private String customer;
+
     @Override
     public String getCustomer() {
         return this.customer;

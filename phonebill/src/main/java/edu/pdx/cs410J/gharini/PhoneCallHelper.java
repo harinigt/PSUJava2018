@@ -86,7 +86,9 @@ public class PhoneCallHelper {
         if (numOfArgs == 0) {
             throw new InvalidNumberOfArgumentsException ("Missing Command Line Arguments ");
         }
-        else if (numOfNonOptions > 0 && numOfNonOptions < 8) {
+        else if (numOfNonOptions > 0 && numOfNonOptions < 7) {
+            System.out.println (numOfArgs);
+            System.out.println (numOfNonOptions);
             throw new InvalidNumberOfArgumentsException ("Missing few Command Line Arguments ");
         }
         else if (numOfNonOptions > 9) {
