@@ -155,7 +155,7 @@ public class Project1IT extends InvokeMainTestCase {
         String endTime = "22:2v0";
         MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,startTime,endDate,endTime);
         assertThat (result.getExitCode (),equalTo (-1));
-        assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid time , Hour range [00-23] , Minutes range [00-59]  :"));
+        assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid time format , Usage HH:mm :"));
         assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
     }
 
@@ -175,7 +175,7 @@ public class Project1IT extends InvokeMainTestCase {
         String endTime = "24:20";
         MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,startTime,endDate,endTime);
         assertThat (result.getExitCode (),equalTo (-1));
-        assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid time , Hour range [00-23] , Minutes range [00-59]  :"));
+        assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid time format , Usage HH:mm :"));
         assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
     }
 

@@ -210,7 +210,7 @@ public class PhoneCallHelper {
 
         try {
             if (!arg.matches ("\\d{4}/\\d{2}/\\d{2}"))
-                throw new Exception ("Invalid Date , Usage : yyyy/MM/dd  " + arg);
+                throw new Exception ("Invalid Date Format , Usage : yyyy/MM/dd  " + arg);
             Date date = sdf.parse (arg);
         } catch (ParseException pe) {
             throw new InvalidDateAndTimeException ("Invalid Date , Usage : yyyy/MM/dd  " + arg);
@@ -232,7 +232,7 @@ public class PhoneCallHelper {
     public static void checkTimeFormat(String arg) {
         SimpleDateFormat sdf = new SimpleDateFormat ("HH:mm", Locale.US);
         if (!arg.matches ("([01]?[0-9]|2[0-3]):[0-5][0-9]"))
-            throw new InvalidDateAndTimeException ("Invalid time , Hour range [00-23] , Minutes range [00-59]  :" + arg);
+            throw new InvalidDateAndTimeException ("Invalid time format , Usage HH:mm :" + arg);
 
         try {
             Date date = sdf.parse (arg);
