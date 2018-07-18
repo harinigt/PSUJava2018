@@ -25,24 +25,17 @@ public class FileHelper {
             }
             else if (phonebill.exists () && phonebill.length () == 0) {
                 throw new FileException ("This file is malformed : " + phonebill);
-
             }
             else if (!phonebill.exists ()) {
                 phonebill.createNewFile ();
             }
         } catch (FileNotFoundException fe) {
-            PhoneCallHelper.printErrorMessageAndExit (fe.getMessage ());
-
+            throw new FileException (fe.getMessage ());
         } catch (UnsupportedEncodingException ue) {
-            PhoneCallHelper.printErrorMessageAndExit (ue.getMessage ());
+            throw new FileException (ue.getMessage ());
         } catch (IOException ie) {
-            PhoneCallHelper.printErrorMessageAndExit (ie.getMessage ());
+            throw new FileException (ie.getMessage ());
         }
-
-    }
-
-
-    public static void checkForEmptyFile() {
 
     }
 

@@ -96,7 +96,6 @@ public class Project2 {
         }
         catch (InvalidDateAndTimeException idf){
             PhoneCallHelper.printErrorMessageAndExit (idf.getMessage ());
-            idf.printStackTrace ();
         }
         catch (SameCallerAndCalleeException scc){
             PhoneCallHelper.printErrorMessageAndExit (scc.getMessage ());
@@ -106,7 +105,6 @@ public class Project2 {
         }
         catch(Exception e){
             PhoneCallHelper.printErrorMessageAndExit (e.getMessage ());
-            e.printStackTrace ();
         }
         PhoneCall call = new PhoneCall(customer,callerNumber,calleeNumber,startDate, startTime,endDate,endTime);
         PhoneBill bill = new PhoneBill(customer);
