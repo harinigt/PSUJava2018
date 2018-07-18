@@ -4,6 +4,7 @@ import edu.pdx.cs410J.PhoneBillParser;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.*;
+import java.util.Iterator;
 
 /***
  * This class is implemented as part of Project 2. This class implements in the interface PhoneBillParser.
@@ -18,6 +19,7 @@ public class TextParser implements PhoneBillParser<PhoneBill> {
         this.customer = customer;
     }
     private HashMap<String, ArrayList<ArrayList <String>>> callMap = new HashMap<String, ArrayList<ArrayList <String>>>();
+
     /**
      *
      * @return
@@ -25,13 +27,16 @@ public class TextParser implements PhoneBillParser<PhoneBill> {
      */
     @Override
     public PhoneBill parse() throws ParserException {
-        ArrayList<ArrayList<String>> arraylist = new ArrayList<ArrayList<String>>();
+
         PhoneBill bill ;
         FileHelper.checkIfFileExistsAndCreateIfOtherwise(this.file);
         String fileContent = FileHelper.readFile(this.file ,this.customer);
-        this.callMap = FileHelper.splitContent (fileContent);
-        bill = FileHelper.loadPhoneBill (this.callMap,this.customer);
+        callMap = FileHelper.splitContent (fileContent);
+        bill = FileHelper.loadCallDetailsFromFileToPhoneBill (callMap,customer);
         return bill;
     }
+
+
+
 
 }

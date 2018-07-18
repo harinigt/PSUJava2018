@@ -33,10 +33,8 @@ public class Project2 {
         String startTime = null;
         String endTime = null;
         String file = null;
-
         ArrayList<String> options = new ArrayList<>();
         ArrayList<ArrayList<String>> list;
-
         try{
             list = PhoneCallHelper.loadOptions(args);
             options = list.get(0);
@@ -45,7 +43,11 @@ public class Project2 {
             int numOfOptions = options.size();
             int numOfNonOptions = list.get(1).size ();
             PhoneCallHelper.checkNumOfArgs(numOfNonOptions,numOfArgs);
-            for (int i = numOfOptions+1; i<args.length ; i++){
+            int startPt = 0;
+            if(options.contains ("-textFile")){
+                startPt = numOfOptions + 1;
+            } else startPt = numOfOptions;
+            for (int i = startPt; i<args.length ; i++){
                 if(customer == null ){
                     PhoneCallHelper.checkValidArgumentFormat (args[i]);
                     customer = args[i];
@@ -94,6 +96,7 @@ public class Project2 {
         }
         catch (InvalidDateAndTimeException idf){
             PhoneCallHelper.printErrorMessageAndExit (idf.getMessage ());
+            idf.printStackTrace ();
         }
         catch (SameCallerAndCalleeException scc){
             PhoneCallHelper.printErrorMessageAndExit (scc.getMessage ());
@@ -103,6 +106,7 @@ public class Project2 {
         }
         catch(Exception e){
             PhoneCallHelper.printErrorMessageAndExit (e.getMessage ());
+            e.printStackTrace ();
         }
         PhoneCall call = new PhoneCall(customer,callerNumber,calleeNumber,startDate, startTime,endDate,endTime);
         PhoneBill bill = new PhoneBill(customer);
@@ -110,9 +114,13 @@ public class Project2 {
         bill.addPhoneCall (call);
         for(String option:options){
             if(option.equals ("-print")){
+                System.out.println ("_______________________________________________________________________________________________________________");
                 PhoneCallHelper.printCall (call);
+                System.out.println ("_______________________________________________________________________________________________________________");
             }else if(option.equals ("-README")){
+                System.out.println ("_______________________________________________________________________________________________________________");
                 PhoneCallHelper.readme ();
+                System.out.println ("_______________________________________________________________________________________________________________");
             }else if(option.equals ("-textFile")){
                 try {
                     String filePath = new File("").getAbsolutePath ();
@@ -120,7 +128,9 @@ public class Project2 {
                     dumper.dump (bill);
                     TextParser parser = new TextParser (filePath.concat ("/"+file),customer);
                     billFromFile = parser.parse ();
-                    System.out.println ("Phone Bill From the file : " + billFromFile.getPhoneCalls ());
+                    System.out.println ("___________________________________________________________________________________________________________");
+                    System.out.println ("\nPhone Bill From the file : \n" + billFromFile.getPhoneCalls ());
+                    System.out.println ("___________________________________________________________________________________________________________");
                 } catch (IOException e){
                     PhoneCallHelper.printErrorMessageAndExit (e.getMessage ());
                 } catch (ParserException e) {
