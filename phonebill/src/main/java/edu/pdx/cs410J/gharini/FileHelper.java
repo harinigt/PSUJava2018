@@ -30,11 +30,11 @@ public class FileHelper {
                 phonebill.createNewFile ();
             }
         } catch (FileNotFoundException fe) {
-            throw new FileException (fe.getMessage ());
+            throw new FileException (fe.getMessage () + " : " + phonebill);
         } catch (UnsupportedEncodingException ue) {
-            throw new FileException (ue.getMessage ());
+            throw new FileException (ue.getMessage () + " : " + phonebill);
         } catch (IOException ie) {
-            throw new FileException (ie.getMessage ());
+            throw new FileException (ie.getMessage ()+ " : " + phonebill);
         }
 
     }

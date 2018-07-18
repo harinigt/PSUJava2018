@@ -109,6 +109,7 @@ public class Project2 {
         PhoneCall call = new PhoneCall(customer,callerNumber,calleeNumber,startDate, startTime,endDate,endTime);
         PhoneBill bill = new PhoneBill(customer);
         PhoneBill billFromFile;
+        String filePath = null;
         bill.addPhoneCall (call);
         for(String option:options){
             if(option.equals ("-print")){
@@ -121,11 +122,21 @@ public class Project2 {
                 System.out.println ("_______________________________________________________________________________________________________________");
             }else if(option.equals ("-textFile")){
                 try {
-                    String filePath = new File("").getAbsolutePath ();
-                    TextDumper dumper = new TextDumper (filePath.concat ("/"+file),call,customer);
-                    dumper.dump (bill);
-                    TextParser parser = new TextParser (filePath.concat ("/"+file),customer);
-                    billFromFile = parser.parse ();
+                    if(!new File(file).isAbsolute ()){
+                        filePath = new File("").getAbsolutePath ();
+                        TextDumper dumper = new TextDumper (filePath.concat ("/"+file),call,customer);
+                        dumper.dump (bill);
+                        TextParser parser = new TextParser (filePath.concat ("/"+file),customer);
+                        billFromFile = parser.parse ();
+                    } else{
+                        System.out.println (file);
+                        TextDumper dumper = new TextDumper (file,call,customer);
+                        dumper.dump (bill);
+                        TextParser parser = new TextParser (file,customer);
+                        billFromFile = parser.parse ();
+                    }
+
+
                     System.out.println ("___________________________________________________________________________________________________________");
                     System.out.println ("\nPhone Bill From the file : \n" + billFromFile.getPhoneCalls ());
                     System.out.println ("___________________________________________________________________________________________________________");
