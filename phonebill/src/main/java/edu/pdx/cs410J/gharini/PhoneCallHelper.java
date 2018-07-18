@@ -86,10 +86,10 @@ public class PhoneCallHelper {
         if (numOfArgs == 0) {
             throw new InvalidNumberOfArgumentsException ("Missing Command Line Arguments ");
         }
-        else if (numOfNonOptions > 0 && numOfNonOptions < 7) {
+        else if (numOfNonOptions > 0 && numOfNonOptions < 8) {
             throw new InvalidNumberOfArgumentsException ("Missing few Command Line Arguments ");
         }
-        else if (numOfNonOptions > 8) {
+        else if (numOfNonOptions > 9) {
             throw new InvalidNumberOfArgumentsException ("Command Line has too many arguments ");
         }
 
