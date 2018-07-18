@@ -43,7 +43,7 @@ public class Project1IT extends InvokeMainTestCase {
      */
    @Test
     public void testTooManyCommandLineArguments() {
-        MainMethodResult result = invokeMain("-README","-print","MyName","123-456-7890","234-456-7890","2009/12/12", "12:12" ,"2009/12/12", "12:20" , "extra args");
+        MainMethodResult result = invokeMain("-README","-print","MyName","123-456-7890","234-456-7890","2009/12/12", "12:12" ,"2009/12/12", "12:20" , "extra args","extra args","extra args","extra args");
         assertThat(result.getExitCode(), equalTo(-1));
         assertThat(result.getTextWrittenToStandardError(), containsString("Command Line has too many arguments"));
     }
@@ -55,7 +55,7 @@ public class Project1IT extends InvokeMainTestCase {
     public void testOptionsAreCaseSensitive(){
         MainMethodResult result = invokeMain ("-REaDmE","-print","MyName","123-456-7890","234-436-7890","2009/12/12", "10:00" ,"2009/12/12", "12:20");
         assertThat (result.getExitCode (),equalTo (-1));
-        assertThat (result.getTextWrittenToStandardError (),containsString ("Options are case sensitive , Usage : -README , -print  :"));
+        assertThat (result.getTextWrittenToStandardError (),containsString ("Options are case sensitive , Usage : -README , -print , -textFile :"));
         assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
     }
 
@@ -303,7 +303,7 @@ public class Project1IT extends InvokeMainTestCase {
         MainMethodResult result = invokeMain (option2,name,caller,callee,startDate,startTime,endDate,endTime);
         assertThat (result.getExitCode (),equalTo (1));
         String output = "Phone call from " + caller + " to " + callee + " from " + startDate + " "+ startTime + " "+"to " + endDate + " " + endTime;
-        assertThat (result.getTextWrittenToStandardOut (),equalTo (output+"\n"));
+        assertThat (result.getTextWrittenToStandardOut (),containsString (output+"\n"));
 
 
     }
@@ -327,7 +327,7 @@ public class Project1IT extends InvokeMainTestCase {
         String option1 = "-ReaDME";
         MainMethodResult result = invokeMain (option1);
         assertThat (result.getExitCode (),equalTo (-1));
-        assertThat (result.getTextWrittenToStandardError (), containsString ("Options are case sensitive , Usage : -README , -print  :"));
+        assertThat (result.getTextWrittenToStandardError (), containsString ("Options are case sensitive , Usage : -README , -print , -textFile :"));
     }
 
 
