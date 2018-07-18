@@ -11,8 +11,6 @@ public class PhoneCall extends AbstractPhoneCall {
   private String startDate;
   private String endDate;
 
-  public PhoneCall(){}
-
   public PhoneCall( String customer , String callerNumber , String calleeNumber , String startDate,
                    String startTime,String endDate,String endTime ) {
 

@@ -5,29 +5,31 @@ import java.io.IOException;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.PrintWriter;
-public class TextDumper implements PhoneBillDumper<PhoneBill> {
 
-    //private static String pathname = "/Users/harinirahul/PSUJava2018/phonebill/src/main/java/edu/pdx/cs410J/gharini/";
+public class TextDumper implements PhoneBillDumper<PhoneBill> {
 
     private File file ;
     private String customer;
-
     private PhoneCall call;
-
-
     public TextDumper(String path , PhoneCall call , String customer){
         this.call= call;
         this.file = new File(path);
         this.customer = customer;
     }
+    /**
+     *
+     * @param phoneBill  : The phone bill to write to the file
+     * @throws IOException
+     *
+     * This method dumps the phone bill to the text file specified in the command line. The text file is checked for all the
+     * required validations before the contents are written on to it.
+     */
     @Override
     public void dump(PhoneBill phoneBill) throws IOException {
         FileHelper.checkIfFileExistsAndCreateIfOtherwise (this.file);
 
         BufferedWriter bw = null;
         FileWriter fw = null;
-       // System.out.println ("from dumper");
         String temp = FileHelper.readFile (this.file ,this.customer);
         try{
             fw = new FileWriter(this.file,true);
@@ -42,8 +44,6 @@ public class TextDumper implements PhoneBillDumper<PhoneBill> {
             bw.write (",");
             bw.write (this.call.getEndTimeString ());
             bw.write ("\n");
-
-
         }catch (IOException e){
               e.printStackTrace ();
         } finally {

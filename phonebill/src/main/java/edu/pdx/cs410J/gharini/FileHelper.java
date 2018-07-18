@@ -71,8 +71,10 @@ public class FileHelper {
 
     /**
      *
-     * @param line
-     * @param customer
+     * @param line : The string that contains the line read from the file.
+     * @param customer : The customer name
+     *                 This method compares the customer name on the file with the customer name from the command line argument.
+     *                 If there is a mismatch an exception is raised with an appropriate message
      */
 
     public  static void compareName(String line , String customer){
@@ -84,8 +86,12 @@ public class FileHelper {
 
     /**
      *
-     * @param content
-     * @return
+     * @param content  : The contents of the file as a string
+     * @return hashmap : The hashmap that contains customer name as key and his/her phone call details as values.
+     *
+     * This method takes a string that has content of the file as input and converts it to a hashmap that contains
+     * the list of all phone calls from the file. Each phone call of the customer is converted to a list and all phone call lists
+     * of a customer are added to another list. This list is then added as value to a hashmap along with customer name as key.
      */
     public static HashMap splitContent(String content){
         String [] values ;
@@ -114,6 +120,15 @@ public class FileHelper {
         return hashmap;
     }
 
+    /**
+     *
+     * @param values
+     * @param callContent
+     * @param temp
+     *
+     * This is a utility method that helps in the parsing the contents of the file to a phone bill.
+     */
+
     private static void helperToExtractCallContent(String[] values, ArrayList<ArrayList<String>> callContent, ArrayList<String> temp) {
         for(int i=1 ; i < values.length ; i++){
             temp.add (values[i]);
@@ -121,6 +136,14 @@ public class FileHelper {
         callContent.add (temp);
     }
 
+    /**
+     *
+     * @param map  : hashMap that maps customer name to his/her phone bill.
+     * @param customer : customer name from the text file.
+     * @return : A PhoneBill .
+     *
+     * This method reads the values of the hashmap and parses it a phone call and adds it to the phone bill of the customer.
+     */
     public static PhoneBill loadPhoneBill(HashMap map , String customer){
         String callDetails = map.values ().toString ();
         String[] callDetailz = callDetails.split ("]");
@@ -140,7 +163,6 @@ public class FileHelper {
                 try{
                     if(callerNumber == null){
                         callerNumber = PhoneCallHelper.getPhoneNumbers (val.trim ());
-
                     }
                     else if(calleeNumber == null){
                         calleeNumber = PhoneCallHelper.getPhoneNumbers (val.trim ());
@@ -183,8 +205,6 @@ public class FileHelper {
             billFromFile.addPhoneCall (callFromFile);
 
         }
-
-
         return billFromFile;
     }
 }

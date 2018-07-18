@@ -1,8 +1,5 @@
 package edu.pdx.cs410J.gharini;
-
 import edu.pdx.cs410J.AbstractPhoneCall;
-
-
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -165,7 +162,6 @@ public class PhoneCallHelper {
         }
     }
 
-
     /**
      *
      * @param arg  : The Phone number
@@ -184,7 +180,6 @@ public class PhoneCallHelper {
 
     }
 
-
     /**
      *
      * @param caller  : The phone number of the caller.
@@ -201,8 +196,6 @@ public class PhoneCallHelper {
         }
 
     }
-
-
 
     /**
      *

@@ -19,6 +19,9 @@ public class Project2 {
      *
      *             The phone bill class has a collection of phone calls and the customer name.
      *
+     *             The functionality to write the phone bill to a text file and to read a text file containing
+     *             phone bill and convert it to a PhoneBill object is implemented in this project.
+     *
      *             All the exceptions thrown during the error checks are handled in the main method and the user is prompted with an appropriate message.
      */
     public static void main(String[] args) {
@@ -33,7 +36,6 @@ public class Project2 {
 
         ArrayList<String> options = new ArrayList<>();
         ArrayList<ArrayList<String>> list;
-
 
         try{
             list = PhoneCallHelper.loadOptions(args);
@@ -130,7 +132,5 @@ public class Project2 {
         }
         System.exit(1);
     }
-
-
 
 }
