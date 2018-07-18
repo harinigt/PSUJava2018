@@ -34,9 +34,9 @@ public class TextDumper implements PhoneBillDumper<PhoneBill> {
             bw = new BufferedWriter(fw);
             bw.write(phoneBill.getCustomer ());
             bw.write (",");
-            bw.write (this.call.getCallee ());
-            bw.write (",");
             bw.write (this.call.getCaller ());
+            bw.write (",");
+            bw.write (this.call.getCallee ());
             bw.write (",");
             bw.write (this.call.getStartTimeString ());
             bw.write (",");
