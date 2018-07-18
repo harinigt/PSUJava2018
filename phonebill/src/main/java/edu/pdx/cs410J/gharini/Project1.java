@@ -32,9 +32,9 @@ public class Project1 {
   private static void checkNumOfArgs(int numOfNonOptions , int numOfOptions , int numOfArgs){
       if(numOfArgs ==0){
           throw new InvalidNumberOfArgumentsException ("Missing Command Line Arguments ");
-      }else if(numOfNonOptions > 0 && numOfNonOptions < 5) {
+      }else if(numOfNonOptions > 0 && numOfNonOptions < 7) {
           throw new InvalidNumberOfArgumentsException ("Missing few Command Line Arguments ");
-      }else if(numOfNonOptions > 5){
+      }else if(numOfNonOptions > 7){
           throw new InvalidNumberOfArgumentsException ("Command Line has too many arguments ");
       }
 
@@ -265,6 +265,8 @@ public class Project1 {
     String calleeNumber = null;
     String startDate = null;
     String endDate = null;
+    String startTime = null;
+    String endTime = null;
     ArrayList<String> options = new ArrayList<>();
     ArrayList<ArrayList<String>> list = new ArrayList<>();
 
@@ -288,12 +290,26 @@ public class Project1 {
                 checkCallerAndCallee (callerNumber,calleeNumber);
 
             } else if (startDate == null ){
-                startDate = getStartAndEndDates (args[i]);
+                PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                PhoneCallHelper.checkDateFormat (args[i]);
+                startDate = args[i];
+            }
+            else if (startTime == null ){
+                PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                PhoneCallHelper.checkTimeFormat (args[i]);
+                startTime = args[i];
 
-            } else if(endDate == null ) {
-                endDate = getStartAndEndDates (args[i]);
-                checkDateDifference (startDate,endDate);
+            }else if(endDate == null ) {
+                PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                PhoneCallHelper.checkDateFormat (args[i]);
+                endDate = args[i];
 
+
+            }else if (endTime == null ){
+                PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                PhoneCallHelper.checkTimeFormat (args[i]);
+                endTime = args[i];
+                PhoneCallHelper.checkDateDifference (startDate, startTime,endDate,endTime);
             }
         }
     }
@@ -314,13 +330,16 @@ public class Project1 {
     }
     catch (InvalidOptionException ioe){
         printErrorMessageAndExit (ioe.getMessage ());
-    } catch(Exception e){
-        printErrorMessageAndExit ("Argument not in right place");
+    }catch(Exception e){
+        PhoneCallHelper.printErrorMessageAndExit (e.getMessage ());
     }
 
-      PhoneCall call = new PhoneCall(customer,callerNumber,calleeNumber,startDate,endDate);
+      PhoneCall call = new PhoneCall(customer,callerNumber,calleeNumber,startDate,startTime,endDate,endTime);
       PhoneBill bill = new PhoneBill(customer);
+
       bill.addPhoneCall (call);
+
+      //System.out.println (bill.getPhoneCalls ());
       for(String option:options){
          if(option.equals ("-print")){
              printCall (call);
