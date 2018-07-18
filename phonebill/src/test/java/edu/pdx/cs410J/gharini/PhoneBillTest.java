@@ -28,10 +28,12 @@ public class PhoneBillTest {
         String option2 = "-print";
         String name = "myName";
         String caller = "123-456-7890";
-        String callee = "2334-4536-7890";
-        String startDate = "2009/12/12 12:12";
-        String endDate = "2009/12/12 12:22";
-        PhoneCall call = new PhoneCall (name,caller,callee,startDate,endDate);
+        String callee = "234-4536-7890";
+        String startDate = "2009/12/12";
+        String startTime = "12:12";
+        String endDate = "2009/12/12";
+        String endTime = "12:22";
+        PhoneCall call = new PhoneCall (name,caller,callee,startDate, startTime,endDate,endTime);
         PhoneBill bill = new PhoneBill (name);
         bill.addPhoneCall (call);
         assertThat (bill.getPhoneCalls ().toString (),containsString (call.toString ()));

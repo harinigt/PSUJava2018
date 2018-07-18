@@ -34,7 +34,7 @@ public class Project1IT extends InvokeMainTestCase {
      */
     @Test
     public void testFewCommandLineArgumentsMissing() {
-        MainMethodResult result = invokeMain("-README","-print", "123-456-7890","234-456-7890","2009/12/12 12:12" ,"2009/12/12 12:20" );
+        MainMethodResult result = invokeMain("-README","-print", "123-456-7890","234-456-7890","2009/12/12", "12:12" ,"2009/12/12", "12:20" );
         assertThat(result.getExitCode(), equalTo(-1));
         assertThat(result.getTextWrittenToStandardError(), containsString("Missing few Command Line Arguments"));
     }
@@ -43,7 +43,7 @@ public class Project1IT extends InvokeMainTestCase {
      */
    @Test
     public void testTooManyCommandLineArguments() {
-        MainMethodResult result = invokeMain("-README","-print","MyName","123-456-7890","234-456-7890","2009/12/12 12:12" ,"2009/12/12 12:20" , "extra args");
+        MainMethodResult result = invokeMain("-README","-print","MyName","123-456-7890","234-456-7890","2009/12/12", "12:12" ,"2009/12/12", "12:20" , "extra args");
         assertThat(result.getExitCode(), equalTo(-1));
         assertThat(result.getTextWrittenToStandardError(), containsString("Command Line has too many arguments"));
     }
@@ -53,7 +53,7 @@ public class Project1IT extends InvokeMainTestCase {
 
     @Test
     public void testOptionsAreCaseSensitive(){
-        MainMethodResult result = invokeMain ("-REaDmE","-print","MyName","123-456-7890","234-436-7890","2009/12/12 10:00" ,"2009/12/12 12:20");
+        MainMethodResult result = invokeMain ("-REaDmE","-print","MyName","123-456-7890","234-436-7890","2009/12/12", "10:00" ,"2009/12/12", "12:20");
         assertThat (result.getExitCode (),equalTo (-1));
         assertThat (result.getTextWrittenToStandardError (),containsString ("Options are case sensitive , Usage : -README , -print  :"));
         assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
@@ -64,7 +64,7 @@ public class Project1IT extends InvokeMainTestCase {
      */
     @Test
     public void testProgramRunsWithoutOptions(){
-        MainMethodResult result = invokeMain ("MyName","123-456-7890","234-436-7890","2009/12/12 10:00" ,"2009/12/12 12:20");
+        MainMethodResult result = invokeMain ("MyName","123-456-7890","234-436-7890","2009/12/12","10:00" ,"2009/12/12", "12:20");
         assertThat (result.getExitCode (),equalTo (1));
         assertThat (result.getTextWrittenToStandardError (), equalTo (""));
         assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
@@ -77,7 +77,7 @@ public class Project1IT extends InvokeMainTestCase {
      */
     @Test
     public void testValidPhoneNumberFormat1(){
-      MainMethodResult result = invokeMain ("-README","-print","MyName","123/456/7890","234-456-7890","2009/12/12 12:12" ,"2009/12/12 12:20");
+      MainMethodResult result = invokeMain ("-README","-print","MyName","123/456/7890","234-456-7890","2009/12/12", "12:12" ,"2009/12/12", "12:20");
       assertThat (result.getExitCode (),equalTo (-1));
       assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid Phone Number Format , Usage : nnn-nnn-nnnn"));
     }
@@ -92,9 +92,11 @@ public class Project1IT extends InvokeMainTestCase {
         String name = "myName";
         String caller = "123-456-7890";
         String callee = "2334-4536-7890";
-        String startDate = "2009/12/12 12:12";
-        String endDate = "2009/12/12 12:22";
-        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        String startDate = "2009/12/22" ;
+        String startTime = "21:12";
+        String endDate = "2009/12/22";
+        String endTime = "22:20";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,startTime,endDate,endTime);
         assertThat (result.getExitCode (),equalTo (-1));
         assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid Phone Number Format , Usage : nnn-nnn-nnnn"));
     }
@@ -108,9 +110,11 @@ public class Project1IT extends InvokeMainTestCase {
         String name = "myName";
         String caller = "334-456-7890";
         String callee = "334-456-7890";
-        String startDate = "2009/12/12 12:12";
-        String endDate = "2009/12/12 12:22";
-        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        String startDate = "2009/12/22" ;
+        String startTime = "21:12";
+        String endDate = "2009/12/22";
+        String endTime = "22:20";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,startTime,endDate,endTime);
         assertThat (result.getExitCode (),equalTo (-1));
         assertThat (result.getTextWrittenToStandardError (),containsString ("Caller and Callee should be different  :"));
     }
@@ -125,11 +129,13 @@ public class Project1IT extends InvokeMainTestCase {
         String name = "myName";
         String caller = "123-456-7890";
         String callee = "334-456-7890";
-        String startDate = "2009-12-12 12:12";
-        String endDate = "2009/12/12 12:22";
-        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        String startDate = "2009-12-22" ;
+        String startTime = "21:12";
+        String endDate = "2009/12/22";
+        String endTime = "22:20";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,startTime,endDate,endTime);
         assertThat (result.getExitCode (),equalTo (-1));
-        assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid Date , Usage : yyyy/MM/dd hh:mm"));
+        assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid Date , Usage : yyyy/MM/dd"));
         assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
     }
 
@@ -143,11 +149,13 @@ public class Project1IT extends InvokeMainTestCase {
         String name = "myName";
         String caller = "123-456-7890";
         String callee = "334-456-7890";
-        String startDate = "2009/12/12 12:12";
-        String endDate = "20/2009/12 12:20";
-        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        String startDate = "2009/12/22" ;
+        String startTime = "21:12";
+        String endDate = "2009/12/22";
+        String endTime = "22:2v0";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,startTime,endDate,endTime);
         assertThat (result.getExitCode (),equalTo (-1));
-        assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid Date , Usage : yyyy/MM/dd hh:mm"));
+        assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid time , Hour range [00-23] , Minutes range [00-59]  :"));
         assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
     }
 
@@ -161,11 +169,13 @@ public class Project1IT extends InvokeMainTestCase {
         String name = "myName";
         String caller = "123-456-7890";
         String callee = "334-456-7890";
-        String startDate = "2009/12/12 12:12:00";
-        String endDate = "2009/12/22 12:20";
-        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        String startDate = "2009/12/22" ;
+        String startTime = "21:12";
+        String endDate = "2009/12/22";
+        String endTime = "24:20";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,startTime,endDate,endTime);
         assertThat (result.getExitCode (),equalTo (-1));
-        assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid Date , Usage : yyyy/MM/dd hh:mm"));
+        assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid time , Hour range [00-23] , Minutes range [00-59]  :"));
         assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
     }
 
@@ -179,9 +189,11 @@ public class Project1IT extends InvokeMainTestCase {
         String name = "myName";
         String caller = "123-456-7890";
         String callee = "334-456-7890";
-        String startDate = "2009/12/22 12:12";
-        String endDate = "2009/12/12 12:20";
-        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        String startDate = "2009/12/23" ;
+        String startTime = "21:12";
+        String endDate = "2009/12/22";
+        String endTime = "22:00";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,startTime,endDate,endTime);
         assertThat (result.getExitCode (),equalTo (-1));
         assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid Dates , Start Date should be before end date  "));
         assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
@@ -198,9 +210,11 @@ public class Project1IT extends InvokeMainTestCase {
         String name = "myName";
         String caller = "123-456-7890";
         String callee = "334-456-7890";
-        String startDate = "2009/12/22 12:12";
-        String endDate = "2019/12/22 12:20";
-        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        String startDate = "2009/12/22" ;
+        String startTime = "21:12";
+        String endDate = "2019/12/22";
+        String endTime = "22:20";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,startTime,endDate,endTime);
         assertThat (result.getExitCode (),equalTo (-1));
         assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid end date , end date should be before today!!  "));
         assertThat(result.getTextWrittenToStandardOut(), equalTo(""));
@@ -216,9 +230,11 @@ public class Project1IT extends InvokeMainTestCase {
         String name = "myName";
         String caller = "123-456-7890";
         String callee = "334-456-7890";
-        String startDate = "2009/12/22 21:12";
-        String endDate = "2009/12/22 22:20";
-        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        String startDate = "2009/12/22" ;
+        String startTime = "21:12";
+        String endDate = "2009/12/22";
+        String endTime = "22:20";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,startTime,endDate,endTime);
         assertThat (result.getExitCode (),equalTo (1));
         assertThat (result.getTextWrittenToStandardError (),equalTo (""));
         assertThat(result.getTextWrittenToStandardOut(), containsString ("Phone call from"));
@@ -235,9 +251,12 @@ public class Project1IT extends InvokeMainTestCase {
         String name = "myName";
         String caller = "123-456-7890";
         String callee = "334-456-7890";
-        String startDate = "2009/12/22 00:00";
-        String endDate = "2009/12/22 00:00";
-        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        String startDate = "2009/12/22";
+        String endDate = "2009/12/22";
+        String startTime = "00:00";
+        String endTime = "00:00";
+
+        MainMethodResult result = invokeMain (option2,name,caller,callee,startDate,startTime,endDate,endTime);
         assertThat (result.getExitCode (),equalTo (1));
         assertThat (result.getTextWrittenToStandardError (),equalTo (""));
         assertThat(result.getTextWrittenToStandardOut(), containsString ("Phone call from"));
@@ -255,9 +274,13 @@ public class Project1IT extends InvokeMainTestCase {
         String name = "-myName";
         String caller = "-123-456-7890";
         String callee = "-334-456-7890";
-        String startDate = "2009/12/22 00:00";
-        String endDate = "2009/12/22 00:00";
-        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        String startDate = "2009/12/22";
+        String endDate = "2009/12/22";
+        String startTime = "00:00";
+        String endTime = "00:00";
+
+        MainMethodResult result = invokeMain (option2,name,caller,callee,startDate,startTime,endDate,endTime);
+        //MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
         assertThat (result.getExitCode (),equalTo (-1));
         assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid Argument : Argument cannot start with a -  :"));
 
@@ -272,11 +295,14 @@ public class Project1IT extends InvokeMainTestCase {
         String name = "myName";
         String caller = "123-456-7890";
         String callee = "334-456-7890";
-        String startDate = "2009/12/22 00:00";
-        String endDate = "2009/12/22 00:00";
-        MainMethodResult result = invokeMain (option2,name,caller,callee,startDate,endDate);
+        String startDate = "2009/12/22";
+        String endDate = "2009/12/22";
+        String startTime = "00:00";
+        String endTime = "00:00";
+
+        MainMethodResult result = invokeMain (option2,name,caller,callee,startDate,startTime,endDate,endTime);
         assertThat (result.getExitCode (),equalTo (1));
-        String output = "Phone call from " + caller + " to " + callee + " from " + startDate + " to " + endDate;
+        String output = "Phone call from " + caller + " to " + callee + " from " + startDate + " "+ startTime + " "+"to " + endDate + " " + endTime;
         assertThat (result.getTextWrittenToStandardOut (),equalTo (output+"\n"));
 
 
@@ -315,9 +341,11 @@ public class Project1IT extends InvokeMainTestCase {
         String name = "myName";
         String caller = "123-456-7890";
         String callee = "334-456-7890";
-        String startDate = "2009/12/22 00:00";
-        String endDate = "2009/12/22 00:00";
-        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
+        String startDate = "2009/12/22";
+        String startTime = "00:00";
+        String endTime = "00:00";
+        String endDate = "2009/12/22";
+        MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,startTime,endDate,endTime);
         assertThat (result.getExitCode (),equalTo (1));
         assertThat (result.getTextWrittenToStandardError (), equalTo (""));
         assertThat (result.getTextWrittenToStandardOut (),containsString ("Phone call from"));
