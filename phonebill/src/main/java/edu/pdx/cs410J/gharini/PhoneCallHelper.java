@@ -87,8 +87,6 @@ public class PhoneCallHelper {
             throw new InvalidNumberOfArgumentsException ("Missing Command Line Arguments ");
         }
         else if (numOfNonOptions > 0 && numOfNonOptions < 7) {
-            System.out.println (numOfArgs);
-            System.out.println (numOfNonOptions);
             throw new InvalidNumberOfArgumentsException ("Missing few Command Line Arguments ");
         }
         else if (numOfNonOptions > 9) {
@@ -232,7 +230,7 @@ public class PhoneCallHelper {
     public static void checkTimeFormat(String arg) {
         SimpleDateFormat sdf = new SimpleDateFormat ("HH:mm", Locale.US);
         if (!arg.matches ("([01]?[0-9]|2[0-3]):[0-5][0-9]"))
-            throw new InvalidDateAndTimeException ("Invalid time format , Usage HH:mm :" + arg);
+            throw new InvalidDateAndTimeException ("Invalid time format , Usage HH:mm :pr" + arg);
 
         try {
             Date date = sdf.parse (arg);
@@ -278,6 +276,9 @@ public class PhoneCallHelper {
         }
     }
 
+    static void checkSpecificArgumentMissing(){
+
+    }
 
 
 }
