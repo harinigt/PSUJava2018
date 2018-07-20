@@ -13,7 +13,7 @@ public class PhoneCallTest {
   @Ignore
   @Test(expected = UnsupportedOperationException.class)
   public void getStartTimeStringNeedsToBeImplemented() {
-    PhoneCall call = new PhoneCall("Harini" ,"123-345-4565","433-455-6789 ","2009/12/12", "20:10" ,"2009/12/12", "20:20" );
+    PhoneCall call = new PhoneCall("Harini" ,"123-345-4565","433-455-6789 ","12/12/2009", "20:10" ,"12/12/2009", "20:20" );
     call.getStartTimeString ();
   }
     /**
@@ -22,7 +22,7 @@ public class PhoneCallTest {
 
   @Test
   public void initiallyAllPhoneCallsHaveTheSameCallee() {
-    PhoneCall call = new PhoneCall("Harini" ,"123-345-4565","433-455-6789","2009/12/12"," 20:10" ,"2009/12/12"," 20:20" );
+    PhoneCall call = new PhoneCall("Harini" ,"123-345-4565","433-455-6789","12/12/2009"," 20:10" ,"12/12/2009"," 20:20" );
     assertThat(call.getCallee(), containsString(call.getCallee ()));
   }
     /**
@@ -31,7 +31,7 @@ public class PhoneCallTest {
 
   @Test
   public void forProject1ItIsOkayIfGetStartTimeReturnsNull() {
-    PhoneCall call = new PhoneCall("Harini" ,"123-345-4565","433-455-6789 ","null" ,"null" ,"2009/12/12"," 20:20" );
+    PhoneCall call = new PhoneCall("Harini" ,"123-345-4565","433-455-6789 ","null" ,"null" ,"12/12/2009"," 20:20" );
     String out = "null null";
     assertThat(call.getStartTime(), is(nullValue ()));
   }
@@ -41,7 +41,7 @@ public class PhoneCallTest {
   @Test
   public void forProject1ItIsOkayIfGetEndTimeResultsNull(){
       String out = "null null";
-      PhoneCall call = new PhoneCall ("Harini" ,"123-345-4565","433-455-6789 ","2009/12/12"," 20:20" ,"null","null");
+      PhoneCall call = new PhoneCall ("Harini" ,"123-345-4565","433-455-6789 ","12/12/2009"," 20:20" ,"null","null");
       assertThat (call.getEndTimeString () , is(out));
   }
 
@@ -74,7 +74,7 @@ public class PhoneCallTest {
    @Test
    public void testGetStartTime(){
       String startTime = "20:20";
-      PhoneCall call = new PhoneCall ("harini",null,"123-456-7890", "2009/12/12"," 20:20",null,null);
+      PhoneCall call = new PhoneCall ("harini",null,"123-456-7890", "12/12/2009"," 20:20",null,null);
       assertThat (call.getStartTimeString (),containsString (startTime));
    }
     /**
@@ -83,7 +83,7 @@ public class PhoneCallTest {
     @Test
     public void testGetEndTime(){
         String endTime = "20:30";
-        PhoneCall call = new PhoneCall ("harini",null,"123-456-7890", "2009/12/12"," 20:20","2009/12/12"," 20:30");
+        PhoneCall call = new PhoneCall ("harini",null,"123-456-7890", "12/12/2009"," 20:20","12/12/2009"," 20:30");
         assertThat (call.getEndTimeString (),containsString (endTime));
     }
 }

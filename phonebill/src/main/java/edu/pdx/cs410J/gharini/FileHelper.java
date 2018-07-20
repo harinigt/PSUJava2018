@@ -34,7 +34,7 @@ public class FileHelper {
         } catch (UnsupportedEncodingException ue) {
             throw new FileException (ue.getMessage () + " : " + phonebill);
         } catch (IOException ie) {
-            throw new FileException (ie.getMessage ()+ " : " + phonebill);
+            throw new FileException ("File doesn't exist and cannot be created here : " + phonebill);
         }
 
     }

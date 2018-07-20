@@ -82,14 +82,14 @@ public class PhoneCallHelper {
      * @param: numOfOptions : count of number of options in the command line arguments
      */
 
-    static void checkNumOfArgs(int numOfNonOptions, int numOfArgs) {
+    static void checkNumOfArgs(int numOfNonOptions, int numOfArgs , String [] args) {
         if (numOfArgs == 0) {
-            throw new InvalidNumberOfArgumentsException ("Missing Command Line Arguments ");
+            throw new InvalidNumberOfArgumentsException ("Missing Command Line Arguments " );
         }
         else if (numOfNonOptions > 0 && numOfNonOptions < 7) {
             throw new InvalidNumberOfArgumentsException ("Missing few Command Line Arguments ");
         }
-        else if (numOfNonOptions > 9) {
+        else if (numOfNonOptions > 8) {
             throw new InvalidNumberOfArgumentsException ("Command Line has too many arguments ");
         }
 
@@ -172,10 +172,11 @@ public class PhoneCallHelper {
      *                                     with appropriate message is thrown.
      */
     static void checkPhoneNumberFormat(String arg) {
-        String regex = "^\\(?([0-9]{3})\\)?[-\\s]?([0-9]{3})[-\\s]?([0-9]{4})";
-        Pattern pattern = Pattern.compile (regex);
-        Matcher matcher = pattern.matcher (arg);
-        if (!matcher.matches ()) {
+//        String regex = ;
+//        Pattern pattern = Pattern.compile (regex);
+//        Matcher matcher = pattern.matcher (arg);
+
+        if (!arg.matches ("^\\(?([0-9]{3})\\)?[-\\s]?([0-9]{3})[-\\s]?([0-9]{4})")) {
             throw new InvalidPhoneNumberException ("Invalid Phone Number Format , Usage : nnn-nnn-nnnn  : " + arg);
         }
 
@@ -203,21 +204,22 @@ public class PhoneCallHelper {
      */
     public static void checkDateFormat(String arg) {
 
-        SimpleDateFormat sdf = new SimpleDateFormat ("yyyy/MM/dd", Locale.US);
+        SimpleDateFormat sdf = new SimpleDateFormat ("MM/dd/yyyy", Locale.US);
         sdf.setLenient (false);
+        if (!arg.matches ("\\d{2}/\\d{2}/\\d{4}"))
+            throw new InvalidDateAndTimeException ("Invalid Date Format , Usage : MM/dd/yyyy  " + arg);
 
         try {
-            if (!arg.matches ("\\d{4}/\\d{2}/\\d{2}"))
-                throw new Exception ("Invalid Date Format , Usage : yyyy/MM/dd  " + arg);
+
             Date date = sdf.parse (arg);
         } catch (ParseException pe) {
-            throw new InvalidDateAndTimeException ("Invalid Date , Usage : yyyy/MM/dd  " + arg);
+            throw new InvalidDateAndTimeException ("Invalid Date , Usage : MM/dd/yyyy  " + arg);
 
         } catch (DateTimeParseException dpe) {
-            throw new InvalidDateAndTimeException ("Invalid Date , Usage : yyyy/MM/dd  " + arg);
+            throw new InvalidDateAndTimeException ("Invalid Date , Usage : MM/dd/yyyy  " + arg);
 
         } catch (Exception e) {
-            throw new InvalidDateAndTimeException ("Invalid Date , Usage : yyyy/MM/dd  " + arg);
+            throw new InvalidDateAndTimeException ("Invalid Date , Usage : MM/dd/yyyy  " + arg);
         }
     }
 
@@ -230,7 +232,7 @@ public class PhoneCallHelper {
     public static void checkTimeFormat(String arg) {
         SimpleDateFormat sdf = new SimpleDateFormat ("HH:mm", Locale.US);
         if (!arg.matches ("([01]?[0-9]|2[0-3]):[0-5][0-9]"))
-            throw new InvalidDateAndTimeException ("Invalid time format , Usage HH:mm :pr" + arg);
+            throw new InvalidDateAndTimeException ("Invalid time format , Usage HH:mm :" + arg);
 
         try {
             Date date = sdf.parse (arg);
@@ -262,7 +264,7 @@ public class PhoneCallHelper {
          String strDate = startDate + " " + startTime;
          String eDate = endDate + " " + endTime;
 
-        DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern ("yyyy/MM/dd HH:mm" , Locale.US);
+        DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern ("MM/dd/yyyy HH:mm" , Locale.US);
         LocalDateTime startDateTime = LocalDateTime.parse (strDate , dateTimeFormat );
         LocalDateTime endDateTime = LocalDateTime.parse (eDate,dateTimeFormat);
         LocalDateTime currDate = LocalDateTime.now ();

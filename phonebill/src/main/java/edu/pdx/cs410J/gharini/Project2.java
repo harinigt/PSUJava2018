@@ -38,7 +38,7 @@ public class Project2 {
             int numOfArgs = args.length;
             int numOfOptions = options.size();
             int numOfNonOptions = nonOptions.size ();
-            PhoneCallHelper.checkNumOfArgs(numOfNonOptions,numOfArgs);
+            PhoneCallHelper.checkNumOfArgs(numOfNonOptions,numOfArgs,args);
             int startPt = 0;
             if(options.contains ("-textFile")){
                 startPt = numOfOptions + 1;
@@ -126,10 +126,9 @@ public class Project2 {
                         TextParser parser = new TextParser (filePath.concat ("/"+file),customer);
                         billFromFile = parser.parse ();
                     } else{
-                        System.out.println (filePath);
-                        TextDumper dumper = new TextDumper (filePath,call,customer);
+                        TextDumper dumper = new TextDumper (file,call,customer);
                         dumper.dump (bill);
-                        TextParser parser = new TextParser (filePath,customer);
+                        TextParser parser = new TextParser (file,customer);
                         billFromFile = parser.parse ();
                     }
                     System.out.println ("___________________________________________________________________________________________________________");
