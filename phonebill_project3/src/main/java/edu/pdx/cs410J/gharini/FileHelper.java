@@ -140,7 +140,7 @@ public class FileHelper {
         Iterator<ArrayList> iterator1 = null;
         Iterator<String> iterator2 = null;
         PhoneBill bill = new PhoneBill (customer) ;
-        PhoneCall callFromBill = null;
+        PhoneCall callFromBill ;
         iterator = map.values ().iterator ();
         while (iterator.hasNext()) {
             ArrayList element = iterator.next();
@@ -173,11 +173,10 @@ public class FileHelper {
                             startDate = val;
                         }
                         else if(startTime == null & startAmPm == null){
-                            dateTime = getTimeAndAmPm (val.trim ());
+                            dateTime = getTimeAndAmPm ( getTime (val.trim ()));
                             startTime = dateTime[0];
                             PhoneCallHelper.checkAmPmForCase (dateTime[1].toLowerCase ());
                             startAmPm = dateTime[1];
-
                         }
                         else if(endDate == null){
                             PhoneCallHelper.checkValidArgumentFormat (val.trim ());
@@ -185,7 +184,7 @@ public class FileHelper {
                             endDate = val;
                         }
                         else if(endTime == null & endAmPm == null){
-                            dateTime = getTimeAndAmPm (val.trim ());
+                            dateTime = getTimeAndAmPm (getTime (val.trim ()));
                             endTime = dateTime[0];
                             PhoneCallHelper.checkAmPmForCase (dateTime[1].toLowerCase ());
                             endAmPm = dateTime[1];
@@ -215,17 +214,42 @@ public class FileHelper {
         return dateTime;
     }
 
-    static String getDate(String date){
-        Date sDate = null;
-        String callDate = null;
+    /**
+     *
+     * @param date
+     * @return
+     */
+   private static String getDate(String date){
+        Date sDate ;
+        String callDate;
         try{
             SimpleDateFormat sdf = new SimpleDateFormat ("MM/dd/yyyy");
             sdf.setLenient(false);
             sDate = sdf.parse (date);
             callDate = sdf.format (sDate);
         }catch (ParseException pe){
-            throw  new InvalidDateAndTimeException ("Invalid date , Usage : mm/dd/yyyy hh:mm aa \n" + date);
+            throw  new InvalidDateAndTimeException ("Invalid date , Usage : mm/dd/yyyy hh:mm a \n" + date);
         }
         return callDate;
+    }
+
+    /**
+     *
+     * @param time
+     * @return
+     */
+   private static  String getTime(String time){
+        Date sTime ;
+        String callTime ;
+        try{
+            SimpleDateFormat sdf = new SimpleDateFormat ("hh:mm a");
+            sdf.setLenient(false);
+            sTime = sdf.parse (time);
+            callTime = sdf.format (sTime);
+        }catch (ParseException pe){
+            throw  new InvalidDateAndTimeException ("Invalid date , Usage : mm/dd/yyyy hh:mm aa \n" + time);
+        }
+        return callTime;
+
     }
 }

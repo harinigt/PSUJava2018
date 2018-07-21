@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 
-public class PhoneBill extends AbstractPhoneBill<PhoneCall> implements Comparable<PhoneCall> {
+public class PhoneBill extends AbstractPhoneBill<PhoneCall>  {
     private Collection<PhoneCall> calls = new ArrayList<>();
     private String customer;
 
@@ -29,9 +29,5 @@ public class PhoneBill extends AbstractPhoneBill<PhoneCall> implements Comparabl
         return this.calls;
     }
 
-    @Override
-    public int compareTo(PhoneCall o) {
-        return 0;
-    }
 }
 

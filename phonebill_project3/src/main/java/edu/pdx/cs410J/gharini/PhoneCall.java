@@ -6,7 +6,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class PhoneCall extends AbstractPhoneCall {
+public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall> {
   private String customer ;
   private String callerNumber ;
   private String calleeNumber ;
@@ -58,4 +58,23 @@ public class PhoneCall extends AbstractPhoneCall {
     return dateFormat.format (dateTime);
   }
 
+  @Override
+  public int compareTo(PhoneCall o) {
+      if(this.getStartTime ().after (o.getStartTime ())){
+          return 1;
+      }
+      if(this.getStartTime ().before (o.getStartTime ())){
+          return -1;
+      }
+
+      if(this.getStartTime ().compareTo (o.getStartTime ()) == 0){
+          if(this.getCaller ().compareTo (o.getCaller ()) > 0){
+              return  1;
+          }
+          if(this.getCaller ().compareTo (o.getCaller ()) < 0){
+              return  -1;
+          }
+      }
+    return 0;
+  }
 }
