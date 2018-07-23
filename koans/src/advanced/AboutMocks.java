@@ -35,12 +35,19 @@ public class AboutMocks {
         }
     }
 
+    static class dummy implements Collaborator {
+        public void doBusinessStuff() {
+            //fail("Default collaborator's behavior is complicating testing.");
+        }
+    }
+
     @Koan
     public void simpleAnonymousMock() {
         // HINT: pass a safe Collaborator implementation to constructor
         // new ClassUnderTest(new Collaborator(){... it should not be the
         // objective of this test to test that collaborator, so replace it
-        new ClassUnderTest().doSomething();
+        Collaborator explosiveCollaborator = new dummy ();
+        new ClassUnderTest(explosiveCollaborator).doSomething();
     }
 
 }
