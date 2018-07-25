@@ -14,7 +14,7 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
     /**
      * customer : customer of the phone call.
      */
-  private String customer ;
+  private String customer = null;
     /**
      * caller number : The phone number of the caller
      */
@@ -26,11 +26,11 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
     /**
      * startTime : The start date and time of the phone call
      */
-  private Date startTime;
+  private Date startTime = null;
     /**
      * endTime : The end date and time of the phone call
      */
-  private Date endTime;
+  private Date endTime = null;
 
   public PhoneCall( String customer,String callerNumber , String calleeNumber,Date startTime,
                    Date endTime ) {
