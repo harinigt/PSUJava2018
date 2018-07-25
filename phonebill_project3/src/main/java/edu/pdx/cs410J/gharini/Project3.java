@@ -73,6 +73,10 @@ public class Project3 {
                     PhoneCallHelper.checkTimeFormat ( startTime, startAmPm );
                     PhoneCallHelper.checkTimeFormat ( endTime, endAmPm );
                     PhoneCallHelper.checkDateDifference (startDate, startTime + " "+startAmPm,endDate,endTime+ " " +endAmPm);
+                } else{
+                    String msg = "Extraneous command line argument" ;
+                    PhoneCallHelper.printErrorMessageAndExit (msg+" : "+args
+                    [i]);
                 }
             }
         }
