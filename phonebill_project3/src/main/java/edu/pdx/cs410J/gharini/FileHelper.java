@@ -284,7 +284,7 @@ public class FileHelper {
         for(PhoneCall call : sortedCalls){
             prettyContent+= "----------------------------------------------------------------------------------\n";
             prettyContent+="*Phone call from\t" + call.getCaller () + "\tto\t"+ call.getCallee () + "\n";
-            prettyContent+="*\t\t\ton\t" +  getPrettyDateTime (call.getStartTime ()) + "\tto\t" +  getPrettyDateTime (call.getEndTime ())+"\n";
+            prettyContent+="*\t\t\ton\t" +  getPrettyDateTime (call.getStartTime ()) + "\t to\t" +  getPrettyDateTime (call.getEndTime ())+"\n";
             prettyContent+= "----------------------------------------------------------------------------------\n";
             prettyContent+="*The call duration was\t "+ getDurationOfcallInMinutes (call.getStartTime (),call.getEndTime ()) +"\tminutes\n";
             prettyContent+= "----------------------------------------------------------------------------------\n";
