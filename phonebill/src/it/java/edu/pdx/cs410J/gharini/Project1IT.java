@@ -300,7 +300,7 @@ public class Project1IT extends InvokeMainTestCase {
         MainMethodResult result = invokeMain (option2,name,caller,callee,startDate,startTime,endDate,endTime);
         //MainMethodResult result = invokeMain (option1,option2,name,caller,callee,startDate,endDate);
         assertThat (result.getExitCode (),equalTo (-1));
-        assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid Argument : Argument cannot start with a -  :"));
+        assertThat (result.getTextWrittenToStandardError (),containsString ("Invalid Argument : Argument cannot start with a '-' (Optional arguments are -README -print) :"));
 
     }
 
