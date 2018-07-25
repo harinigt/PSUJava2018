@@ -9,9 +9,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 
 public class PhoneCallHelper {
 
@@ -20,7 +17,7 @@ public class PhoneCallHelper {
      * @param msg This method prints the error message on the console when an exception is raised . The program terminates with the status code -1 when this
      *            method is executed.
      */
-    public static void printErrorMessageAndExit(String msg) {
+     static void printErrorMessageAndExit(String msg) {
         System.err.println (msg);
         System.exit (-1);
 
@@ -89,7 +86,7 @@ public class PhoneCallHelper {
         else if (numOfNonOptions > 0 && numOfNonOptions < 7) {
             throw new InvalidNumberOfArgumentsException ("Missing few Command Line Arguments ");
         }
-        else if (numOfNonOptions > 8) {
+        else if (numOfNonOptions > 7) {
             throw new InvalidNumberOfArgumentsException ("Command Line has too many arguments ");
         }
 
@@ -160,7 +157,7 @@ public class PhoneCallHelper {
      */
     static void checkValidArgumentFormat(String arg) {
         if (arg.startsWith ("-")) {
-            throw new InvalidArgumentFormatException ("Invalid Argument : Argument cannot start with a -  :" + arg);
+            throw new InvalidArgumentFormatException ("Invalid Argument : Argument cannot start with a '-' (Optional arguments are -README -print) :" + arg);
         }
     }
 
@@ -172,10 +169,6 @@ public class PhoneCallHelper {
      *                                     with appropriate message is thrown.
      */
     static void checkPhoneNumberFormat(String arg) {
-//        String regex = ;
-//        Pattern pattern = Pattern.compile (regex);
-//        Matcher matcher = pattern.matcher (arg);
-
         if (!arg.matches ("^\\(?([0-9]{3})\\)?[-\\s]?([0-9]{3})[-\\s]?([0-9]{4})")) {
             throw new InvalidPhoneNumberException ("Invalid Phone Number Format , Usage : nnn-nnn-nnnn  : " + arg);
         }
@@ -190,7 +183,7 @@ public class PhoneCallHelper {
      *                                      This method checks if the caller and callee has same phone number. In case they have same phone number
      *                                      a SameCallerAndCalleeException is thrown that gives a message that the phone numbers are same.
      */
-    public static void checkCallerAndCallee(String caller, String callee) {
+     static void checkCallerAndCallee(String caller, String callee) {
         if (caller.equals (callee)) {
             throw new SameCallerAndCalleeException ("Caller and Callee should be different  :" + caller + " " + callee);
         }
@@ -202,7 +195,7 @@ public class PhoneCallHelper {
      * @throws InvalidDateAndTimeException This method checks if the Start Date and end Date of the phone call is in the valid format. The valid format for time date/time
      *                                     is "yyyy/MM/dd " . If the dates are in any format other than the specified one , an exception is thrown with the appropriate message.
      */
-    public static void checkDateFormat(String arg) {
+     static void checkDateFormat(String arg) {
 
         SimpleDateFormat sdf = new SimpleDateFormat ("MM/dd/yyyy", Locale.US);
         sdf.setLenient (false);
@@ -229,7 +222,7 @@ public class PhoneCallHelper {
      *                                     is " HH:mm" . If the times are in any format other than the specified one , an exception is thrown with the appropriate message.
      */
 
-    public static void checkTimeFormat(String arg) {
+     static void checkTimeFormat(String arg) {
         SimpleDateFormat sdf = new SimpleDateFormat ("HH:mm", Locale.US);
         if (!arg.matches ("([01]?[0-9]|2[0-3]):[0-5][0-9]"))
             throw new InvalidDateAndTimeException ("Invalid time format , Usage HH:mm :" + arg);
@@ -277,10 +270,5 @@ public class PhoneCallHelper {
             throw  new InvalidDateAndTimeException ("Invalid end date , end date should be before today!!  " + eDate);
         }
     }
-
-    static void checkSpecificArgumentMissing(){
-
-    }
-
 
 }
