@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 public class Project1 {
 
@@ -21,11 +22,14 @@ public class Project1 {
         String endAmPm = null;
         String file = null;
         String prettyFile = null;
+        Date finalStartTime = null;
+        Date finalEndTime = null;
         Boolean prettyPrintToFile = false;
         ArrayList<String> options = new ArrayList<>();
         ArrayList<String> nonOptions = new ArrayList<>();
         ArrayList<String> files = new ArrayList<>();
         ArrayList<ArrayList<String>> list = null;
+        PhoneBill billFromFile = null;
         try{
             list = PhoneCallHelper.loadOptions(args);
             options = list.get(0);
@@ -73,6 +77,8 @@ public class Project1 {
                     PhoneCallHelper.checkTimeFormat ( startTime, startAmPm );
                     PhoneCallHelper.checkTimeFormat ( endTime, endAmPm );
                     PhoneCallHelper.checkDateDifference (startDate, startTime + " "+startAmPm,endDate,endTime+ " " +endAmPm);
+                    finalStartTime = PhoneCallHelper.convertToDate (startDate,startTime,startAmPm);
+                    finalEndTime = PhoneCallHelper.convertToDate (endDate,endTime,endAmPm);
                 }
             }
         }
@@ -83,11 +89,11 @@ public class Project1 {
         catch(Exception e){
             PhoneCallHelper.printErrorMessageAndExit (e.getMessage ());
         }
-        PhoneCall call = new PhoneCall(customer_name,callerNumber,calleeNumber,PhoneCallHelper.convertToDate (startDate,startTime,startAmPm),
-                PhoneCallHelper.convertToDate (endDate,endTime,endAmPm));
+        PhoneCall call = new PhoneCall(customer_name,callerNumber,calleeNumber,finalStartTime,
+                finalEndTime);
         PhoneBill bill = new PhoneBill(customer_name);
 
-        PhoneBill billFromFile;
+
         String filePath = null;
         bill.addPhoneCall (call);
 
@@ -97,7 +103,7 @@ public class Project1 {
             System.out.println ("_______________________________________________________________________________________________________________");
         }
 
-        if(options.contains ("--README")){
+        if(options.contains ("-README")){
             System.out.println ("_______________________________________________________________________________________________________________");
             PhoneCallHelper.readme ();
             System.out.println ("_______________________________________________________________________________________________________________");
@@ -128,8 +134,8 @@ public class Project1 {
         }
 
         if(options.contains ("-pretty") && nonOptions.contains ("-")) {
-            PrettyPrinter pretty_printer = new PrettyPrinter (bill,customer_name);
-            pretty_printer.dumpPrettyContentToStandardOut (bill);
+            PrettyPrinter pretty_printer = new PrettyPrinter (billFromFile,customer_name);
+            pretty_printer.dumpPrettyContentToStandardOut (billFromFile);
         }
 
         if(prettyPrintToFile){

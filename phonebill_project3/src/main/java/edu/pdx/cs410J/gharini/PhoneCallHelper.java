@@ -34,14 +34,16 @@ public class PhoneCallHelper {
      */
     static void readme() {
         String readme = "Course    : Advanced Java Programming.\nName      : Harini Gowdagere Tulaisdas.\nemail     : gharini@pdx.edu\n";
-        readme += "Project   : Project1\nObjective :\n";
-        readme += "\t\tThe project 1 to implement a simple Phone Call Details generation has two classes phoneCall and phoneBill that represents the details of a phone call and phone bill respectively. " +
+        readme += "Project   : Project3\nObjective :\n";
+        readme += "\t\tThe project 3 to implement a simple Phone Call Details generation has two classes phoneCall and phoneBill that represents the details of a phone call and phone bill respectively. " +
                 "The phoneCall class has fields to hold the details of a phone call such as  customer name , caller (Phone number) , callee(phone number) ,  the start and end time of the call. " +
                 "The phone bill has a collection of phone calls and the name of the customer \n" +
                 "\n" +
-                "\t\tThe application is invoked in the Project1 class. The Project1 class parses the command line arguments for the input." +
-                " The command line arguments has the format [options] <args>. The [options] has two choices, -readme and -print. The other arguments are phone numbers of the caller and callee and " +
-                " the start and end times of the phone call. The command line can have either one of the 2 options or both options and no arguments or all arguments for " +
+                "\t\tThe application is invoked in the Project3 class. The Project3 class parses the command line arguments for the input." +
+                " The command line arguments has the format [options] <args>. The [options] has 4 choices, -README , -print , -textFile filename (to write the" +
+                " phone calls on to a file) , -pretty -(to pretty print on standard out)" +
+                " and -pretty file (to pretty print on to a file) . The other arguments are phone numbers of the caller and callee and " +
+                " the start and end times of the phone call. The start and end times have a 12 hr format.  The command line can have all the options or no options  and no arguments or all arguments for " +
                 " a phone call. The program checks for the validity of all the arguments and failure to confirm validity results in a friendly error message. " +
                 "\n\n" +
                 "\t\tThe -print option in the input prints the phone call and the -readme option prints the readme information.  ";
@@ -336,7 +338,7 @@ public class PhoneCallHelper {
             sdf.setLenient(false);
             sDate = sdf.parse (date+' '+time+' '+ampm);
         }catch (ParseException pe){
-            throw  new InvalidDateAndTimeException ("Invalid date , Usage : mm/dd/yyyy hh:mm aa \n" + date+' '+time+' '+ampm);
+            throw  new InvalidDateAndTimeException ("Invalid date , Usage : mm/dd/yyyy hh:mm a \n" + date+' '+time+' '+ampm);
         }
       return sDate;
     }
