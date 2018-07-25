@@ -8,15 +8,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.*;
-public class FileHelper {
 
+public class FileHelper {
 
     /**
      * @param phonebill : The path to the file
      *                  This method checks if a text file exists in the location. If the file doesn't exist
      *                  a new text file is created.
      */
-
     public static void checkIfFileExistsAndCreateIfOtherwise(File phonebill) {
         try {
             if (phonebill.exists () && phonebill.isDirectory ()) {
@@ -123,7 +122,6 @@ public class FileHelper {
         }
         callContent.add (temp);
     }
-
     /**
      *
      * @param map  : hashMap that maps customer name to his/her phone bill.
@@ -187,7 +185,6 @@ public class FileHelper {
         }
         return bill;
     }
-
     /**
      *
      * @param val
