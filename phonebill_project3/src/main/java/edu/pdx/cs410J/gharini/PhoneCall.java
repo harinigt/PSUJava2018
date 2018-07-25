@@ -72,9 +72,15 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
   }
 
   private static  String shortFormat(Date dateTime){
-    DateFormat dateFormat = DateFormat.getDateTimeInstance (DateFormat.SHORT,DateFormat.SHORT,Locale.US);
-    dateFormat.setLenient (false);
-    return dateFormat.format (dateTime);
+    if(dateTime!=null)  {
+          DateFormat dateFormat = DateFormat.getDateTimeInstance (DateFormat.SHORT,DateFormat.SHORT,Locale.US);
+          dateFormat.setLenient (false);
+          return dateFormat.format (dateTime);
+      }
+      else{
+        return null;
+      }
+
   }
 
   @Override
