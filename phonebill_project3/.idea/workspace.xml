@@ -2,51 +2,527 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa342246-fc82-4706-8a80-8bdd0544ee25" name="Default" comment="project 3">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PrettyPrinter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../koans/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../koans/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../koans/app/config/file_hashes.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../koans/app/config/file_hashes.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../phonebill/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/PhoneCallHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/PhoneCallHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/failsafe-reports/TEST-edu.pdx.cs410J.gharini.Project1IT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/failsafe-reports/TEST-edu.pdx.cs410J.gharini.Project1IT.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/failsafe-reports/edu.pdx.cs410J.gharini.Project1IT.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/failsafe-reports/edu.pdx.cs410J.gharini.Project1IT.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/failsafe-reports/failsafe-summary.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/failsafe-reports/failsafe-summary.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/jacoco-it.exec" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/jacoco-it.exec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidArgumentFormatException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidArgumentFormatException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidArgumentFormatException.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidArgumentFormatException.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidDateAndTimeException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidDateAndTimeException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidDateAndTimeException.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidDateAndTimeException.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidNumberOfArgumentsException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidNumberOfArgumentsException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidNumberOfArgumentsException.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidNumberOfArgumentsException.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidPhoneNumberException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidPhoneNumberException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidPhoneNumberException.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidPhoneNumberException.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneBill.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneBill.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneBill.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneBill.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneCall.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneCall.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneCall.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneCall.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/Project1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/Project1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/Project1.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/Project1.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/SameCallerAndCalleeException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/SameCallerAndCalleeException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/SameCallerAndCalleeException.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/SameCallerAndCalleeException.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-sessions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/surefire-reports/TEST-edu.pdx.cs410J.gharini.PhoneBillTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/surefire-reports/TEST-edu.pdx.cs410J.gharini.PhoneBillTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/surefire-reports/TEST-edu.pdx.cs410J.gharini.PhoneCallTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/surefire-reports/TEST-edu.pdx.cs410J.gharini.PhoneCallTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/surefire-reports/edu.pdx.cs410J.gharini.PhoneBillTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/surefire-reports/edu.pdx.cs410J.gharini.PhoneBillTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/target/surefire-reports/edu.pdx.cs410J.gharini.PhoneCallTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/target/surefire-reports/edu.pdx.cs410J.gharini.PhoneCallTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/phonebill.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/phonebill.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/it/java/edu/pdx/cs410J/gharini/Project1IT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/FileException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/FileHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/InvalidArgumentFormatException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/InvalidDateAndTimeException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/InvalidNumberOfArgumentsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/InvalidOptionException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/InvalidPhoneNumberException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/PhoneBill.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/PhoneCall.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/PhoneCallHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/Project1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/Project2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/Project3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/SameCallerAndCalleeException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/TextDumper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/gharini/TextParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/javadoc/edu/pdx/cs410J/gharini/package.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/javadoc/package.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/test/java/edu/pdx/cs410J/gharini/PhoneBillTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/test/java/edu/pdx/cs410J/gharini/PhoneCallTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/test/javadoc/edu/pdx/cs410J/gharini/package.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/src/test/javadoc/package.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/checkstyle-cachefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/checkstyle-checker.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/checkstyle-result.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/cpd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/failsafe-reports/TEST-edu.pdx.cs410J.gharini.Project1IT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/failsafe-reports/edu.pdx.cs410J.gharini.Project1IT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/failsafe-reports/failsafe-summary.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/jacoco-it.exec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/javadoc-bundle-options/javadoc-options-javadoc-resources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/jdepend-report.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/maven-pmd-plugin-default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/maven-status/maven-compiler-plugin/testCompile/compile-integration-test/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/maven-status/maven-compiler-plugin/testCompile/compile-integration-test/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/pmd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/allclasses-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/allclasses-noframe.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/constant-values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/deprecated-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/edu/pdx/cs410J/gharini/PhoneCall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/edu/pdx/cs410J/gharini/Project1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/edu/pdx/cs410J/gharini/class-use/PhoneCall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/edu/pdx/cs410J/gharini/class-use/Project1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/edu/pdx/cs410J/gharini/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/edu/pdx/cs410J/gharini/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/edu/pdx/cs410J/gharini/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/edu/pdx/cs410J/gharini/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/index-all.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/external/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/images/ui-bg_flat_75_ffffff_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/images/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/images/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/images/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/jquery-1.10.2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/jquery-ui.structure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/jszip-utils/dist/jszip-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/jszip/dist/jszip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/jquery/jszip/dist/jszip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/serialized-form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/src-html/edu/pdx/cs410J/gharini/PhoneCall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/src-html/edu/pdx/cs410J/gharini/Project1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/apidocs/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/checkstyle.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/checkstyle.rss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/css/maven-base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/css/maven-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/css/print.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/css/site.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/dependency-info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/dependency-updates-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/distribution-management.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/failsafe-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/images/close.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/images/collapsed.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/images/expanded.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/images/external.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/images/icon_error_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/images/icon_info_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/images/icon_success_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/images/icon_warning_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/images/logos/build-by-maven-black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/images/logos/build-by-maven-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/images/logos/maven-feather.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/images/newwindow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/images/rss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/issue-tracking.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidArgumentFormatException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidArgumentFormatException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidDateAndTimeException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidDateAndTimeException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidNameException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidNameException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidNumberOfArgumentsException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidNumberOfArgumentsException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidPhoneNumberException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidPhoneNumberException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidStartAndEndTimesException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidStartAndEndTimesException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/OptionsAreCaseSensitiveException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/OptionsAreCaseSensitiveException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneBill.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneBill.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneCall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneCall.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/Project1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/Project1.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/SameCallerAndCalleeException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/SameCallerAndCalleeException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/edu.pdx.cs410J.gharini/index.source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/branchfc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/branchnc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/branchpc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/bundle.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/class.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/down.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/greenbar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/group.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/method.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/package.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/prettify.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/prettify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/redbar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/report.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/report.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/session.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/sort.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/sort.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/source.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-resources/up.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco-sessions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jacoco-it/jacoco.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/jdepend-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/license.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/plugin-management.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/plugin-updates-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/plugins.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/pmd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/project-info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/project-reports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/project-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/property-updates-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/source-repository.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/spotbugs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/spotbugs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/surefire-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/team-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/allclasses-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/allclasses-noframe.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/constant-values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/deprecated-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/edu/pdx/cs410J/gharini/PhoneCallTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/edu/pdx/cs410J/gharini/class-use/PhoneCallTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/edu/pdx/cs410J/gharini/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/edu/pdx/cs410J/gharini/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/edu/pdx/cs410J/gharini/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/edu/pdx/cs410J/gharini/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/index-all.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/external/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/images/ui-bg_flat_75_ffffff_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/images/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/images/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/images/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/jquery-1.10.2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/jquery-ui.structure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/jszip-utils/dist/jszip-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/jszip/dist/jszip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/jquery/jszip/dist/jszip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/src-html/edu/pdx/cs410J/gharini/PhoneCallTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/testapidocs/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref-test/allclasses-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref-test/edu/pdx/cs410J/gharini/PhoneCallTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref-test/edu/pdx/cs410J/gharini/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref-test/edu/pdx/cs410J/gharini/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref-test/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref-test/overview-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref-test/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref-test/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref/allclasses-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref/edu/pdx/cs410J/gharini/PhoneCall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref/edu/pdx/cs410J/gharini/Project1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref/edu/pdx/cs410J/gharini/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref/edu/pdx/cs410J/gharini/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref/overview-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/site/xref/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/spotbugsXml.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/surefire-reports/TEST-edu.pdx.cs410J.gharini.PhoneBillTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/surefire-reports/TEST-edu.pdx.cs410J.gharini.PhoneCallTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/surefire-reports/edu.pdx.cs410J.gharini.PhoneBillTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phonebill/target/surefire-reports/edu.pdx.cs410J.gharini.PhoneCallTest.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/FileHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/FileHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneCall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneCallHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneCallHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Project3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Project3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/TextDumper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/TextDumper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/checkstyle-cachefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/checkstyle-checker.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/checkstyle-result.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cpd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/failsafe-reports/TEST-edu.pdx.cs410J.gharini.Project1IT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/failsafe-reports/edu.pdx.cs410J.gharini.Project1IT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jacoco-it.exec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/javadoc-bundle-options/javadoc-options-javadoc-resources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jdepend-report.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-pmd-plugin-default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/compile-integration-test/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/compile-integration-test/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pmd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/allclasses-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/allclasses-noframe.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/constant-values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/deprecated-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/edu/pdx/cs410J/gharini/PhoneCall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/edu/pdx/cs410J/gharini/Project1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/edu/pdx/cs410J/gharini/class-use/PhoneCall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/edu/pdx/cs410J/gharini/class-use/Project1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/edu/pdx/cs410J/gharini/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/edu/pdx/cs410J/gharini/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/edu/pdx/cs410J/gharini/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/edu/pdx/cs410J/gharini/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/index-all.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/external/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/images/ui-bg_flat_75_ffffff_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/images/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/images/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/images/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/jquery-1.10.2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/jquery-ui.structure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/jszip-utils/dist/jszip-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/jszip/dist/jszip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/jquery/jszip/dist/jszip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/serialized-form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/src-html/edu/pdx/cs410J/gharini/PhoneCall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/src-html/edu/pdx/cs410J/gharini/Project1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/apidocs/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/checkstyle.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/checkstyle.rss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/css/maven-base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/css/maven-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/css/print.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/css/site.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/dependency-info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/dependency-updates-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/distribution-management.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/failsafe-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/close.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/collapsed.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/expanded.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/external.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/icon_error_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/icon_info_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/icon_success_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/icon_warning_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/logos/build-by-maven-black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/logos/build-by-maven-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/logos/maven-feather.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/newwindow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/rss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/issue-tracking.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/FileException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/FileException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/FileHelper.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/FileHelper.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidArgumentFormatException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidArgumentFormatException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidDateAndTimeException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidDateAndTimeException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidNameException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidNameException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidNumberOfArgumentsException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidNumberOfArgumentsException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidOptionException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidOptionException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidPhoneNumberException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidPhoneNumberException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidStartAndEndTimesException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/InvalidStartAndEndTimesException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/OptionsAreCaseSensitiveException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/OptionsAreCaseSensitiveException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneBill.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneBill.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneCall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneCall.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneCallHelper.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/PhoneCallHelper.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/Project1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/Project1.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/Project2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/Project2.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/Project3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/Project3.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/SameCallerAndCalleeException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/SameCallerAndCalleeException.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/TextDumper.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/TextDumper.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/TextParser.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/TextParser.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/index.source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/edu.pdx.cs410J.gharini/test.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/branchfc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/branchnc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/branchpc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/bundle.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/class.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/down.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/greenbar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/group.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/method.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/package.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/prettify.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/prettify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/redbar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/report.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/report.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/session.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/sort.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/sort.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/source.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-resources/up.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco-sessions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco-it/jacoco.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jdepend-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/license.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/plugin-management.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/plugin-updates-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/plugins.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/pmd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/project-info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/project-reports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/project-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/property-updates-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/source-repository.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/spotbugs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/spotbugs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/surefire-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/team-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/allclasses-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/allclasses-noframe.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/constant-values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/deprecated-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/edu/pdx/cs410J/gharini/PhoneCallTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/edu/pdx/cs410J/gharini/class-use/PhoneCallTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/edu/pdx/cs410J/gharini/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/edu/pdx/cs410J/gharini/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/edu/pdx/cs410J/gharini/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/edu/pdx/cs410J/gharini/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/index-all.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/external/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/images/ui-bg_flat_75_ffffff_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/images/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/images/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/images/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/jquery-1.10.2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/jquery-ui.structure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/jszip-utils/dist/jszip-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/jszip/dist/jszip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/jquery/jszip/dist/jszip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/src-html/edu/pdx/cs410J/gharini/PhoneCallTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/testapidocs/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/allclasses-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/edu/pdx/cs410J/gharini/PhoneCallTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/edu/pdx/cs410J/gharini/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/edu/pdx/cs410J/gharini/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/overview-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/allclasses-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/edu/pdx/cs410J/gharini/PhoneCall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/edu/pdx/cs410J/gharini/Project1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/edu/pdx/cs410J/gharini/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/edu/pdx/cs410J/gharini/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/overview-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotbugsXml.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.pdx.cs410J.gharini.PhoneBillTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.pdx.cs410J.gharini.PhoneCallTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.pdx.cs410J.gharini.PhoneBillTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.pdx.cs410J.gharini.PhoneCallTest.txt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,11 +534,59 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Project3.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PhoneCallHelper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneCallHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="314" column="46" lean-forward="true" selection-start-line="314" selection-start-column="46" selection-end-line="314" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Project2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Project2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="583">
+              <caret line="164" column="13" selection-start-line="164" selection-start-column="13" selection-end-line="164" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Project1.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Project1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1174">
+              <caret line="164" column="13" selection-start-line="164" selection-start-column="13" selection-end-line="164" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhoneBill.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneBill.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="460">
+              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Project3.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Project3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="113" column="19" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="87" />
+            <state relative-caret-position="187">
+              <caret line="163" column="13" selection-start-line="163" selection-start-column="13" selection-end-line="163" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,41 +594,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="yee1233.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yee1233.txt">
+      <file leaf-file-name="FileHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/FileHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="yee1.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yee1.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrettyPrinter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PrettyPrinter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="67" column="73" selection-start-line="67" selection-start-column="73" selection-end-line="67" selection-end-column="73" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextDumper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/TextDumper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+            <state relative-caret-position="4820">
+              <caret line="241" column="28" lean-forward="true" selection-start-line="241" selection-start-column="28" selection-end-line="241" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,58 +609,23 @@
       <file leaf-file-name="PhoneCall.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneCall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="62" column="51" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="51" />
+            <state relative-caret-position="198">
+              <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#722#723#0" expanded="true" />
-                <element signature="e#756#757#0" expanded="true" />
-                <element signature="e#799#800#0" expanded="true" />
-                <element signature="e#833#834#0" expanded="true" />
-                <element signature="e#885#886#0" expanded="true" />
-                <element signature="e#932#933#0" expanded="true" />
-                <element signature="e#981#982#0" expanded="true" />
-                <element signature="e#1025#1026#0" expanded="true" />
-                <element signature="e#1069#1070#0" expanded="true" />
-                <element signature="e#1100#1101#0" expanded="true" />
-                <element signature="e#1142#1143#0" expanded="true" />
-                <element signature="e#1171#1172#0" expanded="true" />
+                <element signature="e#889#890#0" expanded="true" />
+                <element signature="e#923#924#0" expanded="true" />
+                <element signature="e#966#967#0" expanded="true" />
+                <element signature="e#1000#1001#0" expanded="true" />
+                <element signature="e#1052#1053#0" expanded="true" />
+                <element signature="e#1099#1100#0" expanded="true" />
+                <element signature="e#1148#1149#0" expanded="true" />
+                <element signature="e#1192#1193#0" expanded="true" />
+                <element signature="e#1236#1237#0" expanded="true" />
+                <element signature="e#1267#1268#0" expanded="true" />
+                <element signature="e#1309#1310#0" expanded="true" />
+                <element signature="e#1338#1339#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PhoneCallHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneCallHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3160">
-              <caret line="158" column="35" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#908#909#0" expanded="true" />
-                <element signature="e#949#950#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/FileHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="282" column="86" selection-start-line="282" selection-start-column="86" selection-end-line="282" selection-end-column="86" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/TextParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
         </entry>
@@ -215,7 +674,6 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/InvalidNumberOfArgumentsException.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/InvalidPhoneNumberException.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/SameCallerAndCalleeException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/FileException.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Phonebill.txt" />
         <option value="$PROJECT_DIR$/Phonebill.txt" />
         <option value="$PROJECT_DIR$/Phonebill_harini.txt" />
@@ -226,25 +684,26 @@
         <option value="$PROJECT_DIR$/abcde.txt" />
         <option value="$PROJECT_DIR$/abcd.txt" />
         <option value="$PROJECT_DIR$/gharini.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Project1.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/gharini/PhoneCallTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/gharini/PhoneBillTest.java" />
         <option value="$PROJECT_DIR$/src/it/java/edu/pdx/cs410J/gharini/Project1IT.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Project2.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneBill.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/TextParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneCall.java" />
-        <option value="$PROJECT_DIR$/haar.txt" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/test.java" />
         <option value="$PROJECT_DIR$/haarin3i.txt" />
         <option value="$PROJECT_DIR$/haarini.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/TextDumper.java" />
         <option value="$PROJECT_DIR$/harini.txt" />
         <option value="$PROJECT_DIR$/yee1233.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneCallHelper.java" />
+        <option value="$PROJECT_DIR$/haar.txt" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PrettyPrinter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/FileException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/TextDumper.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/FileHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneCall.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Project1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Project2.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Project3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneCallHelper.java" />
       </list>
     </option>
   </component>
@@ -271,8 +730,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -352,7 +810,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -385,7 +844,7 @@
     <configuration name="Project1" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.pdx.cs410J.gharini.Project1" />
       <module name="phonebill" />
-      <option name="PROGRAM_PARAMETERS" value="-print &quot;harini gt&quot; 123-345-4567 234-567-8990 2018/02/12 20:00 2018/02/12 20:10" />
+      <option name="PROGRAM_PARAMETERS" value="-README" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -397,7 +856,7 @@
     <configuration name="Project2" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.pdx.cs410J.gharini.Project2" />
       <module name="phonebill" />
-      <option name="PROGRAM_PARAMETERS" value="-textFile gharini.txt -print Project2 123-456-7890 234-567-9081 01/07/2018 07:00 01/17/2018 17:00" />
+      <option name="PROGRAM_PARAMETERS" value="-README -print" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -409,7 +868,7 @@
     <configuration name="Project3" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.pdx.cs410J.gharini.Project3" />
       <module name="phonebill" />
-      <option name="PROGRAM_PARAMETERS" value="-Readme -print harini1234 111-000-4567 837-807-8990 05/01/1911 11:20 pm 05/02/1911 12:40 am" />
+      <option name="PROGRAM_PARAMETERS" value="-README -print -textFile gharim.txt -pretty ghari-pretty.txt Project13 123-456-7890 124-351-4234 12/08/2018 8:00 am 12/08/2018 8:15 am" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -586,7 +1045,8 @@
       <workItem from="1532116612760" duration="875000" />
       <workItem from="1532118331956" duration="37309000" />
       <workItem from="1532324294691" duration="8057000" />
-      <workItem from="1532458547314" duration="13741000" />
+      <workItem from="1532458547314" duration="18715000" />
+      <workItem from="1532495271907" duration="15533000" />
     </task>
     <task id="LOCAL-00001" summary="committing from intellij">
       <created>1530768916618</created>
@@ -798,7 +1258,91 @@
       <option name="project" value="LOCAL" />
       <updated>1532164158262</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="project 3">
+      <created>1532478992092</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1532478992092</updated>
+    </task>
+    <task id="LOCAL-00032" summary="project 3-minor changes">
+      <created>1532481493727</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1532481493727</updated>
+    </task>
+    <task id="LOCAL-00033" summary="project 3">
+      <created>1532490247053</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1532490247053</updated>
+    </task>
+    <task id="LOCAL-00034" summary="project 3 - final">
+      <created>1532490905291</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1532490905291</updated>
+    </task>
+    <task id="LOCAL-00035" summary="project 3 - extraneous command line">
+      <created>1532495418666</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1532495418667</updated>
+    </task>
+    <task id="LOCAL-00036" summary="updated project3">
+      <created>1532540982260</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1532540982260</updated>
+    </task>
+    <task id="LOCAL-00037" summary="project 3 - changes">
+      <created>1532543475290</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1532543475290</updated>
+    </task>
+    <task id="LOCAL-00038" summary="project 3">
+      <created>1532544739223</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1532544739223</updated>
+    </task>
+    <task id="LOCAL-00039" summary=" fixed null pointer exception">
+      <created>1532545532073</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1532545532073</updated>
+    </task>
+    <task id="LOCAL-00040" summary="project 3">
+      <created>1532546074968</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1532546074968</updated>
+    </task>
+    <task id="LOCAL-00041" summary="project 3-minor changes">
+      <created>1532547594539</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1532547594539</updated>
+    </task>
+    <task id="LOCAL-00042" summary="project 3 - final">
+      <created>1532549976952</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1532549976952</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -834,7 +1378,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245071000" />
+    <option name="totallyTimeSpent" value="265578000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="16" y="23" width="1400" height="770" extended-state="0" />
@@ -849,20 +1393,20 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.39985272" side_tool="true" weight="0.2778603" />
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.60014725" weight="0.5215453" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.60014725" visible="true" weight="0.27191678" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.10824742" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2437408" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info id="Learn" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.52600294" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.46953937" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -875,10 +1419,10 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.32986626" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.60014725" visible="true" weight="0.27340266" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.60014725" visible="true" weight="0.09063893" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.10824742" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2437408" />
       <window_info id="Learn" order="2" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -887,7 +1431,7 @@
       <window_info id="Designer" order="3" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.46953937" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.52600294" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
@@ -909,10 +1453,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="committing from intellij" />
-    <MESSAGE value="Adding Exception class" />
-    <MESSAGE value="Removed the check for No options in Command Line" />
-    <MESSAGE value="updated test cases" />
     <MESSAGE value="Committing all exception classes and latest project1 class" />
     <MESSAGE value="added case sensitive check for options" />
     <MESSAGE value="added comments to all the classes." />
@@ -931,55 +1471,21 @@
     <MESSAGE value="removed print statments" />
     <MESSAGE value="new changes for data/time format and other validations" />
     <MESSAGE value="Project 3 changes for time format" />
+    <MESSAGE value="project 3 - extraneous command line" />
+    <MESSAGE value="updated project3" />
+    <MESSAGE value="project 3 - changes" />
+    <MESSAGE value=" fixed null pointer exception" />
     <MESSAGE value="project 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="project 3" />
+    <MESSAGE value="project 3-minor changes" />
+    <MESSAGE value="project 3 - final" />
+    <option name="LAST_COMMIT_MESSAGE" value="project 3 - final" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="88" />
+      <option name="time" value="99" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/abc.txt" />
-    <entry file="file://$PROJECT_DIR$/abcd.txt.fxml" />
-    <entry file="jar://$MAVEN_REPOSITORY$/edu/pdx/cs410J/projects/Summer2018/projects-Summer2018-sources.jar!/edu/pdx/cs410J/ParserException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/temp.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/trt.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/InvalidDateAndTimeException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/abcde.txt" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Math.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="1427" selection-start-line="1427" selection-end-line="1427" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="1525" column="31" selection-start-line="1525" selection-start-column="31" selection-end-line="1525" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/StringLatin1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
@@ -1030,52 +1536,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/InvalidNumberOfArgumentsException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/filename.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/InvalidPhoneNumberException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/FileException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Project1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="108" column="11" lean-forward="true" selection-start-line="108" selection-start-column="11" selection-end-line="108" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/java/edu/pdx/cs410J/gharini/Project1IT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Project2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="147" column="5" lean-forward="true" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#7393#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/h6aar.txt" />
     <entry file="jar://$MAVEN_REPOSITORY$/edu/pdx/cs410J/projects/Summer2018/projects-Summer2018-sources.jar!/edu/pdx/cs410J/AbstractPhoneCall.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1091,7 +1552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gharini.txt" />
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/gharini/PhoneCallTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1421">
@@ -1111,79 +1571,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="29" column="55" lean-forward="true" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haar.txt" />
-    <entry file="file://$PROJECT_DIR$/haarin3i.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haarini.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneBill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/harini.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/harini123.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneCall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="62" column="51" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#833#834#0" expanded="true" />
-            <element signature="e#885#886#0" expanded="true" />
-            <element signature="e#932#933#0" expanded="true" />
-            <element signature="e#981#982#0" expanded="true" />
-            <element signature="e#1025#1026#0" expanded="true" />
-            <element signature="e#1069#1070#0" expanded="true" />
-            <element signature="e#1100#1101#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1171#1172#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yee.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="43" lean-forward="true" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yee123.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/-yee1.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/haarin3i.txt" />
+    <entry file="file://$PROJECT_DIR$/haarini.txt" />
+    <entry file="file://$PROJECT_DIR$/harini.txt" />
+    <entry file="file://$PROJECT_DIR$/harini123.txt" />
+    <entry file="file://$PROJECT_DIR$/yee.txt" />
+    <entry file="file://$PROJECT_DIR$/yee123.txt" />
+    <entry file="file://$PROJECT_DIR$/-yee1.txt" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/TextParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -1191,13 +1591,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/TextDumper.java">
+    <entry file="file://$PROJECT_DIR$/src/it/java/edu/pdx/cs410J/gharini/Project1IT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="239">
+          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yee1233.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -1208,29 +1612,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yee1233.txt">
+    <entry file="file://$PROJECT_DIR$/haar.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneCallHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3160">
-          <caret line="158" column="35" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#908#909#0" expanded="true" />
-            <element signature="e#949#950#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PrettyPrinter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="67" column="73" selection-start-line="67" selection-start-column="73" selection-end-line="67" selection-end-column="73" />
+        <state relative-caret-position="-901">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/SameCallerAndCalleeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/InvalidPhoneNumberException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/InvalidOptionException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/InvalidNumberOfArgumentsException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/InvalidDateAndTimeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/FileException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="57" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/InvalidArgumentFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/TextDumper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="26" column="13" lean-forward="true" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gharini.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gharini-pretty.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="39" column="82" lean-forward="true" selection-start-line="39" selection-start-column="82" selection-end-line="39" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/harinigg.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ghari-pretty.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/harinier.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ghari.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneBill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1239,8 +1730,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/FileHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="282" column="86" selection-start-line="282" selection-start-column="86" selection-end-line="282" selection-end-column="86" />
+        <state relative-caret-position="4820">
+          <caret line="241" column="28" lean-forward="true" selection-start-line="241" selection-start-column="28" selection-end-line="241" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneCall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#889#890#0" expanded="true" />
+            <element signature="e#923#924#0" expanded="true" />
+            <element signature="e#966#967#0" expanded="true" />
+            <element signature="e#1000#1001#0" expanded="true" />
+            <element signature="e#1052#1053#0" expanded="true" />
+            <element signature="e#1099#1100#0" expanded="true" />
+            <element signature="e#1148#1149#0" expanded="true" />
+            <element signature="e#1192#1193#0" expanded="true" />
+            <element signature="e#1236#1237#0" expanded="true" />
+            <element signature="e#1267#1268#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
+            <element signature="e#1338#1339#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Project1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1174">
+          <caret line="164" column="13" selection-start-line="164" selection-start-column="13" selection-end-line="164" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Project2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="164" column="13" selection-start-line="164" selection-start-column="13" selection-end-line="164" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1249,8 +1782,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/Project3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="113" column="19" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="87" />
+        <state relative-caret-position="187">
+          <caret line="163" column="13" selection-start-line="163" selection-start-column="13" selection-end-line="163" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gharim.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/gharini/PhoneCallHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="314" column="46" lean-forward="true" selection-start-line="314" selection-start-column="46" selection-end-line="314" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

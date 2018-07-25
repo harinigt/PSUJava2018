@@ -308,6 +308,7 @@ public class PhoneCallHelper {
                  Date d1 = sdf.parse (strDate);
                  Date d2 = sdf.parse (eDate);
                  Date cur_date = new Date ();
+                 //System.out.println (cur_date);
                  long diff = d2.getTime () - d1.getTime ();
                  long diff1 = cur_date.getTime () - d2.getTime ();
               if (diff < 0) {
