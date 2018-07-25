@@ -4,12 +4,11 @@ import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Locale;
 
 public class PhoneCallHelper {
-
-
     /**
      * @param msg This method prints the error message on the console when an exception is raised . The program terminates with the status code -1 when this
      *            method is executed.
@@ -75,14 +74,15 @@ public class PhoneCallHelper {
      * @param: numOfOptions : count of number of options in the command line arguments
      */
 
-    static void checkNumOfArgs(int numOfNonOptions, int numOfArgs , String [] args) {
-        if (numOfArgs == 0) {
+    static void checkNumOfArgs(int numOfNonOptions,  String [] args , Boolean ispretty) {
+        if (args.length == 0) {
             throw new InvalidNumberOfArgumentsException ("Missing Command Line Arguments " );
         }
-        else if (numOfNonOptions > 0 && numOfNonOptions < 7) {
+        else if (numOfNonOptions > 0 && numOfNonOptions < 9) {
             throw new InvalidNumberOfArgumentsException ("Missing few Command Line Arguments ");
         }
-        else if (numOfNonOptions > 10) {
+        else if (!Arrays.asList (args).contains ("-textFile") && !ispretty && numOfNonOptions > 10) {
+
             throw new InvalidNumberOfArgumentsException ("Command Line has too many arguments ");
         }
 
@@ -101,48 +101,93 @@ public class PhoneCallHelper {
     static ArrayList<ArrayList<String>> loadOptions(String[] args) {
         ArrayList<String> options = new ArrayList<> ();
         ArrayList<String> nonOptions = new ArrayList<> ();
+        ArrayList<String> files = new ArrayList<> ();
+        String textFile = null;
+        String prettyFile = null;
         ArrayList<ArrayList<String>> list = new ArrayList<> ();
         for (int i = 0; i < args.length; i++) {
             String arg = args[i].toLowerCase ();
-            if ((arg.contains ("readme") || arg.contains ("print") || arg.contains ("textfile")) && !arg.startsWith ("-")) {
-                throw new InvalidOptionException ("Invalid Option , Usage : -README -print -textFile :" + arg);
+            if ((arg.contains ("readme") || arg.contains ("print") || arg.contains ("textfile")|| arg.equals ("-pretty")) && !arg.startsWith ("-")) {
+                throw new InvalidOptionException ("Invalid Option , Usage : -README -print -textFile -pretty:" + arg);
             }
-            else if (arg.equals ("-readme") || arg.equals ("-print") || arg.equals ("-textfile")) {
-                if (args[i].matches ("-README") || args[i].matches ("-print") || args[i].matches ("-textFile")) {
+            else if (arg.equals ("-readme") || arg.equals ("-print") || arg.equals ("-textfile") || arg.equals ("-pretty")) {
+                if (args[i].matches ("-README") || args[i].matches ("-print") || args[i].matches ("-textFile") ||args[i].matches ("-pretty") ) {
                     options.add (args[i]);
                 }
                 else {
-                    throw new InvalidOptionException ("Options are case sensitive , Usage : -README , -print , -textFile :" + args[i]);
+                    throw new InvalidOptionException ("Options are case sensitive , Usage : -README , -print , -textFile , -pretty:" + args[i]);
                 }
-
             }
-            else {
+            else if(args[i].endsWith(".txt") || args.equals ("-")){
+                files.add (args[i]);
+            }else {
                 nonOptions.add (args[i]);
             }
         }
-
         for (String opt : options) {
-            if (opt.equals ("-textFile")) {
-                checkFileOption (nonOptions);
+           if (opt.equals ("-textFile")) {
+               checkFileOption (args ,"-textFile");
             }
-
         }
         list.add (options);
         list.add (nonOptions);
+        list.add (files);
         return list;
     }
 
     /**
-     * @param nonOptions : The non option arguments from the command line.
+     * @param  : The non option arguments from the command line.
      *                   This method checks that the the -textFile is followed by the filename/filepath
      */
-    static void checkFileOption(ArrayList<String> nonOptions) {
-        if (!nonOptions.get (0).endsWith (".txt")) {
-            throw new InvalidOptionException ("The option -textFile should be followed by the file name/path ,Usage : -textFile filename.txt : " + nonOptions.get (0));
-        }
+    static void checkFileOption(String [] args , String option) {
+       int indexOftxtOption= Arrays.asList (args).indexOf (option);
+        if (!args[indexOftxtOption + 1].endsWith (".txt")) {
+            throw new InvalidOptionException ("The option -textFile should be followed by the file name/path ,Usage : -textFile filename.txt : " + args[indexOftxtOption + 1].endsWith (".txt"));
+       }
     }
 
+    /**
+     *
+     * @param args
+     * @param
+     */
 
+     static Boolean checkifPrettyPrintToFile(String[] args ) {
+         Boolean isPrettyFile = false;
+         if(Arrays.asList (args).contains ("-pretty")){
+             int indexOfPretty = Arrays.asList (args).indexOf ("-pretty");
+             if (args[indexOfPretty + 1].endsWith (".txt")) {
+                 isPrettyFile = true;
+             } else if(!args[indexOfPretty + 1].equals ("-")){
+                 throw new InvalidOptionException ("The pretty option must be followed with a filename or - :" + args[indexOfPretty + 1]);
+             }
+
+         }
+
+         return isPrettyFile;
+     }
+
+    /**
+     *
+     * @param
+     * @param prettyPrintToFile
+     * @param options
+     * @return
+     */
+     static int getStartPoint( Boolean prettyPrintToFile , ArrayList options,ArrayList nonOptions ,ArrayList files){
+         int startPt = 0;
+         if(options.contains ("-textFile") && options.contains ("-pretty")){
+             startPt = options.size () + 2;
+         } else if(options.contains ("-pretty")){
+             startPt = options.size () + 1;
+         }else if(options.contains ("-textFile")){
+             startPt = options.size () + 1;
+         }
+         else{
+             startPt = options.size ();
+         }
+         return startPt;
+     }
     /**
      * @param arg : The command line argument.
      * @throws InvalidArgumentFormatException : Argument format is wrong exception
@@ -152,7 +197,7 @@ public class PhoneCallHelper {
      *                                        when the argument doesnt have the correct format with an appropriate message.
      */
     static void checkValidArgumentFormat(String arg) {
-        if (arg.startsWith ("-")) {
+        if (arg.length () > 1 && arg.startsWith ("-")) {
             throw new InvalidArgumentFormatException ("Invalid Argument : Argument cannot start with a -  :" + arg);
         }
     }
@@ -170,7 +215,6 @@ public class PhoneCallHelper {
         }
 
     }
-
     /**
      * @param caller : The phone number of the caller.
      * @param callee : The phone number of the callee.
@@ -185,7 +229,6 @@ public class PhoneCallHelper {
         }
 
     }
-
     /**
      *
      * @param ampm : the am/pm argument from the command line
@@ -202,14 +245,11 @@ public class PhoneCallHelper {
      *                                     is "yyyy/MM/dd " . If the dates are in any format other than the specified one , an exception is thrown with the appropriate message.
      */
      static void checkDateFormat(String arg) {
-
-        SimpleDateFormat sdf = new SimpleDateFormat ("MM/dd/yyyy", Locale.US);
+         SimpleDateFormat sdf = new SimpleDateFormat ("MM/dd/yyyy", Locale.US);
         sdf.setLenient (false);
         if (!arg.matches ("\\d{2}/\\d{2}/\\d{4}"))
             throw new InvalidDateAndTimeException ("Invalid Date Format , Usage : MM/dd/yyyy  " + arg);
-
         try {
-
             Date date = sdf.parse (arg);
         } catch (ParseException pe) {
             throw new InvalidDateAndTimeException ("Invalid Date , Usage : MM/dd/yyyy  " + arg);
@@ -233,22 +273,16 @@ public class PhoneCallHelper {
         SimpleDateFormat sdf = new SimpleDateFormat ("hh:mm a", Locale.US);
         String callTime = time + ' ' + am_pm;
         if (!callTime.matches (("(1[012]|0[1-9]):[0-5][0-9](\\s)?(?i)(am|pm)")))
-            throw new InvalidDateAndTimeException ("Invalid time format , Usage hh:mm :" + callTime);
-
+            throw new InvalidDateAndTimeException ("Invalid time format , Time must be in 12 hr format:" + callTime);
         try {
             Date date = sdf.parse (callTime);
-
-        } catch (DateTimeParseException dpe) {
-            throw new InvalidDateAndTimeException ("Invalid time , Usage : HH:mm " + callTime);
-        } catch (ParseException e) {
+        } catch (DateTimeParseException  | ParseException  dpe) {
             throw new InvalidDateAndTimeException ("Invalid time , Usage : HH:mm " + callTime);
         } catch (Exception e) {
             throw new InvalidDateAndTimeException ("Invalid time , Usage : HH:mm " + callTime);
         }
 
     }
-
-
 
     /**
      *
@@ -261,10 +295,8 @@ public class PhoneCallHelper {
      * stating appropriate reason is thrown.
      */
       static void checkDateDifference(String startDate ,String startTime, String endDate, String endTime ){
-
          String strDate = startDate + " " + startTime;
          String eDate = endDate + " " + endTime;
-
          SimpleDateFormat sdf = new SimpleDateFormat ("mm/dd/yyyy hh:mm a" ,Locale.US);
          sdf.setLenient (false);
          try {
@@ -274,10 +306,10 @@ public class PhoneCallHelper {
                  long diff = d2.getTime () - d1.getTime ();
                  long diff1 = cur_date.getTime () - d2.getTime ();
               if (diff < 0) {
-                  throw new InvalidDateAndTimeException ("Invalid Dates , Start Date should be before end date  " + strDate + " " + eDate);
+                  throw new InvalidDateAndTimeException ("Invalid Dates , Start Date : "+strDate +" should be before end date : " + eDate);
               }
               else if (diff1 < 0) {
-                  throw  new InvalidDateAndTimeException ("Invalid end date , end date should be before today!!  " + eDate);
+                  throw  new InvalidDateAndTimeException ("Invalid end date , end date " + eDate +" should be before today!!  " );
               }
              }
               catch (ParseException e) {
@@ -293,18 +325,15 @@ public class PhoneCallHelper {
      * @param ampm  : am/pm of the phone call
      * @return  : the time formatted using simple date format
      *
-     * This method
      */
-
     static Date convertToDate(String date , String time , String ampm){
           Date sDate = null;
         try{
             SimpleDateFormat sdf = new SimpleDateFormat ("MM/dd/yyyy hh:mm aa");
             sdf.setLenient(false);
-            sDate = sdf.parse (date+' '+time+ ' '+ampm);
+            sDate = sdf.parse (date+' '+time+' '+ampm);
         }catch (ParseException pe){
             throw  new InvalidDateAndTimeException ("Invalid date , Usage : mm/dd/yyyy hh:mm aa \n" + date+' '+time+' '+ampm);
-
         }
       return sDate;
     }

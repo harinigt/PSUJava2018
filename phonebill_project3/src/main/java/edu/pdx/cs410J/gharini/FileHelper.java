@@ -1,6 +1,7 @@
 package edu.pdx.cs410J.gharini;
 
 import java.io.*;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -17,7 +18,6 @@ public class FileHelper {
      */
 
     public static void checkIfFileExistsAndCreateIfOtherwise(File phonebill) {
-
         try {
             if (phonebill.exists () && phonebill.isDirectory ()) {
                 throw new FileException ("This is a directory :" + phonebill);
@@ -38,7 +38,6 @@ public class FileHelper {
         } catch (IOException ie) {
             throw new FileException ("File doesn't exist and cannot be created here : " + phonebill);
         }
-
     }
 
     /**
@@ -50,7 +49,6 @@ public class FileHelper {
 
     public static String readFile(File phonebill, String customer) {
         StringBuilder contentBuilder = new StringBuilder ();
-
         try (BufferedReader br = new BufferedReader (new FileReader (phonebill))) {
             String sCurrentLine;
             while ((sCurrentLine = br.readLine ()) != null) {
@@ -167,27 +165,17 @@ public class FileHelper {
                             calleeNumber = PhoneCallHelper.getPhoneNumbers (val.trim ());
                             PhoneCallHelper.checkCallerAndCallee (callerNumber,calleeNumber);
                         }
-                        else if(startDate == null){
-                            PhoneCallHelper.checkValidArgumentFormat (val.trim ());
-                            PhoneCallHelper.checkDateFormat (getDate (val.trim ()));
-                            startDate = val;
+                        else if(startDate == null && startTime == null && startAmPm == null){
+                            dateTime = getDateTime (val);
+                            startDate = dateTime[0];
+                            startTime = dateTime[1];
+                            startAmPm = dateTime[2];
                         }
-                        else if(startTime == null & startAmPm == null){
-                            dateTime = getTimeAndAmPm ( getTime (val.trim ()));
-                            startTime = dateTime[0];
-                            PhoneCallHelper.checkAmPmForCase (dateTime[1].toLowerCase ());
-                            startAmPm = dateTime[1];
-                        }
-                        else if(endDate == null){
-                            PhoneCallHelper.checkValidArgumentFormat (val.trim ());
-                            PhoneCallHelper.checkDateFormat (getDate (val.trim ()));
-                            endDate = val;
-                        }
-                        else if(endTime == null & endAmPm == null){
-                            dateTime = getTimeAndAmPm (getTime (val.trim ()));
-                            endTime = dateTime[0];
-                            PhoneCallHelper.checkAmPmForCase (dateTime[1].toLowerCase ());
-                            endAmPm = dateTime[1];
+                        else if(endDate == null && endTime == null && endAmPm == null){
+                            dateTime = getDateTime (val);
+                            endDate = dateTime[0];
+                            endTime = dateTime[1];
+                            endAmPm = dateTime[2];
                         }
                     }catch(InvalidArgumentFormatException |InvalidPhoneNumberException| InvalidDateAndTimeException | SameCallerAndCalleeException ex){
                         PhoneCallHelper.printErrorMessageAndExit ("The Content on the file is corrupted" +"\n" + ex.getMessage () );
@@ -198,6 +186,20 @@ public class FileHelper {
             }
         }
         return bill;
+    }
+
+    /**
+     *
+     * @param val
+     * @return
+     */
+
+    private static String[] getDateTime(String val) {
+        String[] dateTime;PhoneCallHelper.checkValidArgumentFormat (val.trim ());
+        dateTime = val.split (" ");
+        PhoneCallHelper.checkDateFormat (dateTime[0].trim ());
+        PhoneCallHelper.checkTimeFormat (dateTime[1].trim (),dateTime[2].trim ());
+        return dateTime;
     }
 
     /**
@@ -216,8 +218,8 @@ public class FileHelper {
 
     /**
      *
-     * @param date
-     * @return
+     * @param date : the date as string
+     * @return  : the date converted to the format mm/dd/yyyy
      */
    private static String getDate(String date){
         Date sDate ;
@@ -235,10 +237,10 @@ public class FileHelper {
 
     /**
      *
-     * @param time
-     * @return
+     * @param time  : The time as a string
+     * @return  : the time converted to the format hh:mm a
      */
-   private static  String getTime(String time){
+   private static  String gettTime(String time){
         Date sTime ;
         String callTime ;
         try{
@@ -251,5 +253,55 @@ public class FileHelper {
         }
         return callTime;
 
+    }
+    /**
+     *
+     * @param sdate  : The start time of the phone call
+     * @param edate   : the end time of the phone call
+     * @return the call duration in minutes.
+     */
+    private static long getDurationOfcallInMinutes(Date sdate  , Date edate){
+       long diffInMilliSec = edate.getTime () - sdate.getTime ();
+       long diffInMinutes = diffInMilliSec/(1000*60);
+       return diffInMinutes;
+    }
+
+    /**
+     *@param bill : the phone bill with all the phone calls
+     * @return  : The sorted set of the phone calls
+     */
+    private  static SortedSet<PhoneCall> getSortedSet(PhoneBill bill) {
+        SortedSet<PhoneCall> sortedCalls = new TreeSet<> (bill.getPhoneCalls ());
+        return sortedCalls;
+    }
+
+    public static String getPrettyContent(PhoneBill bill){
+        String prettyContent = null;
+        SortedSet<PhoneCall> sortedCalls = getSortedSet (bill);
+        prettyContent = " The phone bill of the customer \n";
+        prettyContent+= "----------------------------------------------------------------------------------\n";
+        prettyContent += "*Name of the customer :\t\t" + bill.getCustomer () + "\n\n";
+        for(PhoneCall call : sortedCalls){
+            prettyContent+= "----------------------------------------------------------------------------------\n";
+            prettyContent+="*Phone call from\t" + call.getCaller () + "\tto\t"+ call.getCallee () + "\n";
+            prettyContent+="*\t\t\ton\t" +  getPrettyDateTime (call.getStartTime ()) + "\tto\t" +  getPrettyDateTime (call.getEndTime ())+"\n";
+            prettyContent+= "----------------------------------------------------------------------------------\n";
+            prettyContent+="*The call duration was\t "+ getDurationOfcallInMinutes (call.getStartTime (),call.getEndTime ()) +"\tminutes\n";
+            prettyContent+= "----------------------------------------------------------------------------------\n";
+        }
+       return prettyContent;
+    }
+
+    /**
+     *
+     * @param date
+     * @return
+     */
+
+    public static String getPrettyDateTime(Date date)  {
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd''yyyy 'at' hh:mm aa",Locale.US);
+        sdf.setLenient (false);
+        String sMyDate = sdf.format (date);
+        return sMyDate;
     }
 }

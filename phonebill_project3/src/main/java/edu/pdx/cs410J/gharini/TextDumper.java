@@ -1,10 +1,10 @@
 package edu.pdx.cs410J.gharini;
 import edu.pdx.cs410J.PhoneBillDumper;
-
 import java.io.IOException;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.text.SimpleDateFormat;
 
 public class TextDumper implements PhoneBillDumper<PhoneBill> {
 
@@ -27,11 +27,11 @@ public class TextDumper implements PhoneBillDumper<PhoneBill> {
     @Override
     public void dump(PhoneBill phoneBill) throws IOException {
         FileHelper.checkIfFileExistsAndCreateIfOtherwise (this.file);
-
         BufferedWriter bw = null;
         FileWriter fw = null;
         String temp = FileHelper.readFile (this.file ,this.customer);
         try{
+            SimpleDateFormat sdf = new SimpleDateFormat ("MM/dd/yyyy hh:mm a");
             fw = new FileWriter(this.file,true);
             bw = new BufferedWriter(fw);
             bw.write(phoneBill.getCustomer ());
@@ -40,12 +40,12 @@ public class TextDumper implements PhoneBillDumper<PhoneBill> {
             bw.write (",");
             bw.write (this.call.getCallee ());
             bw.write (",");
-            bw.write (this.call.getStartTimeString ());
+            bw.write (sdf.format (this.call.getStartTime ()));
             bw.write (",");
-            bw.write (this.call.getEndTimeString ());
+            bw.write (sdf.format (this.call.getEndTime ()));
             bw.write ("\n");
         }catch (IOException e){
-              e.printStackTrace ();
+              throw  new FileException ("The file could not be writted : \n" + e.getMessage ());
         } finally {
             bw.close();
             fw.close();

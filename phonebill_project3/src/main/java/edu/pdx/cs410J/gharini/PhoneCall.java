@@ -63,17 +63,14 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
       if(this.getStartTime ().after (o.getStartTime ())){
           return 1;
       }
-      if(this.getStartTime ().before (o.getStartTime ())){
+      else if(this.getStartTime ().before (o.getStartTime ())){
           return -1;
       }
 
-      if(this.getStartTime ().compareTo (o.getStartTime ()) == 0){
-          if(this.getCaller ().compareTo (o.getCaller ()) > 0){
-              return  1;
-          }
-          if(this.getCaller ().compareTo (o.getCaller ()) < 0){
-              return  -1;
-          }
+      else if(this.getStartTime ().equals (o.getStartTime ())){
+
+          return (this.getCaller ().compareTo (o.getCaller ()));
+
       }
     return 0;
   }
