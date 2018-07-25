@@ -148,8 +148,8 @@ public class PhoneCallHelper {
 
     /**
      *
-     * @param args
-     * @param
+     * @param args : the command line arguments.
+     * This method checks if the pretty content is to be written on to the file or standard output.
      */
 
      static Boolean checkifPrettyPrintToFile(String[] args ) {
@@ -170,9 +170,9 @@ public class PhoneCallHelper {
     /**
      *
      * @param
-     * @param prettyPrintToFile
-     * @param options
-     * @return
+     * @param prettyPrintToFile : Boolean value that determines if the prety is to be written on to the file or standard output.
+     * @param options : the optional arguments.
+     * @return : the index of the argument where the phone call attributes begin.
      */
      static int getStartPoint( Boolean prettyPrintToFile , ArrayList options,ArrayList nonOptions ,ArrayList files){
          int startPt = 0;

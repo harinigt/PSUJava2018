@@ -8,6 +8,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * This class implements phonebill and dumps the pretty content on to a file/ standard output as requested
+ * on the command line argument.
+ */
 public class PrettyPrinter implements PhoneBillDumper {
     private File file ;
     private String customer;
@@ -15,9 +19,9 @@ public class PrettyPrinter implements PhoneBillDumper {
 
     /**
      *
-     * @param path
-     * @param bill
-     * @param customer
+     * @param path : the path to the pretty file
+     * @param bill : the phone bill(calls read from the file)
+     * @param customer : the customer of the phone bill.
      */
     public PrettyPrinter(String path , PhoneBill bill , String customer){
         this.bill= bill;
@@ -27,8 +31,8 @@ public class PrettyPrinter implements PhoneBillDumper {
 
     /**
      *
-     * @param bill
-     * @param customer
+     * @param bill : the phone bill with phone calls
+     * @param customer : the customer of the phone bill.
      */
     public PrettyPrinter(PhoneBill bill , String customer){
         this.bill= bill;
@@ -37,7 +41,7 @@ public class PrettyPrinter implements PhoneBillDumper {
 
     /**
      *
-     * @param bill
+     * @param bill : the phone bill that is written on to the file in pretty format
      * @throws IOException
      */
     @Override
@@ -62,9 +66,9 @@ public class PrettyPrinter implements PhoneBillDumper {
     /**
      *
      * @param bill
+     * This method writes the pretty content on to the standard output.
      */
     public void dumpPrettyContentToStandardOut(AbstractPhoneBill bill){
-        String prettyContent  = FileHelper.getPrettyContent ((PhoneBill)bill);
         System.out.println (FileHelper.getPrettyContent ((PhoneBill)bill));
 
     }

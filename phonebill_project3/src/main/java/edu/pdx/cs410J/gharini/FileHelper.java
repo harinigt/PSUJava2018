@@ -1,8 +1,6 @@
 package edu.pdx.cs410J.gharini;
 
 import java.io.*;
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -187,8 +185,8 @@ public class FileHelper {
     }
     /**
      *
-     * @param val
-     * @return
+     * @param val : The date and time value as read from the file
+     * @return : the date and time validated and formatted to specified format.
      */
 
     private static String[] getDateTime(String val) {
@@ -199,58 +197,6 @@ public class FileHelper {
         return dateTime;
     }
 
-    /**
-     *
-     * @param val : the string with time and am/pm of the phonecall read from file
-     * @return : the strings checked for valid time and time format.
-     */
-    private static String[] getTimeAndAmPm(String val) {
-        String[] dateTime;
-        dateTime = val.trim().split (" ");
-        PhoneCallHelper.checkValidArgumentFormat (dateTime[0]);
-        PhoneCallHelper.checkValidArgumentFormat (dateTime[1]);
-        PhoneCallHelper.checkTimeFormat (dateTime[0] , dateTime[1]);
-        return dateTime;
-    }
-
-    /**
-     *
-     * @param date : the date as string
-     * @return  : the date converted to the format mm/dd/yyyy
-     */
-   private static String getDate(String date){
-        Date sDate ;
-        String callDate;
-        try{
-            SimpleDateFormat sdf = new SimpleDateFormat ("MM/dd/yyyy");
-            sdf.setLenient(false);
-            sDate = sdf.parse (date);
-            callDate = sdf.format (sDate);
-        }catch (ParseException pe){
-            throw  new InvalidDateAndTimeException ("Invalid date , Usage : mm/dd/yyyy hh:mm a \n" + date);
-        }
-        return callDate;
-    }
-
-    /**
-     *
-     * @param time  : The time as a string
-     * @return  : the time converted to the format hh:mm a
-     */
-   private static  String gettTime(String time){
-        Date sTime ;
-        String callTime ;
-        try{
-            SimpleDateFormat sdf = new SimpleDateFormat ("hh:mm a");
-            sdf.setLenient(false);
-            sTime = sdf.parse (time);
-            callTime = sdf.format (sTime);
-        }catch (ParseException pe){
-            throw  new InvalidDateAndTimeException ("Invalid date , Usage : mm/dd/yyyy hh:mm aa \n" + time);
-        }
-        return callTime;
-
-    }
     /**
      *
      * @param sdate  : The start time of the phone call
@@ -271,6 +217,13 @@ public class FileHelper {
         SortedSet<PhoneCall> sortedCalls = new TreeSet<> (bill.getPhoneCalls ());
         return sortedCalls;
     }
+
+    /**
+     *
+     * @param bill : The phonebill of a customer
+     * @return : the bill with phone calls sorted in chronological order of time
+     * formatted as a pretty content
+     */
 
     public static String getPrettyContent(PhoneBill bill){
         String prettyContent = null;
