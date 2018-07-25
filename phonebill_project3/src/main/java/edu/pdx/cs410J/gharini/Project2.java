@@ -143,22 +143,22 @@ public class Project2 {
                     prettyFile = args[index + 1];
                     if (!new File (prettyFile).isAbsolute ()) {
                         filePath = new File("").getAbsolutePath ();
-                        TextDumper dumper = new TextDumper (filePath.concat ("/"+file), call, customer_name);
-                        dumper.dump (bill);
-                        TextParser parser = new TextParser (filePath.concat ("/"+file), customer_name);
-                        billFromFile = parser.parse ();
+//                        TextDumper dumper = new TextDumper (filePath.concat ("/"+file), call, customer_name);
+//                        dumper.dump (bill);
+//                        TextParser parser = new TextParser (filePath.concat ("/"+file), customer_name);
+//                        billFromFile = parser.parse ();
                         PrettyPrinter pretty_printer = new PrettyPrinter (prettyFile, billFromFile, customer_name);
                         pretty_printer.dump (billFromFile);
                     }
                     else{
-                        TextDumper dumper = new TextDumper (file,call,customer_name);
-                        dumper.dump (bill);
-                        TextParser parser = new TextParser (file,customer_name);
-                        billFromFile = parser.parse ();
+//                        TextDumper dumper = new TextDumper (file,call,customer_name);
+//                        dumper.dump (bill);
+//                        TextParser parser = new TextParser (file,customer_name);
+//                        billFromFile = parser.parse ();
                         PrettyPrinter pretty_printer = new PrettyPrinter (prettyFile, billFromFile, customer_name);
                         pretty_printer.dump (billFromFile);
                     }
-                } catch (IOException|ParserException | FileException e){
+                } catch (IOException | FileException e){
                     PhoneCallHelper.printErrorMessageAndExit (e.getMessage ());
                 }
             }
