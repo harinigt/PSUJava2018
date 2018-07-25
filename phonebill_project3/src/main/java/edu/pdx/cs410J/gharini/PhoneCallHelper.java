@@ -272,7 +272,10 @@ public class PhoneCallHelper {
      static void checkTimeFormat(String time , String am_pm) {
         SimpleDateFormat sdf = new SimpleDateFormat ("hh:mm a", Locale.US);
         String callTime = time + ' ' + am_pm;
-        if (!callTime.matches (("(1[012]|0[1-9]):[0-5][0-9](\\s)?(?i)(am|pm)")))
+        // ()
+        String pattrn = "(1[012]|[1-9]):[0-5][0-9](\\s)?(?i)(am|pm)";
+                //"\\b(?:[01]?\\d|2[0-2]):[0-5][0-9](\\s)?(?i)(am|pm)";
+        if (!callTime.matches (pattrn))
             throw new InvalidDateAndTimeException ("Invalid time format , Time must be in 12 hr format:" + callTime);
         try {
             Date date = sdf.parse (callTime);

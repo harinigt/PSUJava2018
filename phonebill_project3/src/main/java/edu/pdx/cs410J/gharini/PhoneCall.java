@@ -6,11 +6,30 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * The phone call class . It holds all the details of the phone call.
+ */
+
 public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall> {
+    /**
+     * customer : customer of the phone call.
+     */
   private String customer ;
+    /**
+     * caller number : The phone number of the caller
+     */
   private String callerNumber ;
+    /**
+     * caller number : The phone number of the callee
+     */
   private String calleeNumber ;
+    /**
+     * startTime : The start date and time of the phone call
+     */
   private Date startTime;
+    /**
+     * endTime : The end date and time of the phone call
+     */
   private Date endTime;
 
   public PhoneCall( String customer,String callerNumber , String calleeNumber,Date startTime,

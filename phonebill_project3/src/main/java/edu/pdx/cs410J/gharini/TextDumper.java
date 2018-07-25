@@ -31,7 +31,7 @@ public class TextDumper implements PhoneBillDumper<PhoneBill> {
         FileWriter fw = null;
         String temp = FileHelper.readFile (this.file ,this.customer);
         try{
-            SimpleDateFormat sdf = new SimpleDateFormat ("MM/dd/yyyy hh:mm a");
+            SimpleDateFormat sdf = new SimpleDateFormat ("MM/dd/yyyy h:mm a");
             fw = new FileWriter(this.file,true);
             bw = new BufferedWriter(fw);
             bw.write(phoneBill.getCustomer ());

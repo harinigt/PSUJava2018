@@ -4,10 +4,15 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 public class Project3 {
 
-
+    /**
+     *
+     * @param args : Entry point for the project. The main method parses all command line arguments and validates the arguments. It also
+     *             performs suitable actions for different options specified in the command line.
+     */
     public static void main(String[] args){
 
         String customer_name = null;
@@ -20,18 +25,30 @@ public class Project3 {
         String startAmPm = null;
         String endAmPm = null;
         String file = null;
-        String prettyFile = null;
-        Boolean prettyPrintToFile = false;
-        ArrayList<String> options = new ArrayList<>();
-        ArrayList<String> nonOptions = new ArrayList<>();
-        ArrayList<String> files = new ArrayList<>();
-        ArrayList<ArrayList<String>> list = null;
+        Date finalStartTime = null;
+        Date finalEndTime = null;
+        String prettyFile;
+        Boolean prettyPrintToFile ;
+        ArrayList<String> options = null;
+        ArrayList<String> nonOptions =null;
+        ArrayList<String> files=null ;
+        ArrayList<ArrayList<String>> list;
+        PhoneCall call ;
+        PhoneBill bill ;
+        PhoneBill billFromFile = null;
+        String filePath;
         try{
             list = PhoneCallHelper.loadOptions(args);
-            options = list.get(0);
-            nonOptions = list.get (1);
-            files = list.get (2);
-            int numOfOptions = options.size();
+            for(ArrayList a : list){
+                if(options == null){
+                    options = a;
+                }
+                else if(nonOptions==null){
+                    nonOptions = a;
+                }else if(files == null){
+                    files = a;
+                }
+            }
             int numOfNonOptions = nonOptions.size ();
             prettyPrintToFile =  PhoneCallHelper.checkifPrettyPrintToFile(args);
             PhoneCallHelper.checkNumOfArgs(numOfNonOptions,args ,prettyPrintToFile);
@@ -73,10 +90,76 @@ public class Project3 {
                     PhoneCallHelper.checkTimeFormat ( startTime, startAmPm );
                     PhoneCallHelper.checkTimeFormat ( endTime, endAmPm );
                     PhoneCallHelper.checkDateDifference (startDate, startTime + " "+startAmPm,endDate,endTime+ " " +endAmPm);
+                    finalStartTime = PhoneCallHelper.convertToDate (startDate,startTime,startAmPm);
+                    finalEndTime = PhoneCallHelper.convertToDate (endDate,endTime,endAmPm);
                 } else{
                     String msg = "Extraneous command line argument" ;
-                    PhoneCallHelper.printErrorMessageAndExit (msg+" : "+args
-                    [i]);
+                    PhoneCallHelper.printErrorMessageAndExit (msg+" : "+args[i]);
+                }
+            }
+            call = new PhoneCall(customer_name,callerNumber,calleeNumber,finalStartTime,finalEndTime);
+            bill = new PhoneBill(customer_name);
+            bill.addPhoneCall (call);
+            if(options.contains ("-print")){
+                System.out.println ("_______________________________________________________________________________________________________________");
+                PhoneCallHelper.printCall (call);
+                System.out.println ("_______________________________________________________________________________________________________________");
+            }
+            if(options.contains ("-README")){
+                System.out.println ("_______________________________________________________________________________________________________________");
+                PhoneCallHelper.readme ();
+                System.out.println ("_______________________________________________________________________________________________________________");
+            }
+            if(options.contains ("-textFile")){
+                try {
+                    if(!new File (file).isAbsolute ()){
+                        filePath = new File("").getAbsolutePath ();
+                        TextDumper dumper = new TextDumper (filePath.concat ("/"+file),call,customer_name);
+                        dumper.dump (bill);
+                        TextParser parser = new TextParser (filePath.concat ("/"+file),customer_name);
+                        billFromFile = parser.parse ();
+                    } else{
+                        System.out.println (file);
+                        TextDumper dumper = new TextDumper (file,call,customer_name);
+                        dumper.dump (bill);
+                        TextParser parser = new TextParser (file,customer_name);
+                        billFromFile = parser.parse ();
+                    }
+                    //System.out.println ("___________________________________________________________________________________________________________");
+                    //System.out.println ("\nPhone Bill From the file : \n" + billFromFile.getPhoneCalls ());
+                    //System.out.println ("___________________________________________________________________________________________________________");
+                } catch (IOException |ParserException | FileException e){
+                    PhoneCallHelper.printErrorMessageAndExit (e.getMessage ());
+                    e.printStackTrace ();
+                }
+            }
+            if(options.contains ("-pretty") && nonOptions.contains ("-")) {
+                PrettyPrinter pretty_printer = new PrettyPrinter (billFromFile,customer_name);
+                pretty_printer.dumpPrettyContentToStandardOut (billFromFile);
+            }
+            if(prettyPrintToFile){
+                try {
+                    int index = Arrays.asList (args).indexOf ("-pretty");
+                    prettyFile = args[index + 1];
+                    if (!new File (prettyFile).isAbsolute ()) {
+                        filePath = new File("").getAbsolutePath ();
+                        TextDumper dumper = new TextDumper (filePath.concat ("/"+file), call, customer_name);
+                        dumper.dump (bill);
+                        TextParser parser = new TextParser (filePath.concat ("/"+file), customer_name);
+                        billFromFile = parser.parse ();
+                        PrettyPrinter pretty_printer = new PrettyPrinter (prettyFile, billFromFile, customer_name);
+                        pretty_printer.dump (billFromFile);
+                    }
+                    else{
+                        TextDumper dumper = new TextDumper (file,call,customer_name);
+                        dumper.dump (bill);
+                        TextParser parser = new TextParser (file,customer_name);
+                        billFromFile = parser.parse ();
+                        PrettyPrinter pretty_printer = new PrettyPrinter (prettyFile, billFromFile, customer_name);
+                        pretty_printer.dump (billFromFile);
+                    }
+                } catch (IOException|ParserException | FileException e){
+                    PhoneCallHelper.printErrorMessageAndExit (e.getMessage ());
                 }
             }
         }
@@ -87,81 +170,7 @@ public class Project3 {
         catch(Exception e){
             PhoneCallHelper.printErrorMessageAndExit (e.getMessage ());
         }
-        PhoneCall call = new PhoneCall(customer_name,callerNumber,calleeNumber,PhoneCallHelper.convertToDate (startDate,startTime,startAmPm),
-                PhoneCallHelper.convertToDate (endDate,endTime,endAmPm));
-        PhoneBill bill = new PhoneBill(customer_name);
 
-        PhoneBill billFromFile;
-        String filePath = null;
-        bill.addPhoneCall (call);
-
-        if(options.contains ("-print")){
-            System.out.println ("_______________________________________________________________________________________________________________");
-            PhoneCallHelper.printCall (call);
-            System.out.println ("_______________________________________________________________________________________________________________");
-        }
-
-        if(options.contains ("--README")){
-            System.out.println ("_______________________________________________________________________________________________________________");
-            PhoneCallHelper.readme ();
-            System.out.println ("_______________________________________________________________________________________________________________");
-        }
-
-        if(options.contains ("-textFile")){
-            try {
-                if(!new File (file).isAbsolute ()){
-                    filePath = new File("").getAbsolutePath ();
-                    TextDumper dumper = new TextDumper (filePath.concat ("/"+file),call,customer_name);
-                    dumper.dump (bill);
-                    TextParser parser = new TextParser (filePath.concat ("/"+file),customer_name);
-                    billFromFile = parser.parse ();
-                    // System.out.println (FileHelper.getPrettyContent (billFromFile));
-                } else{
-                    System.out.println (file);
-                    TextDumper dumper = new TextDumper (file,call,customer_name);
-                    dumper.dump (bill);
-                    TextParser parser = new TextParser (file,customer_name);
-                    billFromFile = parser.parse ();
-                }
-                //System.out.println ("___________________________________________________________________________________________________________");
-                //System.out.println ("\nPhone Bill From the file : \n" + billFromFile.getPhoneCalls ());
-                //System.out.println ("___________________________________________________________________________________________________________");
-            } catch (IOException |ParserException | FileException e){
-                PhoneCallHelper.printErrorMessageAndExit (e.getMessage ());
-            }
-        }
-
-        if(options.contains ("-pretty") && nonOptions.contains ("-")) {
-            PrettyPrinter pretty_printer = new PrettyPrinter (bill,customer_name);
-            pretty_printer.dumpPrettyContentToStandardOut (bill);
-        }
-
-        if(prettyPrintToFile){
-            try {
-                int index = Arrays.asList (args).indexOf ("-pretty");
-                prettyFile = args[index + 1];
-                if (!new File (prettyFile).isAbsolute ()) {
-                    filePath = new File("").getAbsolutePath ();
-                    TextDumper dumper = new TextDumper (filePath.concat ("/"+file), call, customer_name);
-                    dumper.dump (bill);
-                    TextParser parser = new TextParser (filePath.concat ("/"+file), customer_name);
-                    billFromFile = parser.parse ();
-                    PrettyPrinter pretty_printer = new PrettyPrinter (prettyFile, billFromFile, customer_name);
-                    pretty_printer.dump (billFromFile);
-                }
-                else{
-                    TextDumper dumper = new TextDumper (file,call,customer_name);
-                    dumper.dump (bill);
-                    TextParser parser = new TextParser (file,customer_name);
-                    billFromFile = parser.parse ();
-                    PrettyPrinter pretty_printer = new PrettyPrinter (prettyFile, billFromFile, customer_name);
-                    pretty_printer.dump (billFromFile);
-                }
-            } catch (IOException|ParserException | FileException e){
-                PhoneCallHelper.printErrorMessageAndExit (e.getMessage ());
-        }
-
-        }
         System.exit(1);
     }
 }

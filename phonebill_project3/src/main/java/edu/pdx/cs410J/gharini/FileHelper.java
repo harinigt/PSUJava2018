@@ -249,7 +249,7 @@ public class FileHelper {
      */
 
     public static String getPrettyDateTime(Date date)  {
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd''yyyy 'at' hh:mm aa",Locale.US);
+        SimpleDateFormat sdf = new SimpleDateFormat(" EEE , MMM dd''yyyy 'at' h:mm aa",Locale.US);
         sdf.setLenient (false);
         String sMyDate = sdf.format (date);
         return sMyDate;
