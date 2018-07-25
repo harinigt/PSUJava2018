@@ -100,16 +100,7 @@ public class Project2 {
             call = new PhoneCall(customer_name,callerNumber,calleeNumber,finalStartTime,finalEndTime);
             bill = new PhoneBill(customer_name);
             bill.addPhoneCall (call);
-            if(options.contains ("-print")){
-                System.out.println ("_______________________________________________________________________________________________________________");
-                PhoneCallHelper.printCall (call);
-                System.out.println ("_______________________________________________________________________________________________________________");
-            }
-            if(options.contains ("-README")){
-                System.out.println ("_______________________________________________________________________________________________________________");
-                PhoneCallHelper.readme ();
-                System.out.println ("_______________________________________________________________________________________________________________");
-            }
+
             if(options.contains ("-textFile")){
                 try {
                     if(!new File (file).isAbsolute ()){
@@ -161,6 +152,16 @@ public class Project2 {
                 } catch (IOException | FileException e){
                     PhoneCallHelper.printErrorMessageAndExit (e.getMessage ());
                 }
+            }
+            if(options.contains ("-print")){
+                System.out.println ("_______________________________________________________________________________________________________________");
+                PhoneCallHelper.printCall (call);
+                System.out.println ("_______________________________________________________________________________________________________________");
+            }
+            if(options.contains ("-README")){
+                System.out.println ("_______________________________________________________________________________________________________________");
+                PhoneCallHelper.readme ();
+                System.out.println ("_______________________________________________________________________________________________________________");
             }
         }
         catch (InvalidArgumentFormatException|InvalidNumberOfArgumentsException|InvalidPhoneNumberException
