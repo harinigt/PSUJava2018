@@ -32,10 +32,10 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
      */
   private Date endTime = null;
 
-  public PhoneCall( String customer,String callerNumber , String calleeNumber,Date startTime,
+  public PhoneCall(String callerNumber , String calleeNumber,Date startTime,
                    Date endTime ) {
 
-    this.customer = customer;
+
     this.callerNumber = callerNumber;
     this.calleeNumber = calleeNumber;
     this.startTime = startTime;

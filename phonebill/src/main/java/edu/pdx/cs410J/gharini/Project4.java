@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -14,122 +17,201 @@ import java.util.Map;
  */
 public class Project4 {
 
-    public static final String MISSING_ARGS = "Missing command line arguments";
-
-    public static void main(String... args) {
+    public static void main(String[] args) {
         String hostName = null;
         String portString = null;
-        String word = null;
-        String definition = null;
+        String customer = null;
+        String callerNumber = null;
+        String calleeNumber = null;
+        String startDate = null;
+        String startTime =null;
+        String endDate =null;
+        String endTime = null;
+        String startAmPm = null;
+        String endAmPm = null;
+        Date finalStartTime = null;
+        Date finalEndTime = null;
+        ArrayList<String> options = null;
+        ArrayList<String> nonOptions =null;
+        ArrayList<ArrayList<String>> list;
+        PhoneCall call = null;
+        PhoneBill bill;
+        int port = 0;
 
-        for (String arg : args) {
-            if (hostName == null) {
-                hostName = arg;
+        try{
+            list = PhoneCallHelper.loadOptions(args);
+            for(ArrayList a : list) {
+                if (options == null) {
+                    options = a;
+                }
+                else if (nonOptions == null) {
+                    nonOptions = a;
+                }
+            }
+            if(options!=null && options.contains ("-README")){
+                PhoneCallHelper.readme ();
+                System.exit (1);
+            }
+            if(options!=null && (options.contains ("-host") || options.contains ("-port"))){
+                  PhoneCallHelper.checkHostAndPort (args);
+            }
+            if(options!=null && nonOptions!=null){
+                PhoneCallHelper.checkNumberOfArguments (args,nonOptions.size (),options.size (),options);
+            }
+            int hostIndex = Arrays.asList (args).indexOf ("-host");
+            int portIndex = Arrays.asList (args).indexOf ("-port");
+            hostName = args[hostIndex+1];
+            portString = args[portIndex +1];
+            port = Integer.parseInt (portString);
+            PhoneBillRestClient client = new PhoneBillRestClient (hostName,port);
+            int startPt = options.size ()+2;
+            if( !options.contains ("-search")){
 
-            } else if ( portString == null) {
-                portString = arg;
-
-            } else if (word == null) {
-                word = arg;
-
-            } else if (definition == null) {
-                definition = arg;
+                for(int i = startPt ; i < args.length ; i++){
+                    if(customer == null ){
+                        PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                        customer = args[i];
+                    }
+                    else if (callerNumber == null){
+                        callerNumber = PhoneCallHelper.getPhoneNumbers (args[i]);
+                    }
+                    else if (calleeNumber == null){
+                        calleeNumber = PhoneCallHelper.getPhoneNumbers (args[i]);
+                        PhoneCallHelper.checkCallerAndCallee (callerNumber,calleeNumber);
+                    }
+                    else if (startDate == null){
+                        PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                        PhoneCallHelper.checkDateFormat (args[i]);
+                        startDate = args[i];
+                    }
+                    else if (startTime == null){
+                        PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                        startTime = args[i];
+                    }
+                    else if (startAmPm == null){
+                        PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                        PhoneCallHelper.checkAmPmForCase (args[i]);
+                        startAmPm = args[i];
+                    }
+                    else if(endDate == null) {
+                        PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                        PhoneCallHelper.checkDateFormat (args[i]);
+                        endDate = args[i];
+                    }
+                    else if (endTime == null){
+                        PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                        endTime = args[i];
+                    }
+                    else if(endAmPm == null) {
+                        PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                        PhoneCallHelper.checkAmPmForCase (args[i]);
+                        endAmPm = args[i];
+                        PhoneCallHelper.checkTimeFormat ( startTime, startAmPm );
+                        PhoneCallHelper.checkTimeFormat ( endTime, endAmPm );
+                        PhoneCallHelper.checkDateDifference (startDate, startTime + " "+startAmPm,endDate,endTime+ " " +endAmPm);
+                        finalStartTime = PhoneCallHelper.convertToDate (startDate,startTime,startAmPm);
+                        finalEndTime = PhoneCallHelper.convertToDate (endDate,endTime,endAmPm);
+                    }
+                    else{
+                        String msg = "Extraneous command line argument" ;
+                        PhoneCallHelper.printErrorMessageAndExit (msg+" : "+args[i]);
+                    }
+                }
+                call = new PhoneCall(callerNumber,calleeNumber,finalStartTime,finalEndTime);
+                bill = new PhoneBill(customer);
+                bill.addPhoneCall (call);
 
             } else {
-                usage("Extraneous command line argument: " + arg);
+                for (int i = startPt; i < args.length; i++) {
+
+                    if (customer == null) {
+                        PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                        customer = args[i];
+                    }
+                    else if (startDate == null) {
+                        PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                        PhoneCallHelper.checkDateFormat (args[i]);
+                        startDate = args[i];
+                    }
+                    else if (startTime == null) {
+                        PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                        startTime = args[i];
+                    }
+                    else if (startAmPm == null) {
+                        PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                        PhoneCallHelper.checkAmPmForCase (args[i]);
+                        startAmPm = args[i];
+                    }
+                    else if (endDate == null) {
+                        PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                        PhoneCallHelper.checkDateFormat (args[i]);
+                        endDate = args[i];
+                    }
+                    else if (endTime == null) {
+                        PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                        endTime = args[i];
+                    }
+                    else if (endAmPm == null) {
+                        PhoneCallHelper.checkValidArgumentFormat (args[i]);
+                        PhoneCallHelper.checkAmPmForCase (args[i]);
+                        endAmPm = args[i];
+                        PhoneCallHelper.checkTimeFormat (startTime, startAmPm);
+                        PhoneCallHelper.checkTimeFormat (endTime, endAmPm);
+                        PhoneCallHelper.checkDateDifference (startDate, startTime + " " + startAmPm, endDate, endTime + " " + endAmPm);
+                        finalStartTime = PhoneCallHelper.convertToDate (startDate, startTime, startAmPm);
+                        finalEndTime = PhoneCallHelper.convertToDate (endDate, endTime, endAmPm);
+                    }
+                    else {
+                        String msg = "Extraneous command line argument";
+                        PhoneCallHelper.printErrorMessageAndExit (msg + " : " + args[i]);
+                    }
+
+                }
             }
-        }
-
-        if (hostName == null) {
-            usage( MISSING_ARGS );
-
-        } else if ( portString == null) {
-            usage( "Missing port" );
-        }
-
-        int port;
-        try {
-            port = Integer.parseInt( portString );
-            
-        } catch (NumberFormatException ex) {
-            usage("Port \"" + portString + "\" must be an integer");
-            return;
-        }
-
-        PhoneBillRestClient client = new PhoneBillRestClient(hostName, port);
-
-        String message;
-        try {
-            if (word == null) {
-                // Print all word/definition pairs
-                Map<String, String> dictionary = client.getAllDictionaryEntries();
-                StringWriter sw = new StringWriter();
-                Messages.formatDictionaryEntries(new PrintWriter(sw, true), dictionary);
-                message = sw.toString();
-
-            } else if (definition == null) {
-                // Print all dictionary entries
-                message = Messages.formatDictionaryEntry(word, client.getDefinition(word));
-
-            } else {
-                // Post the word/definition pair
-                client.addDictionaryEntry(word, definition);
-                message = Messages.definedWordAs(word, definition);
+            if(options.contains ("-host") && options.contains ("-port")){
+                try {
+                    if (options.contains ("-search")) {
+                        String st_time = startDate + " " + startTime + " " + startAmPm;
+                        String e_time = endDate + " " + endTime + " " + endAmPm;
+                        if(startDate==null || endDate==null){
+                            PhoneCallHelper.printErrorMessageAndExit ("Missing start/end times." +
+                                    "The -search option should have start and end times. ");
+                        }
+                        System.out.println (client.searchPhonebill (customer, st_time, e_time));
+                    } else if (nonOptions.size () == 3 && options.size ()==2) {
+                        System.out.println (client.getPrettyPhoneBill (customer));
+                    }
+                    else{
+                        if(call!=null){
+                            String st_time = startDate + " " + startTime + " " + startAmPm;
+                            String e_time = endDate + " " + endTime + " " + endAmPm;
+                          client.addPhoneCall (customer,callerNumber,calleeNumber,st_time,e_time);
+                          System.out.println ("Phone call created and added to the phone bill");
+                        }
+                    }
+                } catch (IOException  e){
+                    PhoneCallHelper.printErrorMessageAndExit ("Error while fetching content :\n" + e.getMessage ());
+                } catch (Exception e){
+                    PhoneCallHelper.printErrorMessageAndExit (e.getMessage ());
+                }
             }
 
-        } catch ( IOException ex ) {
-            error("While contacting server: " + ex);
-            return;
+            if(options.contains ("-print")){
+                System.out.println ("__________________________________________________________________________________________");
+                PhoneCallHelper.printCall (call);
+                System.out.println ("__________________________________________________________________________________________");
+            }
+
+        } catch (InvalidArgumentFormatException|InvalidNumberOfArgumentsException|InvalidPhoneNumberException
+                |InvalidDateAndTimeException|SameCallerAndCalleeException| InvalidOptionException ex) {
+            PhoneCallHelper.printErrorMessageAndExit (ex.getMessage ());
         }
-
-        System.out.println(message);
-
-        System.exit(0);
-    }
-
-    /**
-     * Makes sure that the give response has the expected HTTP status code
-     * @param code The expected status code
-     * @param response The response from the server
-     */
-    private static void checkResponseCode( int code, HttpRequestHelper.Response response )
-    {
-        if (response.getCode() != code) {
-            error(String.format("Expected HTTP code %d, got code %d.\n\n%s", code,
-                                response.getCode(), response.getContent()));
+        catch(Exception e){
+            PhoneCallHelper.printErrorMessageAndExit (e.getMessage ());
         }
-    }
+    System.exit(1);
+   }
 
-    private static void error( String message )
-    {
-        PrintStream err = System.err;
-        err.println("** " + message);
 
-        System.exit(1);
-    }
 
-    /**
-     * Prints usage information for this program and exits
-     * @param message An error message to print
-     */
-    private static void usage( String message )
-    {
-        PrintStream err = System.err;
-        err.println("** " + message);
-        err.println();
-        err.println("usage: java Project4 host port [word] [definition]");
-        err.println("  host         Host of web server");
-        err.println("  port         Port of web server");
-        err.println("  word         Word in dictionary");
-        err.println("  definition   Definition of word");
-        err.println();
-        err.println("This simple program posts words and their definitions");
-        err.println("to the server.");
-        err.println("If no definition is specified, then the word's definition");
-        err.println("is printed.");
-        err.println("If no word is specified, all dictionary entries are printed");
-        err.println();
-
-        System.exit(1);
-    }
 }

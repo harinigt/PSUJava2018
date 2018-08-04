@@ -22,10 +22,10 @@ public class Messages
         return String.format("  %s : %s", word, definition);
     }
 
-    public static String missingRequiredParameter( String parameterName )
-    {
-        return String.format("The required parameter \"%s\" is missing", parameterName);
-    }
+//    public static String missingRequiredParameter( String parameterName )
+//    {
+//        return String.format("The required parameter \"%s\" is missing", parameterName);
+//    }
 
     public static String definedWordAs(String word, String definition )
     {

@@ -34,19 +34,16 @@ public class PhoneCallHelper {
      */
     static void readme() {
         String readme = "Course    : Advanced Java Programming.\nName      : Harini Gowdagere Tulaisdas.\nemail     : gharini@pdx.edu\n";
-        readme += "Project   : Project3\nObjective :\n";
-        readme += "\t\tThe project 3 to implement a simple Phone Call Details generation has two classes phoneCall and phoneBill that represents the details of a phone call and phone bill respectively. " +
-                "The phoneCall class has fields to hold the details of a phone call such as  customer name , caller (Phone number) , callee(phone number) ,  the start and end time of the call. " +
-                "The phone bill has a collection of phone calls and the name of the customer \n" +
-                "\n" +
-                "\t\tThe application is invoked in the Project3 class. The Project3 class parses the command line arguments for the input." +
-                " The command line arguments has the format [options] <args>. The [options] has 4 choices, -README , -print , -textFile filename (to write the" +
-                " phone calls on to a file) , -pretty -(to pretty print on standard out)" +
-                " and -pretty file (to pretty print on to a file) . The other arguments are phone numbers of the caller and callee and " +
-                " the start and end times of the phone call. The start and end times have a 12 hr format.  The command line can have all the options or no options  and no arguments or all arguments for " +
-                " a phone call. The program checks for the validity of all the arguments and failure to confirm validity results in a friendly error message. " +
-                "\n\n" +
-                "\t\tThe -print option in the input prints the phone call and the -readme option prints the readme information.  ";
+        readme += "Project   : Project4\nObjective :\n";
+        readme += "\t\tThe Project 4 involves developing a a REST - ful Phone Bill Web Service. The Project 4 is built on Project 1,2 and 3. The web application allows adding the phone call , " +
+                "  searching for all the phone calls between the specified times and displaying all the phone calls for a customer. The application can be accessed through web browser as well as the the command line. " +
+                "The command line has the format “[options]<args> “ the optional arguments in this project are -host , -port , -search and -print . The option -host is followed by the host name and the option -port is " +
+                "followed by the port number. These arguments are necessary to establish connection with the server. The -search option requires customer name and the start and end times. The other arguments of the phone" +
+                " call are similar to the previous projects. The other arguments are used to construct a phone call and add it to the Phonebill. Unlike Previous projects that server stores multiple phone bills and supports" +
+                " REST - ful web service. The phone bill information is stored in server and is available as long as the server is available. " +
+                "The -print option prints the latest phone call information added to the Phonebill.The -README prints the readme information on the standard output and exits the application. " +
+                "\n\nThe -README option in the arguments prints readme information but doesn’t validate any other arguments.\n \tAll the necessary validations for the  other arguments follow the " +
+                "same protocol as the previous assignments.";
         System.out.println (readme);
     }
 
@@ -90,6 +87,34 @@ public class PhoneCallHelper {
 
     }
 
+    /***
+     *
+     * @param args  : the command line arguments
+     * @param numOfNonOptions : the number of non optional arguments
+     * @param numOfOptions : the number of optional arguments
+     *                     This method checks if the number of arguments passed in the command line is valid or not
+     */
+
+    static void checkNumberOfArguments(String [] args , int numOfNonOptions,int numOfOptions , ArrayList options){
+        if (args.length == 0) {
+            throw new InvalidNumberOfArgumentsException ("Missing Command Line Arguments " );
+        }
+        if (args.length> 15){
+            throw new InvalidNumberOfArgumentsException ("Command Line has too many arguments");
+        }
+        if(Arrays.asList (args).contains ("-search") && args.length > 12 ){
+            throw new InvalidNumberOfArgumentsException ("The search option requires customer name , " +
+                    "start time and end time only. Extraneous arguments in the command line ");
+        }
+        if(!Arrays.asList ("-host" , "-port" , "-search").containsAll (options) && numOfNonOptions > 0 && numOfNonOptions < 11){
+
+            throw new InvalidNumberOfArgumentsException ("Missing few Command Line Arguments");
+        }
+        if(numOfOptions > 4){
+            throw new InvalidNumberOfArgumentsException ("Invalid number of options");
+        }
+
+    }
 
     /**
      * @param args command line arguments
@@ -104,36 +129,42 @@ public class PhoneCallHelper {
         ArrayList<String> options = new ArrayList<> ();
         ArrayList<String> nonOptions = new ArrayList<> ();
         ArrayList<String> files = new ArrayList<> ();
+        ArrayList<String> hostPort = new ArrayList<> ();
         String textFile = null;
         String prettyFile = null;
         ArrayList<ArrayList<String>> list = new ArrayList<> ();
         for (int i = 0; i < args.length; i++) {
             String arg = args[i].toLowerCase ();
-            if ((arg.contains ("readme") || arg.contains ("print") || arg.contains ("textfile")|| arg.equals ("-pretty")) && !arg.startsWith ("-")) {
-                throw new InvalidOptionException ("Invalid Option , Usage : -README -print -textFile -pretty:" + arg);
+            if ((arg.contains ("readme") || arg.contains ("print") || arg.contains ("-host") || arg.contains ("port") || arg.contains ("search")) && !arg.startsWith ("-")) {
+                throw new InvalidOptionException ("Invalid Option , Usage : -README -print -search  -host -port:" + arg);
             }
-            else if (arg.equals ("-readme") || arg.equals ("-print") || arg.equals ("-textfile") || arg.equals ("-pretty")) {
-                if (args[i].matches ("-README") || args[i].matches ("-print") || args[i].matches ("-textFile") ||args[i].matches ("-pretty") ) {
+            else if (arg.equals ("-readme") || arg.equals ("-print")||
+                    arg.equals ("-host") || arg.equals ("-port") || arg.equals ("-search"))
+            {
+                if (args[i].matches ("-README") || args[i].matches ("-print") ||
+                         args[i].matches ("-host") || args[i].matches ("-port") ||args[i].matches ("-search")) {
                     options.add (args[i]);
                 }
                 else {
-                    throw new InvalidOptionException ("Options are case sensitive , Usage : -README , -print , -textFile , -pretty:" + args[i]);
+                    throw new InvalidOptionException ("Options are case sensitive , Usage : -README , -print , -search ,-host , -port" + args[i]);
                 }
             }
-            else if(args[i].endsWith(".txt") || args.equals ("-")){
-                files.add (args[i]);
-            }else {
+//            else if(args[i].endsWith(".txt") || args[i].equals ("-")){
+//                files.add (args[i]);
+//            }
+//
+            else {
                 nonOptions.add (args[i]);
             }
         }
-        for (String opt : options) {
-           if (opt.equals ("-textFile")) {
-               checkFileOption (args ,"-textFile");
-            }
-        }
+//        for (String opt : options) {
+//           if (opt.equals ("-textFile")) {
+//               checkFileOption (args ,"-textFile");
+//            }
+//        }
         list.add (options);
         list.add (nonOptions);
-        list.add (files);
+       // list.add (files);
         return list;
     }
 
@@ -144,8 +175,48 @@ public class PhoneCallHelper {
     static void checkFileOption(String [] args , String option) {
        int indexOftxtOption= Arrays.asList (args).indexOf (option);
         if (!args[indexOftxtOption + 1].endsWith (".txt")) {
-            throw new InvalidOptionException ("The option -textFile should be followed by the file name/path ,Usage : -textFile filename.txt : " + args[indexOftxtOption + 1].endsWith (".txt"));
+            throw new InvalidOptionException ("The option -textFile should be followed by the file name/path ,Usage : -textFile filename.txt : " + args[indexOftxtOption + 1]);
        }
+    }
+
+    /***
+     *
+     * @param args : The array of command line arguments
+     *             This method checks for all the validations with host and port.
+     */
+
+    static void checkHostAndPort(String[] args){
+       int indexOfHost = Arrays.asList (args).indexOf ("-host");
+       int indexOfPort = Arrays.asList (args).indexOf ("-port");
+       if((Arrays.asList (args).contains ("-host") && !Arrays.asList (args).contains ("-port")) || (Arrays.asList (args).contains ("-port") && !Arrays.asList (args).contains ("-host"))){
+           throw new InvalidOptionException ("Please provide host and port to connect to the server");
+       }
+//       if((indexOfHost > indexOfPort && indexOfHost != indexOfPort+2) || (indexOfPort > indexOfHost && indexOfPort != indexOfHost+2)){
+//           throw new InvalidOptionException ("The host and port should be provided after each other ");
+//       }
+
+        if(args[indexOfHost +1].isEmpty ()|| args[indexOfHost +1].startsWith ("-")){
+           throw new InvalidOptionException ("The option -host should be followed by the hostname : " + args[indexOfHost+1]);
+        }
+
+        if(args[indexOfPort +1].isEmpty ()||args[indexOfPort + 1].startsWith ("-")){
+           throw new InvalidOptionException ("The option -port should be followed by the port number : " + args[indexOfPort+1]);
+        }
+
+        try{
+            int port = Integer.parseInt (args[indexOfPort+1]);
+        } catch (NumberFormatException ne){
+           throw new IllegalArgumentException ("The port number has to be numeric :" + args[indexOfPort+1]);
+        }
+
+        if(Arrays.asList (args).contains ("-search") && (indexOfHost == -1 || indexOfPort == -1)){
+           throw new InvalidOptionException ("Unable to connect to server as Host and Port are not provided ");
+        }
+
+        if(Arrays.asList (args).contains ("-search") && Arrays.asList (args).contains ("-print")){
+           throw new InvalidOptionException ("Search and Print cannot performed at the same time. Please provide one of them at a time");
+        }
+
     }
 
     /**
@@ -190,6 +261,8 @@ public class PhoneCallHelper {
          }
          return startPt;
      }
+
+
     /**
      * @param arg : The command line argument.
      * @throws InvalidArgumentFormatException : Argument format is wrong exception

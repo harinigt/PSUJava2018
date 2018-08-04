@@ -177,7 +177,7 @@ public class FileHelper {
                         PhoneCallHelper.printErrorMessageAndExit ("The Content on the file is corrupted" +"\n" + ex.getMessage () );
                     }
                 }
-                callFromBill = new PhoneCall (customer,callerNumber,calleeNumber,PhoneCallHelper.convertToDate (startDate,startTime,startAmPm),PhoneCallHelper.convertToDate (endDate,endTime,endAmPm));
+                callFromBill = new PhoneCall (callerNumber,calleeNumber,PhoneCallHelper.convertToDate (startDate,startTime,startAmPm),PhoneCallHelper.convertToDate (endDate,endTime,endAmPm));
                 bill.addPhoneCall (callFromBill);
             }
         }
@@ -190,7 +190,8 @@ public class FileHelper {
      */
 
     private static String[] getDateTime(String val) {
-        String[] dateTime;PhoneCallHelper.checkValidArgumentFormat (val.trim ());
+        String[] dateTime;
+        PhoneCallHelper.checkValidArgumentFormat (val.trim ());
         dateTime = val.split (" ");
         PhoneCallHelper.checkDateFormat (dateTime[0].trim ());
         PhoneCallHelper.checkTimeFormat (dateTime[1].trim (),dateTime[2].trim ());
@@ -233,8 +234,8 @@ public class FileHelper {
         prettyContent += "*Name of the customer :\t\t" + bill.getCustomer () + "\n\n";
         for(PhoneCall call : sortedCalls){
             prettyContent+= "----------------------------------------------------------------------------------\n";
-            prettyContent+="*Phone call from\t" + call.getCaller () + "\tto\t"+ call.getCallee () + "\n";
-            prettyContent+="*\t\t\ton\t" +  getPrettyDateTime (call.getStartTime ()) + "\t to\t" +  getPrettyDateTime (call.getEndTime ())+"\n";
+            prettyContent+="*Phone call from\t\t" + call.getCaller () + "\t\tto\t"+ call.getCallee () + "\n";
+            prettyContent+="*\ton\t\t" +  getPrettyDateTime (call.getStartTime ()) + "\t\tto\t" +  getPrettyDateTime (call.getEndTime ())+"\n";
             prettyContent+= "----------------------------------------------------------------------------------\n";
             prettyContent+="*The call duration was\t "+ getDurationOfcallInMinutes (call.getStartTime (),call.getEndTime ()) +"\tminutes\n";
             prettyContent+= "----------------------------------------------------------------------------------\n";

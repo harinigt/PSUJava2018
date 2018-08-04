@@ -70,6 +70,7 @@ public class PrettyPrinter implements PhoneBillDumper {
      */
     public void dumpPrettyContentToStandardOut(AbstractPhoneBill bill){
         System.out.println (FileHelper.getPrettyContent ((PhoneBill)bill));
+        //return FileHelper.getPrettyContent ((PhoneBill)bill);
 
     }
 
