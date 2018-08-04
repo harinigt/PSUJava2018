@@ -2,7 +2,6 @@ edu/pdx/cs410J/gharini/Project4.class
 edu/pdx/cs410J/gharini/InvalidPhoneNumberException.class
 edu/pdx/cs410J/gharini/PrettyPrinter.class
 edu/pdx/cs410J/gharini/PhoneBillRestClient.class
-edu/pdx/cs410J/gharini/Project3.class
 edu/pdx/cs410J/gharini/TextParser.class
 edu/pdx/cs410J/gharini/PhoneBillServlet.class
 edu/pdx/cs410J/gharini/FileHelper.class
