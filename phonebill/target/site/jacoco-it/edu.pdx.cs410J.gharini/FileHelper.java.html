@@ -177,7 +177,7 @@ import java.util.*;
 <span class="nc" id="L177">                        PhoneCallHelper.printErrorMessageAndExit (&quot;The Content on the file is corrupted&quot; +&quot;\n&quot; + ex.getMessage () );</span>
 <span class="nc" id="L178">                    }</span>
 <span class="nc" id="L179">                }</span>
-<span class="nc" id="L180">                callFromBill = new PhoneCall (customer,callerNumber,calleeNumber,PhoneCallHelper.convertToDate (startDate,startTime,startAmPm),PhoneCallHelper.convertToDate (endDate,endTime,endAmPm));</span>
+<span class="nc" id="L180">                callFromBill = new PhoneCall (callerNumber,calleeNumber,PhoneCallHelper.convertToDate (startDate,startTime,startAmPm),PhoneCallHelper.convertToDate (endDate,endTime,endAmPm));</span>
 <span class="nc" id="L181">                bill.addPhoneCall (callFromBill);</span>
 <span class="nc" id="L182">            }</span>
 <span class="nc" id="L183">        }</span>
@@ -190,11 +190,12 @@ import java.util.*;
      */
 
     private static String[] getDateTime(String val) {
-<span class="nc" id="L193">        String[] dateTime;PhoneCallHelper.checkValidArgumentFormat (val.trim ());</span>
-<span class="nc" id="L194">        dateTime = val.split (&quot; &quot;);</span>
-<span class="nc" id="L195">        PhoneCallHelper.checkDateFormat (dateTime[0].trim ());</span>
-<span class="nc" id="L196">        PhoneCallHelper.checkTimeFormat (dateTime[1].trim (),dateTime[2].trim ());</span>
-<span class="nc" id="L197">        return dateTime;</span>
+        String[] dateTime;
+<span class="nc" id="L194">        PhoneCallHelper.checkValidArgumentFormat (val.trim ());</span>
+<span class="nc" id="L195">        dateTime = val.split (&quot; &quot;);</span>
+<span class="nc" id="L196">        PhoneCallHelper.checkDateFormat (dateTime[0].trim ());</span>
+<span class="nc" id="L197">        PhoneCallHelper.checkTimeFormat (dateTime[1].trim (),dateTime[2].trim ());</span>
+<span class="nc" id="L198">        return dateTime;</span>
     }
 
     /**
@@ -204,9 +205,9 @@ import java.util.*;
      * @return the call duration in minutes.
      */
     private static long getDurationOfcallInMinutes(Date sdate  , Date edate){
-<span class="nc" id="L207">       long diffInMilliSec = edate.getTime () - sdate.getTime ();</span>
-<span class="nc" id="L208">       long diffInMinutes = diffInMilliSec/(1000*60);</span>
-<span class="nc" id="L209">       return diffInMinutes;</span>
+<span class="nc" id="L208">       long diffInMilliSec = edate.getTime () - sdate.getTime ();</span>
+<span class="nc" id="L209">       long diffInMinutes = diffInMilliSec/(1000*60);</span>
+<span class="nc" id="L210">       return diffInMinutes;</span>
     }
 
     /**
@@ -214,8 +215,8 @@ import java.util.*;
      * @return  : The sorted set of the phone calls
      */
     private  static SortedSet&lt;PhoneCall&gt; getSortedSet(PhoneBill bill) {
-<span class="nc" id="L217">        SortedSet&lt;PhoneCall&gt; sortedCalls = new TreeSet&lt;&gt; (bill.getPhoneCalls ());</span>
-<span class="nc" id="L218">        return sortedCalls;</span>
+<span class="nc" id="L218">        SortedSet&lt;PhoneCall&gt; sortedCalls = new TreeSet&lt;&gt; (bill.getPhoneCalls ());</span>
+<span class="nc" id="L219">        return sortedCalls;</span>
     }
 
     /**
@@ -226,20 +227,20 @@ import java.util.*;
      */
 
     public static String getPrettyContent(PhoneBill bill){
-<span class="nc" id="L229">        String prettyContent = null;</span>
-<span class="nc" id="L230">        SortedSet&lt;PhoneCall&gt; sortedCalls = getSortedSet (bill);</span>
-<span class="nc" id="L231">        prettyContent = &quot; The phone bill of the customer \n&quot;;</span>
-<span class="nc" id="L232">        prettyContent+= &quot;----------------------------------------------------------------------------------\n&quot;;</span>
-<span class="nc" id="L233">        prettyContent += &quot;*Name of the customer :\t\t&quot; + bill.getCustomer () + &quot;\n\n&quot;;</span>
-<span class="nc bnc" id="L234" title="All 2 branches missed.">        for(PhoneCall call : sortedCalls){</span>
-<span class="nc" id="L235">            prettyContent+= &quot;----------------------------------------------------------------------------------\n&quot;;</span>
-<span class="nc" id="L236">            prettyContent+=&quot;*Phone call from\t&quot; + call.getCaller () + &quot;\tto\t&quot;+ call.getCallee () + &quot;\n&quot;;</span>
-<span class="nc" id="L237">            prettyContent+=&quot;*\t\t\ton\t&quot; +  getPrettyDateTime (call.getStartTime ()) + &quot;\t to\t&quot; +  getPrettyDateTime (call.getEndTime ())+&quot;\n&quot;;</span>
-<span class="nc" id="L238">            prettyContent+= &quot;----------------------------------------------------------------------------------\n&quot;;</span>
-<span class="nc" id="L239">            prettyContent+=&quot;*The call duration was\t &quot;+ getDurationOfcallInMinutes (call.getStartTime (),call.getEndTime ()) +&quot;\tminutes\n&quot;;</span>
-<span class="nc" id="L240">            prettyContent+= &quot;----------------------------------------------------------------------------------\n&quot;;</span>
-<span class="nc" id="L241">        }</span>
-<span class="nc" id="L242">       return prettyContent;</span>
+<span class="nc" id="L230">        String prettyContent = null;</span>
+<span class="nc" id="L231">        SortedSet&lt;PhoneCall&gt; sortedCalls = getSortedSet (bill);</span>
+<span class="nc" id="L232">        prettyContent = &quot; The phone bill of the customer \n&quot;;</span>
+<span class="nc" id="L233">        prettyContent+= &quot;----------------------------------------------------------------------------------\n&quot;;</span>
+<span class="nc" id="L234">        prettyContent += &quot;*Name of the customer :\t\t&quot; + bill.getCustomer () + &quot;\n\n&quot;;</span>
+<span class="nc bnc" id="L235" title="All 2 branches missed.">        for(PhoneCall call : sortedCalls){</span>
+<span class="nc" id="L236">            prettyContent+= &quot;----------------------------------------------------------------------------------\n&quot;;</span>
+<span class="nc" id="L237">            prettyContent+=&quot;*Phone call from\t\t&quot; + call.getCaller () + &quot;\t\tto\t&quot;+ call.getCallee () + &quot;\n&quot;;</span>
+<span class="nc" id="L238">            prettyContent+=&quot;*\ton\t\t&quot; +  getPrettyDateTime (call.getStartTime ()) + &quot;\t\tto\t&quot; +  getPrettyDateTime (call.getEndTime ())+&quot;\n&quot;;</span>
+<span class="nc" id="L239">            prettyContent+= &quot;----------------------------------------------------------------------------------\n&quot;;</span>
+<span class="nc" id="L240">            prettyContent+=&quot;*The call duration was\t &quot;+ getDurationOfcallInMinutes (call.getStartTime (),call.getEndTime ()) +&quot;\tminutes\n&quot;;</span>
+<span class="nc" id="L241">            prettyContent+= &quot;----------------------------------------------------------------------------------\n&quot;;</span>
+<span class="nc" id="L242">        }</span>
+<span class="nc" id="L243">       return prettyContent;</span>
     }
 
     /**
@@ -249,10 +250,10 @@ import java.util.*;
      */
 
     public static String getPrettyDateTime(Date date)  {
-<span class="nc" id="L252">        SimpleDateFormat sdf = new SimpleDateFormat(&quot; EEE , MMM dd''yyyy 'at' h:mm aa&quot;,Locale.US);</span>
-<span class="nc" id="L253">        sdf.setLenient (false);</span>
-<span class="nc" id="L254">        String sMyDate = sdf.format (date);</span>
-<span class="nc" id="L255">        return sMyDate;</span>
+<span class="nc" id="L253">        SimpleDateFormat sdf = new SimpleDateFormat(&quot; EEE , MMM dd''yyyy 'at' h:mm aa&quot;,Locale.US);</span>
+<span class="nc" id="L254">        sdf.setLenient (false);</span>
+<span class="nc" id="L255">        String sMyDate = sdf.format (date);</span>
+<span class="nc" id="L256">        return sMyDate;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>

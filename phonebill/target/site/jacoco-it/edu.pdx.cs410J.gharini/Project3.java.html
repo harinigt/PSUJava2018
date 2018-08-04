@@ -97,7 +97,7 @@ import java.util.Date;
 <span class="nc" id="L97">                    PhoneCallHelper.printErrorMessageAndExit (msg+&quot; : &quot;+args[i]);</span>
                 }
             }
-<span class="nc" id="L100">            call = new PhoneCall(customer_name,callerNumber,calleeNumber,finalStartTime,finalEndTime);</span>
+<span class="nc" id="L100">            call = new PhoneCall(callerNumber,calleeNumber,finalStartTime,finalEndTime);</span>
 <span class="nc" id="L101">            bill = new PhoneBill(customer_name);</span>
 <span class="nc" id="L102">            bill.addPhoneCall (call);</span>
 

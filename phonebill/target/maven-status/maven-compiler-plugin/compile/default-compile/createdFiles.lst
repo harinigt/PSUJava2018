@@ -14,6 +14,7 @@ edu/pdx/cs410J/gharini/Messages$1.class
 edu/pdx/cs410J/gharini/InvalidArgumentFormatException.class
 edu/pdx/cs410J/gharini/PhoneBillRestClient$PhoneBillRestException.class
 edu/pdx/cs410J/gharini/TextDumper.class
+edu/pdx/cs410J/gharini/NoSuchPhoneBillException.class
 edu/pdx/cs410J/gharini/PhoneBill.class
 edu/pdx/cs410J/gharini/PhoneCall.class
 edu/pdx/cs410J/gharini/InvalidNumberOfArgumentsException.class
