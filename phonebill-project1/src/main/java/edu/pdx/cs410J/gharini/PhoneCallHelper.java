@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Locale;
 
@@ -122,6 +123,9 @@ public class PhoneCallHelper {
             }
             else {
                 nonOptions.add (args[i]);
+            }
+            if(args[i].startsWith ("-") && (!args[i].equals ("-README") || !args[i].equals ("-print") ||!args[i].equals ("-textFile") )){
+                throw new InvalidOptionException ("Invalid Option " + args[i]);
             }
         }
 
