@@ -81,6 +81,9 @@ public class Project1 {
                     endTime = args[i];
                     PhoneCallHelper.checkDateDifference (startDate, startTime,endDate,endTime);
                     }
+                    else{
+                    PhoneCallHelper.printErrorMessageAndExit ("Extraneous command line argument " + args[i]);
+                }
             }
         }
         catch(InvalidArgumentFormatException iaf){
