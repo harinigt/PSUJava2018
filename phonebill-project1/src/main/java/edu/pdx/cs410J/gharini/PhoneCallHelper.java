@@ -122,14 +122,19 @@ public class PhoneCallHelper {
 
             }
             else {
-                nonOptions.add (args[i]);
-            }
-            if(args[i].startsWith ("-") && (!args[i].equals ("-README") || !args[i].equals ("-print") ||!args[i].equals ("-textFile") )){
-                throw new InvalidOptionException ("Invalid Option " + args[i]);
+                if(args[i].startsWith ("-")) {
+                    throw new InvalidOptionException ("Invalid Option : " + args[i]);
+
+                }else{
+                   nonOptions.add (args[i]) ;
+                }
             }
         }
 
         for (String opt : options) {
+//            if(!opt.equals ("-README") || !opt.equals ("-print") || !opt.equals ("-textFile")){
+//                throw new InvalidOptionException ("Invalid Option :" +  opt);
+//            }
             if (opt.equals ("-textFile")) {
                 checkFileOption (nonOptions);
             }
