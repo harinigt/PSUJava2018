@@ -182,15 +182,6 @@ public class PhoneBillServlet extends HttpServlet
             addPhoneBill(phoneBill);
         }
 
-//
-//        if(this.phoneBillHashMap.containsKey (CUSTOMER_NAME)){
-//            phoneBill = this.phoneBillHashMap.get (CUSTOMER_NAME);
-//        } else
-//        {
-//            phoneBill = new PhoneBill (CUSTOMER_NAME);
-//            addPhoneBill (phoneBill);
-//        }
-
         try{
             PhoneCallHelper.checkValidArgumentFormat (name);
             PhoneCallHelper.checkValidArgumentFormat (callerNumber);
@@ -207,7 +198,6 @@ public class PhoneBillServlet extends HttpServlet
             PhoneCallHelper.checkDateFormat (start_time[0].trim ());
             PhoneCallHelper.checkTimeFormat (start_time[1].trim (),start_time[2].trim ());
             PhoneCallHelper.checkDateFormat (end_time[0].trim ());
-            //PhoneCallHelper.checkAmPmForCase ();
             PhoneCallHelper.checkTimeFormat (end_time[1].trim (),end_time[2].trim ());
             PhoneCallHelper.checkDateDifference (start_time[0].trim () , start_time[1].trim ()+" "+start_time[2].trim (),
                     end_time[0].trim () , end_time[1].trim ()+" "+end_time[2].trim () );
