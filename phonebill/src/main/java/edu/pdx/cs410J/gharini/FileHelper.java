@@ -231,13 +231,13 @@ public class FileHelper {
         SortedSet<PhoneCall> sortedCalls = getSortedSet (bill);
         prettyContent = " The phone bill of the customer \n";
         prettyContent+= "----------------------------------------------------------------------------------\n";
-        prettyContent += "*Name of the customer :\t\t" + bill.getCustomer () + "\n\n";
+        prettyContent += "*Name of the customer :" + bill.getCustomer () + "\n\n";
         for(PhoneCall call : sortedCalls){
             prettyContent+= "----------------------------------------------------------------------------------\n";
-            prettyContent+="*Phone call from\t\t" + call.getCaller () + "\t\tto\t"+ call.getCallee () + "\n";
-            prettyContent+="*\ton\t\t" +  getPrettyDateTime (call.getStartTime ()) + "\t\tto\t" +  getPrettyDateTime (call.getEndTime ())+"\n";
+            prettyContent+="*Phone call from  " + call.getCaller () + "  to  "+ call.getCallee () + "\n";
+            prettyContent+="*  on  " +  getPrettyDateTime (call.getStartTime ()) + "  to  " +  getPrettyDateTime (call.getEndTime ())+"\n";
             prettyContent+= "----------------------------------------------------------------------------------\n";
-            prettyContent+="*The call duration was\t "+ getDurationOfcallInMinutes (call.getStartTime (),call.getEndTime ()) +"\tminutes\n";
+            prettyContent+="*The call duration was  "+ getDurationOfcallInMinutes (call.getStartTime (),call.getEndTime ()) +"  minutes\n";
             prettyContent+= "----------------------------------------------------------------------------------\n";
         }
        return prettyContent;
