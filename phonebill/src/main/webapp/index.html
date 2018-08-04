@@ -28,21 +28,39 @@
 
 <div>
     <form method="get" action="calls">
-        List all dictionary entries <input type="submit" value="Submit"/>
+        List all Phone calls
+        <input name="customer" type="text" size="20" title="Customer Name"/>
+        <input type="submit" value="Submit"/>
     </form>
 </div>
 
 <div>
     <form method="get" action="calls">
-        List definition for word <input name="word" type="text" size="10" title="key"/>
+        <h3>List the phone calls</h3> <br>
+        Customer Name
+        <input name="customer" type="text" size="20" title="Customer Name"/> <br>
+        Start Time
+        <input name="startTime" type="text" size="20" title="Start Time"/> <br>
+        End Time
+        <input name="endTime" type="text" size="20" title="End Time"/> <br>
         <input type="submit" value="Submit"/>
     </form>
 </div>
 
 <div>
     <form method="post" action="calls">
-        Create a dictionary entry <input name="word" type="text" size="10" title="word"/> :
-        <input name="definition" type="text" size="100" title="definition"/>
+       <h3>Create a PhoneCall </h3>
+        Customer Name
+        <input name="customer" type="text" size="10" title="Customer Name" /><br/>
+        Caller Phone Number
+        <input name="caller" type="text" size="100" title="Caller Phone Number" /><br/>
+        Callee Phone Number
+        <input name="callee" type="text" size="100" title="Callee Phone Number" /><br/>
+        Start Time of the Call
+        <input name="startTime" type="text" size="100" title="Start Time of the Call"/><br/>
+        End Time of the Call
+        <input name="endTime" type="text" size="100" title="End Time of the Call"/><br/>
+
         <input type="submit" value="Submit"/>
     </form>
 </div>
