@@ -68,9 +68,9 @@ public class PrettyPrinter implements PhoneBillDumper {
      * @param bill
      * This method writes the pretty content on to the standard output.
      */
-    public void dumpPrettyContentToStandardOut(AbstractPhoneBill bill){
-        System.out.println (FileHelper.getPrettyContent ((PhoneBill)bill));
-        //return FileHelper.getPrettyContent ((PhoneBill)bill);
+    public String dumpPrettyContentToStandardOut(AbstractPhoneBill bill){
+        //System.out.println (FileHelper.getPrettyContent ((PhoneBill)bill));
+        return FileHelper.getPrettyContent ((PhoneBill)bill);
 
     }
 

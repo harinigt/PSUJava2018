@@ -375,7 +375,7 @@ public class PhoneCallHelper {
       static void checkDateDifference(String startDate ,String startTime, String endDate, String endTime ){
          String strDate = startDate + " " + startTime;
          String eDate = endDate + " " + endTime;
-         SimpleDateFormat sdf = new SimpleDateFormat ("mm/dd/yyyy hh:mm a" ,Locale.US);
+         SimpleDateFormat sdf = new SimpleDateFormat ("MM/dd/yyyy hh:mm a" ,Locale.US);
          sdf.setLenient (false);
          try {
                  Date d1 = sdf.parse (strDate);
