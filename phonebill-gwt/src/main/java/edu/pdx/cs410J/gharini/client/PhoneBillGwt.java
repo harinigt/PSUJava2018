@@ -375,6 +375,7 @@ public class PhoneBillGwt implements EntryPoint {
           textArea.setText (FileHelper.getPrettyContent (phoneBill));
         }
         textArea.setVisible (true);
+        textArea.setReadOnly (true);
       }
     });
 
@@ -429,6 +430,7 @@ public class PhoneBillGwt implements EntryPoint {
           textArea.setText (FileHelper.getPrettyContent (phoneBill));
         }
        textArea.setVisible (true);
+        textArea.setReadOnly (true);
         return;
 
       }
@@ -456,6 +458,7 @@ public class PhoneBillGwt implements EntryPoint {
 
   private void setupUI() {
     RootLayoutPanel rootPanel = RootLayoutPanel.get ();
+
     rootPanel.setTitle ("Phone Bill GWT Application");
     MenuBar menuBar = new MenuBar (true);
     menuBar.setAutoOpen(true);
@@ -470,6 +473,7 @@ public class PhoneBillGwt implements EntryPoint {
         area.setWidth ("600px");
         area.setHeight ("300px");
         area.setVisibleLines (100);
+        area.setReadOnly (true);
         area.setText (PhoneCallHelper.readme ());
         popupPanel.add (area);
         popupPanel.center ();

@@ -8,13 +8,16 @@ import edu.pdx.cs410J.gharini.client.PhoneBillService;
 import edu.pdx.cs410J.gharini.client.PhoneCallHelper;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * The server-side implementation of the Phone Bill service
  */
 public class PhoneBillServiceImpl extends RemoteServiceServlet implements PhoneBillService
 {
-    PhoneBill phoneBill;
+
+    private final Map<String, PhoneBill> phoneBillHashMap = new HashMap<> ();
 
     /***
      * Service implementation of get phonebill method
@@ -25,6 +28,8 @@ public class PhoneBillServiceImpl extends RemoteServiceServlet implements PhoneB
   @Override
   public PhoneBill getPhoneBill(String customer) throws IllegalStateException{
 
+
+      PhoneBill phoneBill = getPhoneBillForCustomer (customer);
       if(phoneBill==null){
           throw  new IllegalStateException ("Phonebill is empty");
       } else if(!phoneBill.getCustomer ().equals (customer)){
@@ -36,6 +41,13 @@ public class PhoneBillServiceImpl extends RemoteServiceServlet implements PhoneB
   }
 
 
+    public PhoneBill getPhoneBillForCustomer(String customer) {
+        return this.phoneBillHashMap.get(customer);
+    }
+
+    public void addPhoneBill(PhoneBill bill) {
+        this.phoneBillHashMap.put(bill.getCustomer(), bill);
+    }
 
     /***
      *Service implementation of searchPhoneBill method
@@ -49,6 +61,7 @@ public class PhoneBillServiceImpl extends RemoteServiceServlet implements PhoneB
     public PhoneBill searchPhoneBill(String customer  , Date startDate , Date endDate) throws IllegalStateException{
 
         PhoneBill bill = new PhoneBill(customer);
+        PhoneBill phoneBill = getPhoneBillForCustomer (customer);
         if(phoneBill==null){
             throw  new IllegalStateException ("Phonebill is empty");
         } else if(!phoneBill.getCustomer ().equals (customer)){
@@ -78,6 +91,14 @@ public class PhoneBillServiceImpl extends RemoteServiceServlet implements PhoneB
 
     @Override
     public void addPhoneCall(String customer , PhoneCall call){
+
+        PhoneBill phoneBill;
+        if(this.phoneBillHashMap.containsKey (customer)) {
+            phoneBill = getPhoneBillForCustomer (customer);
+        }else {
+            phoneBill = new PhoneBill(customer);
+            addPhoneBill(phoneBill);
+        }
       if(phoneBill == null){
            phoneBill = new PhoneBill (customer); }else
       if(!phoneBill.getCustomer ().equals (customer))  {

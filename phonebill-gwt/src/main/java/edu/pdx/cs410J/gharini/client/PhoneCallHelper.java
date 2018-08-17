@@ -32,16 +32,13 @@ public class PhoneCallHelper {
      */
     static String readme() {
         String readme = "Course    : Advanced Java Programming.\nName      : Harini Gowdagere Tulaisdas.\nemail     : gharini@pdx.edu\n";
-        readme += "Project   : Project4\nObjective :\n";
-        readme += "\t\tThe Project 4 involves developing a a REST - ful Phone Bill Web Service. The Project 4 is built on Project 1,2 and 3. The web application allows adding the phone call , " +
-                "  searching for all the phone calls between the specified times and displaying all the phone calls for a customer. The application can be accessed through web browser as well as the the command line. " +
-                "The command line has the format “[options]<args> “ the optional arguments in this project are -host , -port , -search and -print . The option -host is followed by the host name and the option -port is " +
-                "followed by the port number. These arguments are necessary to establish connection with the server. The -search option requires customer name and the start and end times. The other arguments of the phone" +
-                " call are similar to the previous projects. The other arguments are used to construct a phone call and add it to the Phonebill. Unlike Previous projects that server stores multiple phone bills and supports" +
-                " REST - ful web service. The phone bill information is stored in server and is available as long as the server is available. " +
-                "The -print option prints the latest phone call information added to the Phonebill.The -README prints the readme information on the standard output and exits the application. " +
-                "\n\nThe -README option in the arguments prints readme information but doesn’t validate any other arguments.\n \tAll the necessary validations for the  other arguments follow the " +
-                "same protocol as the previous assignments.";
+        readme += "Project   : Project5\nObjective :\n";
+        readme += "Build a RICH INTERNET PHONE BILL APPLICATION\n";
+        readme += "\t\tThe Project 5 uses GWT (google web toolkit) to build user interface and uses Remote procedure calls for communication. It is not a REST based web service. The User Interface designed for this " +
+                "project has tab layout panel that has different tabs for adding a phone call , searching for phone calls in phone bill and displaying all \n" +
+                "The phone calls in the phone bill of the customer. The tab panel also has a help menu implemented with menu bar. The help menu has the menu item README that displays the readme information. \n" +
+                "\n" +
+                "The protocol for adding the phone call , searching for phone calls and returning phone bill remains the same. The validations for the phone number , phone call start and end times remain the same as previous projects.";
         return readme;
     }
 
@@ -144,8 +141,7 @@ public class PhoneCallHelper {
         DateTimeFormat sdf = DateTimeFormat.getFormat ("hh:mm a");
         String callTime = time + ' ' + am_pm;
 
-        //String pattrn = "(1[012]|[1-9]):[0-5][0-9](am|pm)";
-         String pattrn = "(1[0-2]|[1-9]):[0-5][0-9] (am|pm)";
+        String pattrn = "(1[0-2]|[1-9]):[0-5][0-9] (am|AM|pm|PM)";
 
         if (!callTime.matches (pattrn))
             throw new InvalidDateAndTimeException ("Invalid time format , Time must be in 12 hr format:" + callTime);
@@ -174,11 +170,12 @@ public class PhoneCallHelper {
 
          try {
 
-                 Date d1 = sdf.parseStrict (strDate);
-                 Date d2 = sdf.parseStrict (eDate);
+                 Date d1 = sdf.parse (strDate);
+                 Date d2 = sdf.parse (eDate);
                  Date cur_date = new Date ();
                  long diff = d2.getTime () - d1.getTime ();
                  long diff1 = cur_date.getTime () - d2.getTime ();
+                 System.out.println (d1.after (d2));
               if (d1.after (d2)) {
                   throw new InvalidDateAndTimeException ("Invalid Dates , Start Date : "+strDate +" should be before end date : " + eDate);
               }
@@ -186,7 +183,7 @@ public class PhoneCallHelper {
                   throw  new InvalidDateAndTimeException ("Invalid end date , end date " + eDate +" should be before today!!  " );
               }
              }catch (Exception e) {
-             throw new InvalidDateAndTimeException ("Invalid date ");
+             throw new InvalidDateAndTimeException ("Invalid Dates , Start Date : "+strDate +" should be before end date : " + eDate);
           }
 
     }
